@@ -1,18 +1,18 @@
 const sizeOptions = [
     {
-        id: 1,
+        id: 'small',
         name: 'size',
         value: 'small',
         option: 'Small',
     },
     {
-        id: 2,
+        id: 'medium',
         name: 'size',
         value: 'medium',
         option: 'Medium',
     },
     {
-        id: 3,
+        id: 'large',
         name: 'size',
         value: 'large',
         option: 'Large',

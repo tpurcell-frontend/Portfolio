@@ -1,24 +1,24 @@
 const galaxyOptions = [
     {
-        id: 1,
+        id: 'milkyway',
         name: 'galaxy',
         value: 'milkyway',
         option: 'Milky Way',
     },
     {
-        id: 2,
+        id: 'andromeda',
         name: 'galaxy',
         value: 'andromeda',
         option: 'Andromeda',
     },
     {
-        id: 3,
+        id: 'triangulum',
         name: 'galaxy',
         value: 'triangulum',
         option: 'Triangulum',
     },
     {
-        id: 4,
+        id: 'whirlpool',
         name: 'galaxy',
         value: 'whirlpool',
         option: 'Whirlpool',

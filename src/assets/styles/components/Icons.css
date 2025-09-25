@@ -15,7 +15,8 @@ svg.MuiSvgIcon-root:focus-visible {
 .closeBtn:hover,
 .closeBtn:focus,
 .closeBtn:focus-visible {
-    fill: #4087a5 !important;
+  transform: rotate(90deg) scale(1.25);
+  transition: transform 0.5s !important;
 }
 
 .rocketIcon {

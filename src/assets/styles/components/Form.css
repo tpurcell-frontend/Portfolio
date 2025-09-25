@@ -6,18 +6,17 @@ form > label {
     font-size: 16px;
 }
 
+form .radio-group label:hover,
+form .radio-group input:hover {
+    cursor: pointer;
+}
+
 form input[type="radio"] {
     font-size: 16px;
     flex-basis: 20px;
     accent-color: #a4508b;
     margin: 0;
     margin-right: 8px;
-}
-
-form input[type="radio"]:hover,
-form input[type="radio"]:focus,
-form input[type="radio"]:focus-visible {
-    cursor: pointer;
 }
 
 input[type="radio"] {
@@ -40,10 +39,6 @@ input[type="radio"]:checked {
 
 input[type="radio"]:hover {
 }
-/* 
-input[type="radio"]:focus-visible {
-  outline: 1px solid #a4508b;
-} */
 
 input[type="radio"]::after {
   content: '';
@@ -91,4 +86,20 @@ form .page-wrapper {
     form .page-wrapper {
         font-size: 18px;
     }
+}
+
+form .asterisk {
+  color: red;
+  font-size: 18px;
+  margin-left: 5px;
+  margin-top: -5px;
+}
+
+form .required-message {
+  width: 100%;
+  text-align: right;
+}
+
+form .required-message span {
+  font-size: 12px;
 }

@@ -1,18 +1,18 @@
 const surfaceOptions = [
     {
-        id: 1,
+        id: 'solid',
         name: 'surface',
         value: 'solid',
         option: 'Solid',
     },
     {
-        id: 2,
+        id: 'gas',
         name: 'surface',
         value: 'gas',
         option: 'Gas',
     },
     {
-        id: 3,
+        id: 'liquid',
         name: 'surface',
         value: 'liquid',
         option: 'Liquid',
