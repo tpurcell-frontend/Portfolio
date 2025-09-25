@@ -1,106 +1,106 @@
 import { useState } from 'react'
 import Button from './Button'
+import FormOptions from '../subcomponents/FormOptions'
+import galaxyOptions from "../data/galaxy-options.js"
+import sizeOptions from "../data/size-options.js"
+import surfaceOptions from "../data/surface-options.js"
 
 import '../assets/styles/components/Form.css'
 
 function Form() {
-    const [buttonType, setButtonType] = useState('btn-secondary');
+    const [buttonClass, setbuttonClass] = useState('btn-secondary');
     const [buttonText, setButtonText] = useState('Next');
     const [page, setPage] = useState(1);
+    const [formLabel, setFormLabel] = useState('Choose a galaxy');
     const [selected, setSelected] = useState('');
+
+    function formNextPage () {
+        const nextPage = page + 1;
+        setPage(nextPage);
+        updateFormLabel(nextPage);
+    }
+
+    function formPreviousPage() {
+        const prevPage = page - 1;
+        setPage(prevPage);
+        updateFormLabel(prevPage);
+    }
+
+    function updateFormLabel(page) {
+
+        switch (page) {
+            case 1: 
+                setFormLabel('Choose a galaxy:')
+                break;
+            case 2: 
+                setFormLabel('Choose a size:')
+                break;
+            case 3: 
+                setFormLabel('Choose a surface:')
+                break;
+        }
+    }
+
+    function createOption(galaxyOption) {
+
+        return  (
+            <FormOptions
+                type="radio"
+                id={galaxyOption.id}
+                name={galaxyOption.name}
+                value={galaxyOption.value}
+                // checked={selected === "milkyway"}
+                // onChange={e => setSelected(e.target.value)}
+                option={galaxyOption.option}
+            />
+        )
+    }
+
+    function generatePlanet() {
+        console.log('Generating planet');
+    }
 
     return (
            <form>
+               <label>{formLabel}</label>
                 {page === 1 && (
                     <>
-                        <label>Choose a galaxy:</label>
                         <div className="radio-group">
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="galaxy"
-                                    value="milkyway"
-                                    checked={selected === "milkyway"}
-                                    onChange={e => setSelected(e.target.value)}
-                                />
-                                Milky Way
-                            </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="galaxy"
-                                    value="andromeda"
-                                    checked={selected === "andromeda"}
-                                    onChange={e => setSelected(e.target.value)}
-                                />
-                                Andromeda
-                            </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="galaxy"
-                                    value="triangulum"
-                                    checked={selected === "triangulum"}
-                                    onChange={e => setSelected(e.target.value)}
-                                />
-                                Triangulum
-                            </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="galaxy"
-                                    value="whirlpool"
-                                    checked={selected === "whirlpool"}
-                                    onChange={e => setSelected(e.target.value)}
-                                />
-                                Whirlpool
-                            </label>
+                            {galaxyOptions.map(createOption)}
                         </div>
-
-                        <Button onClick={() => setPage(2)} buttonType={buttonType} text="Next" />
+                        <div className="button-wrapper">
+                            <Button onClick={formNextPage} buttonClass={buttonClass} text="Next" />
+                        </div>
                     </>
                 )}
                 {page === 2 && (
                     <>
-                        <label>Choose a surface type:</label>
                         <div className="radio-group">
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="surface"
-                                    value="solid"
-                                    checked={selected === "solid"}
-                                    onChange={e => setSelected(e.target.value)}
-                                />
-                                Solid
-                            </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="surface"
-                                    value="gas"
-                                    checked={selected === "gas"}
-                                    onChange={e => setSelected(e.target.value)}
-                                />
-                                Surface
-                            </label>
-                            <label>
-                                <input
-                                    type="radio"
-                                    name="surface"
-                                    value="liquid"
-                                    checked={selected === "liquid"}
-                                    onChange={e => setSelected(e.target.value)}
-                                />
-                                Liquid
-                            </label>
+                            {sizeOptions.map(createOption)}
                         </div>
 
-                        <Button onClick={() => setPage(1)} buttonType={buttonType} text="Previous" />
-                        <Button onClick={() => setPage(2)} buttonType={buttonType} text="Next" />
+                        <div className="button-wrapper">
+                            <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
+
+                            <Button onClick={formNextPage} buttonClass={buttonClass} buttonDirection="Next" text="Next" />
+                        </div>
                     </>
                 )}
-                <div>Page {page}</div>
+                {page === 3 && (
+                    <>
+                        <div className="radio-group">
+                            {surfaceOptions.map(createOption)}
+                        </div>
+
+                        <div className="button-wrapper">
+                            <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
+
+                            <Button onClick={generatePlanet} buttonClass={buttonClass} buttonDirection="Generate" text="Generate" buttonType="button" />
+                        </div>
+                    </>
+                )}
+
+                <div className="page-wrapper">Page {page}</div>
             </form>
         )
     }

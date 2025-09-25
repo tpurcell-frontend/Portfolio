@@ -4,3 +4,21 @@
   margin: 0 auto;
   text-align: center;
 }
+
+.planet-generator {
+  padding: 50px 0;
+}
+
+@media (min-width: 769px) {
+
+  .planet-generator {
+    padding: 80px 0;
+  }
+}
+
+@media (min-width: 1201px) {
+
+  .planet-generator {
+    padding: 100px 0;
+  }
+}

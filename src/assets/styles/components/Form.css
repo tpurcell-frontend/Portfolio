@@ -20,6 +20,49 @@ form input[type="radio"]:focus-visible {
     cursor: pointer;
 }
 
+input[type="radio"] {
+  appearance: none;
+  width: 16px;
+  height: 20px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: #242424;
+  display: inline-block;
+  position: relative;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
+input[type="radio"]:checked {
+  border-color: #fff;
+  background: #333;
+}
+
+input[type="radio"]:hover {
+}
+/* 
+input[type="radio"]:focus-visible {
+  outline: 1px solid #a4508b;
+} */
+
+input[type="radio"]::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #a4508b;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+
+input[type="radio"]:checked::after {
+  opacity: 1;
+}
+
 form label {
     color: #fff;
     display: flex;
@@ -33,13 +76,19 @@ form .radio-group {
     margin-top: 12px;
 }
 
+form .page-wrapper {
+    margin-top: 16px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
 @media (min-width: 769px) {
 
     form > label {
         font-size: 22px;
     }
 
-    form input[type="radio"] {
-        font-size: 20px;
+    form .page-wrapper {
+        font-size: 18px;
     }
 }

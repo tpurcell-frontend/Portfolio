@@ -1,0 +1,11 @@
+.animation--glow {
+    transition: filter 300ms;
+    will-change: filter;
+}
+
+.animation-glow:hover,
+.animation-glow:focus,
+.animation-glow:focus-visible {
+    filter: drop-shadow(0 0 6px #a4508b);
+    cursor: pointer;
+}

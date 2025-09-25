@@ -11,7 +11,7 @@ function Modal(props) {
                 <div className="modal-content">
                     <div className="modal-header">
                         <h2>Customize Your Planet</h2>
-                        <CloseIcon onClick={props.closeBtn}/>
+                        <CloseIcon className="closeBtn animation-glow" onClick={props.closeBtn}/>
                     </div>
                     <div className="modal-body">
                         <Form />

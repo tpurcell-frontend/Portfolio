@@ -1,0 +1,30 @@
+svg.MuiSvgIcon-root {
+  transition: fill 0.25s linear;
+}
+
+svg.MuiSvgIcon-root:hover,
+svg.MuiSvgIcon-root:focus,
+svg.MuiSvgIcon-root:focus-visible {
+  cursor: pointer;
+}
+
+.closeBtn {
+  fill: #fff !important;
+}
+
+.closeBtn:hover,
+.closeBtn:focus,
+.closeBtn:focus-visible {
+    fill: #4087a5 !important;
+}
+
+.rocketIcon {
+  margin-bottom: -4px;
+  transform: rotate(-90deg);
+  transition: transform 0.25s !important;
+}
+
+.rocketLaunchIcon {
+    margin-bottom: -4px;
+    transition: transform 0.25s !important;
+}

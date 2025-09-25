@@ -8,7 +8,7 @@ import Modal from './components/Modal'
 import './assets/styles/App.css'
 
 function App() {
-  const [buttonType, setButtonType] = useState('btn-primary');
+  const [buttonClass, setbuttonClass] = useState('btn-primary');
   const [buttonText, setButtonText] = useState('Get Started');
   const [modalStatus, setModalStatus] = useState(false);
 
@@ -23,8 +23,12 @@ function App() {
   return (
     <>
       <Logo />
-      <Heading />
-      <Button onClick={showModal} buttonType={buttonType} text={buttonText} />
+      <section className="planet-generator">
+        <Heading />
+        <div className="button-wrapper">
+          <Button onClick={showModal} buttonClass={`animation-glow ${buttonClass}`} text={buttonText} />
+        </div>
+      </section>
       <Modal closeBtn={hideModal} modalStatus={modalStatus} />
     </>
   )

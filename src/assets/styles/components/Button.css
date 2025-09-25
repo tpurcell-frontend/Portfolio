@@ -1,22 +1,44 @@
+.button-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 16px auto 0;
+    gap: 16px;
+}
+
 button {
-    /* background: linear-gradient(90deg, rgba(204, 255, 204, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(0, 153, 255, 1) 100%); */
-    /* background-color: #4087a5; */
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px;
+
     border: 1px solid #4087a5;
+    border-radius: 8px;
     background-color: transparent;
     padding: 10px 15px;
     transition: background 0.25s linear, border-color 0.25s linear;
 
     font-size: 16px;
-    margin-top: 16px;
 }
 
 button:hover,
 button:focus,
 button:focus-visible {
-    /* background: linear-gradient(90deg, #B2F7EF 0%, #70E1F5 50%, #38A3A5 100%); */
-    /* background-color: #b4649c; */
     border-color: #b4649c;
     background-color: #9b4b83;
+    cursor: pointer;
+}
+
+button:hover .rocketIcon,
+button:focus .rocketIcon,
+button:focus-visible .rocketIcon {
+    transform: rotate(-90deg) translate(0px, -5px);
+}
+
+button:hover .rocketLaunchIcon,
+button:focus .rocketLaunchIcon,
+button:focus-visible .rocketLaunchIcon {
+    transform: translate(5px, -5px);
 }
 
 button.btn-secondary {
@@ -32,11 +54,17 @@ button.btn-secondary:focus-visible {
     background-color: #242424;
 }
 
+button.btn-reverse {
+    flex-direction: row-reverse;
+}
 
 @media (min-width: 769px) {
 
+    .button-wrapper {
+        margin-top: 24px;
+    }
+
     button {
         font-size: 20px;
-        margin-top: 24px;
     }
 }
