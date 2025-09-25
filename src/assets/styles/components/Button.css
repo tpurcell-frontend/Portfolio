@@ -1,0 +1,42 @@
+button {
+    /* background: linear-gradient(90deg, rgba(204, 255, 204, 1) 0%, rgba(87, 199, 133, 1) 50%, rgba(0, 153, 255, 1) 100%); */
+    /* background-color: #4087a5; */
+    border: 1px solid #4087a5;
+    background-color: transparent;
+    padding: 10px 15px;
+    transition: background 0.25s linear, border-color 0.25s linear;
+
+    font-size: 16px;
+    margin-top: 16px;
+}
+
+button:hover,
+button:focus,
+button:focus-visible {
+    /* background: linear-gradient(90deg, #B2F7EF 0%, #70E1F5 50%, #38A3A5 100%); */
+    /* background-color: #b4649c; */
+    border-color: #b4649c;
+    background-color: #9b4b83;
+}
+
+button.btn-secondary {
+    border-color: #fff;
+    color: #fff
+}
+
+button.btn-secondary:hover,
+button.btn-secondary:focus,
+button.btn-secondary:focus-visible {
+    color: #fff;
+    border-color: #242424;
+    background-color: #242424;
+}
+
+
+@media (min-width: 769px) {
+
+    button {
+        font-size: 20px;
+        margin-top: 24px;
+    }
+}

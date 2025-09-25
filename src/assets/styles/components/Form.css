@@ -1,0 +1,45 @@
+form {}
+
+form > label {
+    margin-top: 16px;
+    font-style: italic;
+    font-size: 16px;
+}
+
+form input[type="radio"] {
+    font-size: 16px;
+    flex-basis: 20px;
+    accent-color: #a4508b;
+    margin: 0;
+    margin-right: 8px;
+}
+
+form input[type="radio"]:hover,
+form input[type="radio"]:focus,
+form input[type="radio"]:focus-visible {
+    cursor: pointer;
+}
+
+form label {
+    color: #fff;
+    display: flex;
+    align-items: center;
+}
+
+form .radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+@media (min-width: 769px) {
+
+    form > label {
+        font-size: 22px;
+    }
+
+    form input[type="radio"] {
+        font-size: 20px;
+    }
+}
