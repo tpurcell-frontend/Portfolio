@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Button from './Button'
 import FormOptions from '../subcomponents/FormOptions'
 import galaxyOptions from "../data/galaxy-options.js"
@@ -13,28 +13,31 @@ function Form() {
     const [page, setPage] = useState(1);
     const [formLabel, setFormLabel] = useState('Choose a galaxy');
     const [selected, setSelected] = useState(null);
-    const [selectedOptions, setSelectedOptions] = useState(null);
-
-    useEffect(() => {
-        console.log(selected);
-    }, [selected]);
-    // Write function to display selected option 
+    const [selectedOptions, setSelectedOptions] = useState({
+        galaxyOption: null,
+        sizeOption: null,
+        surfaceOption: null,
+    });
+    var optionKey = page === 1 ? "galaxyOption" : page === 2 ? "sizeOption" : "surfaceOption";
 
     function formNextPage () {
 
-        if(selected) {
+        if (selected) {
             const nextPage = page + 1;
             setPage(nextPage);
             updateFormLabel(nextPage);
-            // setSelected(null);
-
-            setSelectedOptions((prevOptions) => 
-                [prevOptions, selected]
-            )
+            setSelected(null);
         }
     }
 
     function formPreviousPage() {
+        optionKey = page === 2 ? "galaxyOption" : page === 3 ? "sizeOption" : "surfaceOption";
+
+        setSelectedOptions(prevOptions => ({
+            ...prevOptions, 
+            [optionKey]: null
+        }));
+
         const prevPage = page - 1;
         setPage(prevPage);
         updateFormLabel(prevPage);
@@ -65,12 +68,13 @@ function Form() {
                 name={FormOption.name}
                 value={FormOption.value}
                 onChange={() => {
-                    setSelected(FormOption.value)
+                    setSelected(FormOption.value);
+                    setSelectedOptions(prevOptions => ({
+                        ...prevOptions, 
+                        [optionKey]: FormOption.value
+                    }))
                 }}
                 checked={selected === FormOption.value}
-                onClick={() => {
-                    setSelected(FormOption.value);
-                }}
                 option={FormOption.option}
             />
         )
@@ -81,71 +85,73 @@ function Form() {
     }
 
     function generatePlanet() {
+        console.log(selectedOptions);
         console.log('Generating planet');
     }
 
     return (
-           <form>
-               <label>{formLabel} <span className="asterisk">*</span></label>
+        
+        <form>
+            <label>{formLabel} <span className="asterisk">*</span></label>
 
-                {/* Page 1 */}
-                {page === 1 && (
-                    <>
-                        <div className="radio-group">
-                            {galaxyOptions.map(createOption)}
-                        </div>
-                        <div className="button-wrapper">
-                            <Button onClick={formNextPage} buttonClass={buttonClass} text="Next"/>
-                        </div>
-                    </>
-                )}
-
-                {/* Page 2 */}
-                {page === 2 && (
-                    <>
-                        <div className="radio-group">
-                            {sizeOptions.map(createOption)}
-                        </div>
-
-                        <div className="button-wrapper">
-                            <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
-
-                            <Button onClick={formNextPage} buttonClass={buttonClass} buttonDirection="Next" text="Next"/>
-                        </div>
-                    </>
-                )}
-
-                {/* Page 3 */}
-                {page === 3 && (
-                    <>
-                        <div className="radio-group">
-                            {surfaceOptions.map(createOption)}
-                        </div>
-
-                        <div className="button-wrapper">
-                            <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
-
-                            <Button onClick={generatePlanet} buttonClass={buttonClass} buttonDirection="Generate" text="Generate" buttonType="button"/>
-                        </div>
-                    </>
-                )}
-
-                {/* Page Indicator */}
-                <div className="page-wrapper">Page {page}</div>
-
-                {/* Selected Optons */}
-                {selectedOptions ? (
-                    <div className="selectedOptions">
-                        {selectedOptions.filter(Boolean).map(displaySelectedOptions)}
+            {/* Page 1 */}
+            {page === 1 && (
+                <>
+                    <div className="radio-group">
+                        {galaxyOptions.map(createOption)}
                     </div>
+                    <div className="button-wrapper">
+                        <Button onClick={formNextPage} buttonClass={buttonClass} text="Next"/>
+                    </div>
+                </>
+            )}
+
+            {/* Page 2 */}
+            {page === 2 && (
+                <>
+                    <div className="radio-group">
+                        {sizeOptions.map(createOption)}
+                    </div>
+
+                    <div className="button-wrapper">
+                        <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
+
+                        <Button onClick={formNextPage} buttonClass={buttonClass} buttonDirection="Next" text="Next"/>
+                    </div>
+                </>
+            )}
+
+            {/* Page 3 */}
+            {page === 3 && (
+                <>
+                    <div className="radio-group">
+                        {surfaceOptions.map(createOption)}
+                    </div>
+
+                    <div className="button-wrapper">
+                        <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
+
+                        <Button onClick={generatePlanet} buttonClass={buttonClass} text="Generate" buttonType="button"/>
+                    </div>
+                </>
+            )}
+
+            {/* Page Indicator */}
+            <div className="page-wrapper">Page {page}</div>
+
+            {/* Selected Optons */}
+            {Object.values(selectedOptions)[0] ? (
+                <div className="selectedOptions">
+                    {Object.values(selectedOptions).filter(Boolean).map(displaySelectedOptions)}
+                </div>
                 ) : ""}
 
-                {/* Required Message */}
-                <div className="required-message">
-                    <span>* indicates a required field.</span>
-                </div>
-            </form>
-        )
-    }
+            {/* Required Message */}
+            <div className="required-message">
+                <span>* indicates a required field.</span>
+            </div>
+        </form>
+    )
+}
 
 export default Form;

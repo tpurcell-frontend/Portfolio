@@ -9,7 +9,6 @@ function formOptions(props) {
                 value={props.value}
                 onChange={props.onChange}
                 checked={props.checked}
-                onClick={props.onClick}
                 required
             />
             {props.option}
