@@ -14,7 +14,7 @@ form .radio-group input:hover {
 form input[type="radio"] {
     font-size: 16px;
     flex-basis: 20px;
-    accent-color: #a4508b;
+    accent-color: var(--purple3);
     margin: 0;
     margin-right: 8px;
 }
@@ -33,7 +33,7 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  border-color: #fff;
+  border-color: var(--white);
   background: #333;
 }
 
@@ -59,7 +59,7 @@ input[type="radio"]:checked::after {
 }
 
 form label {
-    color: #fff;
+    color: var(--white);
     display: flex;
     align-items: center;
 }
@@ -77,19 +77,21 @@ form .page-wrapper {
     font-weight: 500;
 }
 
-@media (min-width: 769px) {
+form .selectedOptions {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
 
-    form > label {
-        font-size: 22px;
-    }
-
-    form .page-wrapper {
-        font-size: 18px;
-    }
+form .selectedOptions p {
+  margin: 0;
 }
 
 form .asterisk {
-  color: red;
+  color: var(--red);
   font-size: 18px;
   margin-left: 5px;
   margin-top: -5px;
@@ -102,4 +104,34 @@ form .required-message {
 
 form .required-message span {
   font-size: 12px;
+}
+
+@media (min-width: 769px) {
+
+    form > label {
+        font-size: 22px;
+    }
+
+    form .page-wrapper {
+        font-size: 18px;
+    }
+
+    form .selectedOptions {
+      flex-direction: row;
+      align-items: center;
+      margin-top: 20px;
+      gap: 20px;
+    }
+
+    form .selectedOptions p {
+      display: flex;
+      align-items: center;
+    }
+
+    form .selectedOptions p + p::before {
+      content: '·';
+      display: inline-block;
+      margin-right: 20px;
+      font-size: 50px;
+    }
 }

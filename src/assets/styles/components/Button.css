@@ -24,8 +24,8 @@ button {
 button:hover,
 button:focus,
 button:focus-visible {
-    border-color: #b4649c;
-    background-color: #9b4b83;
+    border-color: var(--purple);
+    background-color: var(--purple2);
     cursor: pointer;
 }
 
@@ -42,16 +42,16 @@ button:focus-visible .rocketLaunchIcon {
 }
 
 button.btn-secondary {
-    border-color: #fff;
-    color: #fff
+    border-color: var(--white);
+    color: var(--white)
 }
 
 button.btn-secondary:hover,
 button.btn-secondary:focus,
 button.btn-secondary:focus-visible {
-    color: #fff;
-    border-color: #242424;
-    background-color: #242424;
+    color: var(--white);
+    border-color: var(--dark-bg);
+    background-color: var(--dark-bg);
 }
 
 button.btn-reverse {

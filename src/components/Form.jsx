@@ -81,7 +81,7 @@ function Form(props) {
     }
 
     function displaySelectedOptions(selectedOption) {
-        return <p key={selectedOption}>{selectedOption}</p>
+        return <p key={selectedOption}>{selectedOption}</p> 
     }
 
     function generatePlanet() {

@@ -26,8 +26,8 @@
 }
 
 .modal-header {
-  color: #000;
-  border-bottom: 1px solid #ddd;
+  color: var(--black);
+  border-bottom: 1px solid var(--border-color);
   padding-bottom: 10px;
   
   display: flex;
@@ -36,7 +36,7 @@
 }
 
 .modal-header h2 {
-  color: #fff;
+  color: var(--white);
   text-align: left;
   margin: 0;
 }
