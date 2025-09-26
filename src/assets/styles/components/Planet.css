@@ -1,0 +1,96 @@
+.planet-container {
+  display: flex;
+  column-gap: 50px;
+}
+
+.planet-wrapper {
+  padding: 50px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.planet {
+  background: #EEAECA;
+  background: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  border-radius: 50%;
+}
+
+/* Planet Customization */
+
+/* Galaxy */
+.milkway {
+
+}
+
+.andromeda {
+
+}
+
+.triangulum {
+
+}
+
+.whirlpool {
+  box-shadow: 19px 11px 19px 20px rgba(57, 0, 155, 0.5);
+}
+
+/* Size */
+.small {
+  height: 250px;
+  width: 250px;
+}
+
+.medium {
+  height: 500px;
+  width: 500px;
+}
+
+.large {
+  height: 1000px;
+  width: 1000px;
+}
+
+/* Surface */
+.solid {
+
+}
+
+.gas {
+
+}
+
+.liquid {
+
+}
+
+/* Animations */
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .planet {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+@media (min-width: 769px) {
+  
+  .planet-wrapper {
+    padding: 80px 0 0;
+  }
+}
+
+
+@media (min-width: 1201px) {
+  
+  .planet-wrapper {
+    padding: 100px 0 0;
+  }
+}

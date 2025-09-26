@@ -14,7 +14,7 @@ function Modal(props) {
                         <CloseIcon className="closeBtn animation-glow" onClick={props.closeBtn}/>
                     </div>
                     <div className="modal-body">
-                        <Form />
+                        <Form generatePlanet={props.generatePlanet} />
                     </div>
                 </div>
             </div>

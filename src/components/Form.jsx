@@ -7,9 +7,8 @@ import surfaceOptions from "../data/surface-options.js"
 
 import '../assets/styles/components/Form.css'
 
-function Form() {
+function Form(props) {
     const [buttonClass, setbuttonClass] = useState('btn-secondary');
-    const [buttonText, setButtonText] = useState('Next');
     const [page, setPage] = useState(1);
     const [formLabel, setFormLabel] = useState('Choose a galaxy');
     const [selected, setSelected] = useState(null);
@@ -21,6 +20,7 @@ function Form() {
     var optionKey = page === 1 ? "galaxyOption" : page === 2 ? "sizeOption" : "surfaceOption";
 
     function formNextPage () {
+        // console.log(selectedOptions);
 
         if (selected) {
             const nextPage = page + 1;
@@ -85,8 +85,7 @@ function Form() {
     }
 
     function generatePlanet() {
-        console.log(selectedOptions);
-        console.log('Generating planet');
+        props.generatePlanet(selectedOptions);
     }
 
     return (
@@ -144,7 +143,7 @@ function Form() {
                 <div className="selectedOptions">
                     {Object.values(selectedOptions).filter(Boolean).map(displaySelectedOptions)}
                 </div>
-                ) : ""}
+            ) : ""}
 
             {/* Required Message */}
             <div className="required-message">
