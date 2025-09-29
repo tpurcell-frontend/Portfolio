@@ -17,10 +17,29 @@ function Form(props) {
         sizeOption: null,
         surfaceOption: null,
     });
-    var optionKey = page === 1 ? "galaxyOption" : page === 2 ? "sizeOption" : "surfaceOption";
+    const optionKey = page === 1 ? "galaxyOption" : page === 2 ? "sizeOption" : "surfaceOption";
+
+    function updateForm(formValue) {
+        setSelected(formValue);
+
+        setSelectedOptions(prevOptions => ({
+            ...prevOptions, 
+            [optionKey]: formValue
+        }));
+    }
+
+    function formPreviousPage() {
+        const prevPage = page - 1;
+        setPage(prevPage);
+        updateFormLabel(prevPage);
+
+        setSelectedOptions(prevOptions => ({
+            ...prevOptions, 
+            [optionKey]: null
+        }));
+    }
 
     function formNextPage () {
-        // console.log(selectedOptions);
 
         if (selected) {
             const nextPage = page + 1;
@@ -28,19 +47,6 @@ function Form(props) {
             updateFormLabel(nextPage);
             setSelected(null);
         }
-    }
-
-    function formPreviousPage() {
-        optionKey = page === 2 ? "galaxyOption" : page === 3 ? "sizeOption" : "surfaceOption";
-
-        setSelectedOptions(prevOptions => ({
-            ...prevOptions, 
-            [optionKey]: null
-        }));
-
-        const prevPage = page - 1;
-        setPage(prevPage);
-        updateFormLabel(prevPage);
     }
 
     function updateFormLabel(page) {
@@ -67,13 +73,7 @@ function Form(props) {
                 id={FormOption.id}
                 name={FormOption.name}
                 value={FormOption.value}
-                onChange={() => {
-                    setSelected(FormOption.value);
-                    setSelectedOptions(prevOptions => ({
-                        ...prevOptions, 
-                        [optionKey]: FormOption.value
-                    }))
-                }}
+                onChange={() => {updateForm(FormOption.value)}}
                 checked={selected === FormOption.value}
                 option={FormOption.option}
             />
@@ -85,7 +85,10 @@ function Form(props) {
     }
 
     function generatePlanet() {
-        props.generatePlanet(selectedOptions);
+        if (selected) {
+            props.generatePlanet(selectedOptions)
+            setSelected(null);
+        }
     }
 
     return (
@@ -130,7 +133,7 @@ function Form(props) {
                     <div className="button-wrapper">
                         <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
 
-                        <Button onClick={generatePlanet} buttonClass={buttonClass} text="Generate" buttonType="button"/>
+                        <Button onClick={generatePlanet} buttonClass={buttonClass} text="Generate"/>
                     </div>
                 </>
             )}

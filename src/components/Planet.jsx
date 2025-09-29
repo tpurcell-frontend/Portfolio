@@ -4,7 +4,7 @@ function Planet(props) {
     const surface = props.planetResult.surfaceOption;
 
     return (
-        <div class="planet-container">
+        <div className="planet-container">
             {props.planetResult ? 
                 <div className="planetResults">
                     <h3>Planet Results</h3>

@@ -1,9 +1,10 @@
-function formOptions(props) {
+function FormOptions(props) {
 
     return (
         <label>
             <input
                 type="radio"
+                id={props.id}
                 key={props.id}
                 name={props.name}
                 value={props.value}
@@ -16,4 +17,4 @@ function formOptions(props) {
     )
 }
 
-export default formOptions;
+export default FormOptions;
