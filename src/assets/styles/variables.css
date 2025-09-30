@@ -11,6 +11,10 @@ h3 {
     font-size: 24px;
 }
 
+h4 {
+    font-size: 20px;
+}
+
 p {
     font-size: 16px;
 }
@@ -27,6 +31,10 @@ p {
 
     h3 {
         font-size: 32px;
+    }
+
+    h4 {
+        font-size: 24px;
     }
 
     p {

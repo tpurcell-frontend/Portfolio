@@ -1,9 +1,9 @@
 import '../assets/styles/components/Heading.css'
 
-function Heading() {
+function Heading(props) {
     return (
         <div className="heading">
-            <h1>Custom Planet Generator</h1>
+            <h1>{props.title}</h1>
         </div>
     )
 }

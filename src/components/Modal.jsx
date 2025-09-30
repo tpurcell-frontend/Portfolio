@@ -10,7 +10,7 @@ function Modal(props) {
             <div className="modal-overlay">
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h2>Customize Your Planet</h2>
+                        <h2>{props.heading}</h2>
                         <CloseIcon className="closeBtn animation-glow" onClick={props.closeBtn}/>
                     </div>
                     <div className="modal-body">

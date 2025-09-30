@@ -24,25 +24,36 @@ function App() {
   }
 
   function generatePlanet(selectedOptions) {
-    console.log(selectedOptions);
-    console.log('Generating planet');
     setModalStatus(false);
     setPlanetResult(selectedOptions);
   }
 
   return (
     <>
+      {/* Stars Background */}
+      <div className="star-background">
+        <div className="stars"></div>
+      </div>
+      
+      {/* Logo  */}
       <Logo />
+
+      {/* Planet Generator */}
       <section className="planet-generator">
-        <Heading />
+        <Heading title="Planet Generator" />
+        {planetResult ? <p className="hoverHint">Hover over the planet to view planet details.</p> : ""}
         <div className="button-wrapper">
           <Button onClick={showModal} buttonClass={`animation-glow ${buttonClass}`} text={buttonText} />
         </div>
       </section>
-      <section className="planet-wrapper">
-        <Planet planetResult={planetResult} />
-      </section>
-      <Modal generatePlanet={generatePlanet} closeBtn={hideModal} modalStatus={modalStatus} />
+
+      {/* Planet */}
+      {planetResult ? 
+        <section className="planet-wrapper">
+          <Planet planetResult={planetResult} />
+        </section>
+      : ""}
+      <Modal heading="Customize Your Planet" generatePlanet={generatePlanet} closeBtn={hideModal} modalStatus={modalStatus} />
     </>
   )
 }
