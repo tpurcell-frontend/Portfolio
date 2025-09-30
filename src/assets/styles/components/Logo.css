@@ -5,6 +5,7 @@
 }
 
 .logo {
+  width: 25px;
   height: 100%;
   padding: 5px;
   will-change: filter;

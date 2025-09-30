@@ -10,6 +10,7 @@ svg.MuiSvgIcon-root:focus-visible {
 
 .closeBtn {
   fill: #fff !important;
+  margin-top: 10px;
 }
 
 .closeBtn:hover,
