@@ -1,3 +1,4 @@
+import React from 'react'; 
 import planetNames from "../data/planet-names.js";
 import resources from "../data/resources.js";
 import {resourceSurvivability} from "../data/resources.js";
