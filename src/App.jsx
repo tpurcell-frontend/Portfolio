@@ -41,7 +41,7 @@ function App() {
       {/* Planet Generator */}
       <section className="planet-generator">
         <Heading title="Planet Generator" />
-        {planetResult ? <p className="tooltipHint">Click the planet to view planet details.</p> : ""}
+        {planetResult ? <p className="tooltipHint">Hover over planet to view planet details.</p> : ""}
         <div className="button-wrapper">
           <Button onClick={showModal} buttonClass={`animation-glow ${buttonClass}`} text={buttonText} />
         </div>

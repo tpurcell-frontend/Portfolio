@@ -42,7 +42,7 @@ function Planet(props) {
                     </ul>
                     <h3>Possible Resources:</h3>
                     <ul className="possible-resources">
-                        {resources.map((resource) => <li>{resource}</li>)}
+                        {resources.map((resource, index) => <li key={resources[index]} id={resources[index]}>{resource}</li>)}
                     </ul>
                     <h3>Survivablity:</h3>
                     <p>A survivability score of {requiredScore}% is required to survive.</p>
