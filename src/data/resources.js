@@ -6,7 +6,7 @@ const resources = [
   "Iron Ore",
   "Coal",
   "Gold Nuggets",
-  "Freshwater",
+  "Fresh Water",
   "Berries",
   "Animal Hide",
   "Sand",
@@ -18,7 +18,8 @@ const resources = [
   "Herbs",
   "Bamboo",
   "Obsidian",
-  "Ice Blocks"
+  "Ice Blocks",
+  "Monsters"
 ];
 
 const resourceSurvivability = {
@@ -29,7 +30,7 @@ const resourceSurvivability = {
   "Iron Ore": 60,
   "Coal": 48,
   "Gold Nuggets": 15,
-  "Freshwater": 99,
+  "Fresh Water": 99.99,
   "Berries": 74,
   "Animal Hide": 81,
   "Sand": 22,
@@ -41,7 +42,8 @@ const resourceSurvivability = {
   "Herbs": 76,
   "Bamboo": 66,
   "Obsidian": 39,
-  "Ice Blocks": 63
+  "Ice Blocks": 63,
+  "Monsters": 0
 };
 
 export default resources;

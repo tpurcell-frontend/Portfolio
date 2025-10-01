@@ -10,6 +10,7 @@ function Planet(props) {
     const surface = props.planetResult.surfaceOption;
     const [discoveredResource, survivability] = generateDiscoveredResource();
     var planetName = '';
+    const generatedPlanetName = generatePlanetName();
     var requiredScore = 75;
 
     function generatePlanetName() {
@@ -29,10 +30,10 @@ function Planet(props) {
     return (
 
         <div className="planet-container">
-            <div className={`planet animation--glow ${props.planetResult ? galaxy + ' ' + size + ' ' + surface : ''}`}></div>
+            <div tabindex="0" className={`planet animation--glow ${props.planetResult ? galaxy + ' ' + size + ' ' + surface : ''}`}></div>
             {props.planetResult ? 
                 <div className="planet-results">
-                    <h3>Planet Name: {generatePlanetName()}</h3>
+                    <h3>Planet Name: {generatedPlanetName}</h3>
                     <ul>
                         <li><ChevronRightIcon /><strong>Galaxy:&nbsp;</strong> {galaxy.charAt(0).toUpperCase() + galaxy.slice(1)}</li>
                         <li><ChevronRightIcon /><strong>Size:&nbsp;</strong> {size.charAt(0).toUpperCase() + size.slice(1)}</li>
@@ -45,11 +46,14 @@ function Planet(props) {
                         {resources.map((resource, index) => <li key={resources[index]} id={resources[index]}>{resource}</li>)}
                     </ul>
                     <h3>Survivablity:</h3>
-                    <p>A survivability score of {requiredScore}% is required to survive.</p>
-                    <p>Your score is: {survivability}%.</p>
-                    <p>{survivability > requiredScore ?
-                    "This planet is viable for life!"
-                    : "Life on this planet is not sustainable."}</p>
+                    <p>A survivability score of <strong>{requiredScore}%</strong> is required to survive.</p>
+                    <p>{generatedPlanetName}'s abundance of {discoveredResource} gives you a <strong>{survivability}%</strong> chance of survival.</p>
+                    <p>
+                        {discoveredResource === "Fresh Water" ? "Your chance of survival is all but guaranteed!" 
+                        : discoveredResource === "Monsters" ? "You're doomed." 
+                        : survivability > requiredScore ? "This planet is viable for life!"
+                        : "Life on this planet is not sustainable."}
+                    </p>
                 </div>
             : ""}
         </div>
