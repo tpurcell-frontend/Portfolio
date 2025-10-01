@@ -18,7 +18,6 @@ function App() {
     setModalStatus(true);
     const planetModal = document.getElementById('planet-modal');
     planetModal.focus();
-    console.log(planetModal);
   }
 
   function hideModal(event) {
