@@ -1,5 +1,5 @@
 .modal-overlay {
-  display: flex;
+  display: none;
   position: fixed;
   top: 0;
   left: 0;
@@ -12,6 +12,10 @@
   transition: opacity 0.3s linear;
 }
 
+.modal-overlay.showModal {
+  display: flex;
+}
+
 .modal-content {
   background: linear-gradient(135deg, #0f2027 0%, #a4508b 100%);
   color: white;
@@ -20,7 +24,7 @@
   box-shadow: 0 8px 32px rgba(0,0,0,0.25);
   margin: 0 10px;
   width: 100%;
-  max-width: 100%;
+  max-width: 450px;
   text-align: center;
   animation: modalFadeIn 0.4s;
 }
@@ -48,9 +52,19 @@
 }
 
 @media (min-width: 769px) {
+
+  .modal-header h2 {
+    margin-right: 10px;
+  }
   
   .modal-content {
-    max-width: 60%;
     padding: 20px 30px;
+  }
+}
+
+@media (min-width: 1025px) {
+
+  .modal-content {
+    max-width: 650px;
   }
 }

@@ -30,3 +30,10 @@ svg.MuiSvgIcon-root:focus-visible {
     margin-bottom: -4px;
     transition: transform 0.25s !important;
 }
+
+@media (min-width: 769px) {
+
+  .closeBtn {
+    margin-top: 15px;
+  }
+}

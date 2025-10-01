@@ -5,14 +5,13 @@ import CloseIcon from '@mui/icons-material/Close';
 import '../assets/styles/components/Modal.css'
 
 function Modal(props) {
-    if (!props.modalStatus) return null;
 
     return (
-            <div className="modal-overlay">
-                <div className="modal-content">
+            <div className={`${props.modalStatus === true ? 'showModal' : ''} modal-overlay`}>
+                <div id="planet-modal" className="modal-content">
                     <div className="modal-header">
                         <h2>{props.heading}</h2>
-                        <CloseIcon className="closeBtn animation-glow" onClick={props.closeBtn}/>
+                        <CloseIcon tabIndex="0" className="closeBtn animation-glow" onClick={props.closeBtn} onKeyDown={props.closeBtn}/>
                     </div>
                     <div className="modal-body">
                         <Form generatePlanet={props.generatePlanet} />

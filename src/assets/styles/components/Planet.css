@@ -173,7 +173,8 @@
   animation: swirl 20s ease-in-out infinite;
 }
 
-.planet:hover + .planet-results {
+.planet:hover + .planet-results,
+.planet:focus-visible + .planet-results {
   opacity: 0.85;
   cursor: pointer;
 }

@@ -1,5 +1,4 @@
-import React from 'react'; 
-import { useState } from 'react'
+import React, {useState} from 'react'; 
 import Logo from './components/Logo'
 import Heading from './components/Heading'
 import Button from './components/Button'
@@ -13,14 +12,26 @@ function App() {
   const [buttonClass, setbuttonClass] = useState('btn-primary');
   const [buttonText, setButtonText] = useState('Get Started');
   const [modalStatus, setModalStatus] = useState(false);
-  const [planetResult, setPlanetResult] = useState("");
+  const [planetResult, setPlanetResult] = useState('');
 
   function showModal() {
     setModalStatus(true);
+    const planetModal = document.getElementById('planet-modal');
+    planetModal.focus();
+    console.log(planetModal);
   }
 
-  function hideModal() {
-    setModalStatus(false);
+  function hideModal(event) {
+
+    // On click
+    if (event.key == undefined) {
+      setModalStatus(false);
+    }
+
+    // On Enter keydown 
+    else if ( event.key === 'Enter') {
+      setModalStatus(false);
+    }
   }
 
   function generatePlanet(selectedOptions) {
