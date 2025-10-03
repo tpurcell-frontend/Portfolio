@@ -42,6 +42,10 @@ button:focus-visible .rocketLaunchIcon {
     transform: translate(5px, -5px);
 }
 
+button.btn-homepage {
+    text-align: center;
+}
+
 button.btn-secondary {
     border-color: var(--white);
     color: var(--white)
