@@ -1,0 +1,45 @@
+header {
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 25px;
+}
+
+header span {
+  font-size: 24px;
+}
+
+header a {
+  color: var(--white);
+  text-decoration: none;
+}
+
+header a:hover,
+header a:focus-visible {
+  text-decoration: underline;
+}
+
+header ul {
+  display: flex;
+  margin: 0;
+  gap: 15px;
+  list-style: none;
+  padding: 0;
+}
+
+.header-info {
+  display: flex;
+  gap: 25px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@media (min-width: 769px) {
+
+  header {
+    padding: 20px 50px;
+  }
+
+  .header-info {
+    flex-direction: row;
+  }
+}

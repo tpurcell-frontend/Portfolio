@@ -1,5 +1,5 @@
-import React, {useState} from 'react'; 
-import Logo from './components/Logo'
+import React, {useState} from 'react'
+import Header from './components/Header'
 import Heading from './components/Heading'
 import Button from './components/Button'
 import Modal from './components/Modal'
@@ -40,18 +40,18 @@ function App() {
 
   return (
     <>
+      {/* Header */}
+      <Header />
+
       {/* Stars Background */}
       <div className="star-background">
         <div className="stars"></div>
       </div>
-      
-      {/* Logo  */}
-      <Logo />
 
       {/* Planet Generator */}
       <section className="planet-generator">
         <Heading title="Planet Generator" />
-        {planetResult ? <p className="tooltipHint">Hover over your planet to view the results.</p> : ""}
+        {planetResult ? <p className="tooltip-hint">Hover or tap your planet to view the results.</p> : ""}
         <div className="button-wrapper">
           <Button onClick={showModal} buttonClass={`animation-glow ${buttonClass}`} text={buttonText} />
         </div>
@@ -63,6 +63,8 @@ function App() {
           <Planet planetResult={planetResult} />
         </section>
       : ""}
+
+      {/* Modal */}
       <Modal heading="Customize Your Planet" generatePlanet={generatePlanet} closeBtn={hideModal} modalStatus={modalStatus} />
     </>
   )

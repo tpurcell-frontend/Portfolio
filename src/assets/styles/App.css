@@ -1,25 +1,37 @@
 #root {
   color: var(--white);
-  max-width: 1280px;
-  margin: 0 auto;
+  /* max-width: 1280px; */
+  /* margin: 0 auto; */
   text-align: center;
 }
 
+section {
+  margin: 0 20px;
+}
+
+section:last-of-type {
+  padding-bottom: 100px;
+}
+
+body {
+  margin: 0;
+}
+
 .planet-generator {
-  padding: 50px 0 0;
+  padding: 100px 0 0;
 }
 
 @media (min-width: 769px) {
 
   .planet-generator {
-    padding: 80px 0 0;
+    padding: 125px 0 0;
   }
 }
 
 @media (min-width: 1201px) {
 
   .planet-generator {
-    padding: 100px 0 0;
+    padding: 200px 0 0;
   }
 }
 
