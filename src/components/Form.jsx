@@ -89,6 +89,7 @@ function Form(props) {
         if (selected) {
             props.generatePlanet(selectedOptions)
             setSelected(null);
+            setPage(1);
         }
     }
 
