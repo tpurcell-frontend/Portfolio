@@ -47,13 +47,13 @@ function Planet(props) {
                     </ul>
                     <h3>Survivablity:</h3>
                     <p>A survivability score of <strong>{requiredScore}%</strong> is required to survive.</p>
-                    <p><strong>{generatedPlanetName}'s</strong> abundance of {discoveredResource} gives you a <strong>{survivability}%</strong> chance of survival.</p>
-                    <p>
+                    <p><strong>{generatedPlanetName}'s</strong> abundance of <strong>{discoveredResource}</strong> gives you a <strong>{survivability}%</strong> chance of survival.</p>
+                    <p><strong>
                         {discoveredResource === "Fresh Water" ? "Your chance of survival is all but guaranteed!" 
                         : discoveredResource === "Monsters" ? "You're doomed." 
                         : survivability > requiredScore ? "This planet is viable for life!"
                         : "Life on this planet is not sustainable."}
-                    </p>
+                    </strong></p>
                 </div>
             : ""}
         </div>
