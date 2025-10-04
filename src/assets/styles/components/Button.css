@@ -7,6 +7,10 @@
     gap: 16px;
 }
 
+.button-wrapper a {
+    text-decoration: none;
+}
+
 button {
     display: flex;
     flex-wrap: wrap;

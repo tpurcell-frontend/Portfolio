@@ -10,30 +10,48 @@ import '../assets/styles/components/Planet.css'
 
 function PlanetGenerator() {
     const [buttonClass, setbuttonClass] = useState('btn-primary');
-    const [buttonText, setButtonText] = useState('Get Started');
+    const [buttonText, setButtonText] = useState('Launch');
+    var countdown = 3;
     const [modalStatus, setModalStatus] = useState(false);
     const [planetResult, setPlanetResult] = useState('');
 
     function showModal() {
-        setModalStatus(true);
-        const planetModal = document.getElementById('planet-modal');
-        planetModal.focus();
+        setButtonText('T-minus ' + countdown + '...');
+
+        const countdownTimer = setInterval(() => {
+            countdown = countdown - 1;
+            setButtonText('T-minus ' + countdown + '...');
+            
+            if (countdown == 0) {
+                setButtonText('Take off!');
+                clearInterval(countdownTimer);
+
+                setTimeout(() => {
+                    setModalStatus(true);
+                    const planetModal = document.getElementById('planet-modal');
+                    planetModal.focus();
+                }, 1000);
+            }
+        }, 1000);
     }
 
     function hideModal(event) {
 
         // On click
         if (event.key == undefined) {
-        setModalStatus(false);
+            setModalStatus(false);
+            setButtonText('Launch');
         }
 
         // On Enter keydown 
         else if ( event.key === 'Enter') {
-        setModalStatus(false);
+            setModalStatus(false);
+            setButtonText('Launch');
         }
     }
 
     function generatePlanet(selectedOptions) {
+        setButtonText('Launch');
         setModalStatus(false);
         setPlanetResult(selectedOptions);
     }

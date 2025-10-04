@@ -6,29 +6,11 @@ import {
 } from "react-router";
 import { NavLink } from "react-router";
 
-import Home from '../pages/PlanetGenerator.jsx'
+import Home from '../pages/Home.jsx'
 import PlanetGenerator from "../pages/PlanetGenerator.jsx";
 import Projects from '../pages/Projects.jsx'
 
-import Button from '../components/Button.jsx'
 import App from '../App.jsx'
-
-function Root() {
-  function buttonLaunch() {
-
-  }
-
-  return (
-    <div>
-      <h1>Travis Purcell's Portfolio</h1>
-      <div className="button-wrapper">
-        <NavLink to="projects">
-          <Button onClick={buttonLaunch()} buttonClass="animation-glow btn-homepage" text="Launch" />
-        </NavLink>
-      </div>
-    </div>
-    )
-}
 
 const router = createBrowserRouter([
   {
@@ -36,7 +18,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <Root />
+        element: <Home />
       },
       {
         path: 'planet-generator',

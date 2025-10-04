@@ -39,6 +39,10 @@ header ul {
     padding: 20px 50px;
   }
 
+  header ul {
+    gap: 30px;
+  }
+
   .header-info {
     flex-direction: row;
   }
