@@ -19,6 +19,8 @@ header a:focus-visible {
 
 header ul {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   margin: 0;
   gap: 15px;
   list-style: none;
@@ -41,6 +43,7 @@ header ul {
 
   header ul {
     gap: 30px;
+    justify-content: flex-start;
   }
 
   .header-info {
