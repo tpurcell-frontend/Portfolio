@@ -30,9 +30,9 @@ function PlanetGenerator() {
                     setModalStatus(true);
                     const planetModal = document.getElementById('planet-modal');
                     planetModal.focus();
-                }, 1000);
+                }, 250);
             }
-        }, 1000);
+        }, 250);
     }
 
     function hideModal(event) {
