@@ -12,6 +12,8 @@
 }
 
 button {
+    color: var(--white);
+    -webkit-text-fill-color: var(--white);
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -52,13 +54,15 @@ button.btn-homepage {
 
 button.btn-secondary {
     border-color: var(--white);
-    color: var(--white)
+    color: var(--white);
+    -webkit-text-fill-color: var(--white);
 }
 
 button.btn-secondary:hover,
 button.btn-secondary:focus,
 button.btn-secondary:focus-visible {
     color: var(--white);
+    -webkit-text-fill-color: var(--white);
     border-color: var(--dark-bg);
     background-color: var(--dark-bg);
 }
