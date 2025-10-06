@@ -296,7 +296,7 @@
     width: 350px;
 
     position: absolute;
-    right: 0;
+    right: 25px;
     top: -10%;
     pointer-events: none;
   }
@@ -306,6 +306,7 @@
 
   .planet-results {
     width: 500px;
+    right: 50px;
   }
 }
 

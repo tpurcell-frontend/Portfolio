@@ -23,7 +23,7 @@ function PlanetGenerator() {
             setButtonText('T-minus ' + countdown + '...');
             
             if (countdown == 0) {
-                setButtonText('Take off!');
+                setButtonText('Blast off!');
                 clearInterval(countdownTimer);
 
                 setTimeout(() => {

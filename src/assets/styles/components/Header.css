@@ -1,5 +1,4 @@
 header {
-  background-color: var(--dark-bg);
   padding: 25px;
 }
 
@@ -9,13 +8,14 @@ header span {
 
 header a {
   color: var(--white);
+  font-weight: bold;
   text-decoration: none;
   transition: color 0.5s;
 }
 
 header a:hover,
 header a:focus-visible {
-  text-decoration: underline;
+  color: var(--solar-flare);
 }
 
 header ul {
