@@ -132,7 +132,6 @@ form .required-message span {
     content: '·';
     display: inline-block;
     margin-right: 20px;
-    font-size: 50px;
   }
 
   form .required-message {
