@@ -12,7 +12,7 @@ function Projects() {
             <Header />
                 
             <section>
-                <div class="custom-container">
+                <div className="custom-container">
                     <h1>This is the Projects page</h1>
                     <h2>
                         <NavLink to="/planet-generator">Planet Generator</NavLink>
