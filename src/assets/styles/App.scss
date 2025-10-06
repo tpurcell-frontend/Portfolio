@@ -1,5 +1,7 @@
+@use './variables.scss' as *;
+
 #root {
-  color: var(--white);
+  color: $white;
   /* max-width: 1280px; */
   /* margin: 0 auto; */
   text-align: center;
@@ -56,7 +58,7 @@ body {
 }
 
 .technology-section {
-  background-color: var(--blue);
+  background-color: $blue;
   position: relative;
 }
 
@@ -76,13 +78,13 @@ body {
 }
 
 .technology-section button {
-  color: var(--gray);
-  background-color: var(--warm-pink);
-  border-color: var(--warm-pink);
+  color: $gray;
+  background-color: $warm-pink;
+  border-color: $warm-pink;
 }
 
 .technology-section svg {
-  fill: var(--white);
+  fill: $white;
 }
 
 .contact-section {
@@ -126,7 +128,7 @@ body {
   }
 
   .technology-list + .technology-list {
-    border-left: 1px solid var(--black);
+    border-left: 1px solid $black;
   }
 
   .technology-list ul {

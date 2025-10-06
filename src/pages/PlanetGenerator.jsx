@@ -5,8 +5,8 @@ import Button from '../components/Button'
 import Modal from '../components/Modal'
 import Planet from '../components/Planet'
 
-import '../assets/styles/App.css'
-import '../assets/styles/components/Planet.css'
+import '../assets/styles/App.scss'
+import '../assets/styles/components/Planet.scss'
 
 function PlanetGenerator() {
     const [buttonClass, setbuttonClass] = useState('btn-primary');

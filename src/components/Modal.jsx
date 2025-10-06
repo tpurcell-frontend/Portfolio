@@ -2,7 +2,7 @@ import React from 'react';
 import Form from './Form.jsx'
 import CloseIcon from '@mui/icons-material/Close';
 
-import '../assets/styles/components/Modal.css'
+import '../assets/styles/components/Modal.scss'
 
 function Modal(props) {
 

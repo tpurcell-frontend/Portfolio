@@ -1,3 +1,5 @@
+@use '../variables.scss' as *;
+
 .button-wrapper {
     display: flex;
     flex-wrap: wrap;
@@ -12,14 +14,14 @@
 }
 
 button {
-    color: var(--white);
-    -webkit-text-fill-color: var(--white);
+    color: $white;
+    -webkit-text-fill-color: $white;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     gap: 8px;
     
-    border: 1px solid var(--blue);
+    border: 1px solid $blue;
     border-radius: 8px;
     background-color: transparent;
     padding: 10px 15px;
@@ -31,8 +33,8 @@ button {
 button:hover,
 button:focus,
 button:focus-visible {
-    border-color: var(--purple);
-    background-color: var(--purple2);
+    border-color: $purple;
+    background-color: $purple2;
     cursor: pointer;
 }
 
@@ -53,18 +55,18 @@ button.btn-homepage {
 }
 
 button.btn-secondary {
-    border-color: var(--white);
-    color: var(--white);
-    -webkit-text-fill-color: var(--white);
+    border-color: $white;
+    color: $white;
+    -webkit-text-fill-color: $white;
 }
 
 button.btn-secondary:hover,
 button.btn-secondary:focus,
 button.btn-secondary:focus-visible {
-    color: var(--white);
-    -webkit-text-fill-color: var(--white);
-    border-color: var(--dark-bg);
-    background-color: var(--dark-bg);
+    color: $white;
+    -webkit-text-fill-color: $white;
+    border-color: $dark-bg;
+    background-color: $dark-bg;
 }
 
 button.btn-reverse {

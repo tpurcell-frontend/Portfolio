@@ -1,6 +1,6 @@
 import React from 'react'; 
 import { useState } from 'react';
-import '../assets/styles/components/Button.css'
+import '../assets/styles/components/Button.scss'
 
 import RocketIcon from '@mui/icons-material/Rocket';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';

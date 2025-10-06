@@ -1,3 +1,5 @@
+@use '../variables.scss' as *;
+
 header {
   padding: 25px;
 }
@@ -7,7 +9,7 @@ header span {
 }
 
 header a {
-  color: var(--white);
+  color: $white;
   font-weight: bold;
   text-decoration: none;
   transition: color 0.5s;
@@ -15,7 +17,7 @@ header a {
 
 header a:hover,
 header a:focus-visible {
-  color: var(--solar-flare);
+  color: $solar-flare;
 }
 
 header ul {

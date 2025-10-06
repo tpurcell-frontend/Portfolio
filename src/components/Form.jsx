@@ -6,7 +6,7 @@ import galaxyOptions from "../data/galaxy-options.js"
 import sizeOptions from "../data/size-options.js"
 import surfaceOptions from "../data/surface-options.js"
 
-import '../assets/styles/components/Form.css'
+import '../assets/styles/components/Form.scss'
 
 function Form(props) {
     const [buttonClass, setbuttonClass] = useState('btn-secondary');

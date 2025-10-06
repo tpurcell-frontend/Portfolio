@@ -1,3 +1,5 @@
+@use '../variables.scss' as *;
+
 .planet-container {
   position: relative;
   width: 100%;
@@ -27,11 +29,11 @@
 }
 
 .milkyway.solid {
-  background: radial-gradient(circle at 35% 35%, var(--solar-flare), var(--solar-flare2) 70%);
+  background: radial-gradient(circle at 35% 35%, $solar-flare, $solar-flare2 70%);
 }
 
 .milkyway.liquid {
-  background: radial-gradient(circle at 30% 30%, var(--solar-flare), var(--solar-flare2) 80%); 
+  background: radial-gradient(circle at 30% 30%, $solar-flare, $solar-flare2 80%); 
   box-shadow:
     inset -10px 10px 30px rgba(255, 94, 0, 0.6),
     10px 12px 25px 12px rgba(204, 75, 0, 0.35),
@@ -55,11 +57,11 @@
 }
 
 .andromeda.solid {
-  background: radial-gradient(circle at 35% 35%, var(--starlight-rose), var(--starlight-rose2) 70%);
+  background: radial-gradient(circle at 35% 35%, $starlight-rose, $starlight-rose2 70%);
 }
 
 .andromeda.liquid {
-  background: radial-gradient(circle at 30% 30%, var(--starlight-rose), var(--starlight-rose) 80%); 
+  background: radial-gradient(circle at 30% 30%, $starlight-rose, $starlight-rose 80%); 
   box-shadow:
     inset -10px 10px 30px rgba(165, 138, 191, 0.6),
     10px 12px 25px 12px rgba(141, 107, 174, 0.35),
@@ -83,11 +85,11 @@
 }
 
 .triangulum.solid {
-  background: radial-gradient(circle at 35% 35%, var(--ion-blue), var(--ion-blue2) 70%);
+  background: radial-gradient(circle at 35% 35%, $ion-blue, $ion-blue2 70%);
 }
 
 .triangulum.liquid {
-  background: radial-gradient(circle at 30% 30%, var(--ion-blue), var(--ion-blue2) 80%); 
+  background: radial-gradient(circle at 30% 30%, $ion-blue, $ion-blue2 80%); 
   box-shadow:
     inset -10px 10px 30px rgba(107, 158, 203, 0.6),
     10px 12px 25px 12px rgba(85, 144, 195, 0.35),
@@ -111,11 +113,11 @@
 }
 
 .whirlpool.solid {
-  background: radial-gradient(circle at 35% 35%, var(--corefire-green), var(--corefire-green2) 70%);
+  background: radial-gradient(circle at 35% 35%, $corefire-green, $corefire-green2 70%);
 }
 
 .whirlpool.liquid {
-  background: radial-gradient(circle at 30% 30%, var(--corefire-green), var(--corefire-green2) 80%); 
+  background: radial-gradient(circle at 30% 30%, $corefire-green, $corefire-green2 80%); 
   box-shadow:
     inset -10px 10px 30px rgba(0, 100, 80, 0.6),
     10px 12px 25px 12px rgba(0, 255, 150, 0.35),
@@ -185,7 +187,7 @@
 
 /* Planet Results */
 .planet-results {
-  background-color: var(--gray);
+  background-color: $gray;
   border-radius: 18px;
   padding: 20px 15px;
   text-align: left;

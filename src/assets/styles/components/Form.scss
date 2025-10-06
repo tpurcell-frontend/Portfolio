@@ -1,4 +1,4 @@
-form {}
+@use '../variables.scss' as *;
 
 form > label {
     margin-top: 16px;
@@ -14,7 +14,7 @@ form .radio-group input:hover {
 form input[type="radio"] {
     font-size: 16px;
     flex-basis: 20px;
-    accent-color: var(--purple3);
+    accent-color: $purple3;
     margin: 0;
     margin-right: 8px;
 }
@@ -33,11 +33,8 @@ input[type="radio"] {
 }
 
 input[type="radio"]:checked {
-  border-color: var(--white);
+  border-color: $white;
   background: #333;
-}
-
-input[type="radio"]:hover {
 }
 
 input[type="radio"]::after {
@@ -59,7 +56,7 @@ input[type="radio"]:checked::after {
 }
 
 form label {
-    color: var(--white);
+    color: $white;
     display: flex;
     align-items: center;
 }
@@ -91,7 +88,7 @@ form .selectedOptions p {
 }
 
 form .asterisk {
-  color: var(--red);
+  color: $red;
   font-size: 18px;
   margin-left: 5px;
   margin-top: -5px;

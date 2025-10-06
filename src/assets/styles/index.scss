@@ -1,0 +1,20 @@
+@use './variables.scss' as *;
+@import url('./variables.scss');
+@import url('./components/Animations.scss');
+@import url('./components/Icons.scss');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap');
+
+:root {   
+  font-family: "Orbitron", sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: $white;
+  background-color: $dark-bg;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

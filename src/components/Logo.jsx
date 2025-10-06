@@ -2,7 +2,7 @@ import React from 'react';
 import reactLogo from '../assets/react.svg'
 import viteLogo from '/vite.svg'
 
-import '../assets/styles/components/Logo.css'
+import '../assets/styles/components/Logo.scss'
 
 function Logo() {
     return (

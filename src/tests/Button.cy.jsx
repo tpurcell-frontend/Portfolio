@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Button from "../components/Button";
-import '../assets/styles/components/Button.css'
+import '../assets/styles/components/Button.scss'
 
 describe('<Button />', () => {
 

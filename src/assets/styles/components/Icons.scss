@@ -1,3 +1,5 @@
+@use '../variables.scss' as *;
+
 svg.MuiSvgIcon-root {
   transition: fill 0.25s linear;
 }
