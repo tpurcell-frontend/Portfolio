@@ -1,10 +1,31 @@
+/* Default reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Containers */
+.custom-container {
+  margin: 0 20px;
+}
+
+.custom-container h1:first-child,
+.custom-container h2:first-child,
+.custom-container h3:first-child,
+.custom-container h4:first-child,
+.custom-container p:first-child {
+    margin-top: 0;
+}
+
 /* Typography Styles */
 h1 {
     font-size: 48px;
 }
 
 h2, .h2 {
-    font-size: 32px
+    font-size: 32px;
+    margin-top: 24px;
 }
 
 h2 .rocketIcon {
@@ -14,46 +35,56 @@ h2 .rocketIcon {
     height: auto;
 }
 
-h3 {
+h3, .h3 {
     font-size: 24px;
+    margin-top: 24px;
 }
 
-h4 {
+h4, .h4 {
     font-size: 20px;
 }
 
 p {
     font-size: 16px;
+    margin-top: 16px;
+    line-height: 2;
 }
 
 a:not(button) {
     color: var(--white);
 }
 
-a:not(button):hover,
-a:not(button):focus-visible {
-    text-decoration: none;
-}
-
 @media (min-width: 769px) {
+
+    .custom-container {
+        margin: 0 40px;
+    }
    
     h1 {
         font-size: 64px;
     }
 
-    h2 {
+    h2, .h2 {
         font-size: 48px;
     }
 
-    h3 {
+    h3, .h3 {
         font-size: 32px;
+        margin-top: 32px;
     }
 
-    h4 {
+    h4, .h4 {
         font-size: 24px;
     }
 
     p {
         font-size: 18px;
+        margin-top: 24px;
+    }
+}
+
+@media (min-width: 1201px) {
+    .custom-container {
+        margin: 0 50px;
     }
 }

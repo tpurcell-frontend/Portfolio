@@ -1,40 +1,78 @@
-import React, {useState} from "react";
+import React from "react";
 import { NavLink } from "react-router";
 
 import Header from '../components/Header'
 import Button from '../components/Button.jsx'
 
 function Home() {
-    const [buttonText, setButtonText] = useState('Get Started')
 
     return (
         <>
             {/* Header */}
             <Header />
 
-            <h1 className="h2">Hello, my name is Travis. </h1>
-            <p>I'm a Full-Stack Developer, with 6+ years of professional experience.</p>
-            <p>I've worked with numerous technologies, including:</p>
-            <ul>
-                <li>React</li>
-                <li>Cypress React Testing</li>
-                <li>Material UI</li>
-                <li>JavaScript</li>
-                <li>WordPress</li>
-                <li>Drupal</li>
-                <li>Gulp</li>  
-                <li>Pantheon</li>
-                <li>Node.js</li>
-                <li>Foundations</li> 
-                <li>Sass.</li>
-            </ul>
-            <p>My experience includes builds of responsive, scalable and functional web applications built to industries standards.</p>
-            <p>This site is a small showcase of what I can do.</p>
-            <div className="button-wrapper">
-                <NavLink to="planet-generator">
-                    <Button buttonClass="animation-glow btn-homepage" text={buttonText} />
-                </NavLink>
-            </div>
+            <section className="intro-section">
+                {/* Stars Background */}
+                <div className="star-background">
+                    <div className="stars"></div>
+                </div>
+                <div class="custom-container">
+                    <h1 className="h2">Hello, my name is Travis. </h1>
+                    <p>I'm a Front-End Developer with over 6 years of experience crafting responsive, scalable, and functional web applications. I specialize in React.js, modern JavaScript, and CMS platforms like Drupal and WordPress.</p>
+                    <p>At my core, I’m a problem-solver and lifelong learner. Whether it’s building custom components, integrating RESTful APIs, or optimizing page performance, I take pride in writing clean, maintainable code that meets both user and business needs.</p>
+                </div>
+            </section>
+            <section className="technology-section">
+                <div class="custom-container">
+                    <h2 className="h3">Tools & Technologies</h2>
+                    <div className="technology-list-wrapper">
+                        <div className="technology-list">
+                            <h3 className="h4">Languages & Frameworks</h3>
+                            <ul>
+                                <li>React.js</li>
+                                <li>JavaScript</li> 
+                                <li>HTML</li>
+                                <li>CSS</li>
+                                <li>Sass</li>
+                                <li>Material UI</li>
+                            </ul>
+                        </div>
+                        <div className="technology-list">
+                            <h3 className="h4">CMS</h3>
+                            <ul>
+                                <li>WordPress</li>
+                                <li>Drupal</li> 
+                            </ul>
+                        </div>
+                        <div className="technology-list">
+                            <h3 className="h4">Platforms & Deployment</h3>
+                            <ul>
+                                <li>Pantheon</li>
+                                <li>Node.js</li> 
+                                <li>Git</li>
+                                <li>Jira</li> 
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section className="contact-section">
+                {/* Stars Background */}
+                <div class="custom-container">
+                    <p>This site is a small showcase of what I can do.</p>
+                    <div className="button-wrapper">
+                        <NavLink to="planet-generator">
+                            <Button buttonClass="animation-glow btn-homepage" text="Get Started" />
+                        </NavLink>
+                        <NavLink target="_blank" to="https://www.linkedin.com/in/travis-purcell-97b365174/">
+                            <Button buttonClass="animation-glow btn-homepage" text="Let's Connect" />
+                        </NavLink>
+                        <NavLink  target="_blank" to="https://github.com/tpurcell-frontend">
+                            <Button buttonClass="animation-glow btn-homepage" text="Code Repos" />
+                        </NavLink>
+                    </div>
+                </div>
+            </section>
         </>
     )
 }

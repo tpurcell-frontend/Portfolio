@@ -3,10 +3,11 @@
   /* max-width: 1280px; */
   /* margin: 0 auto; */
   text-align: center;
+  position: relative;
 }
 
 section {
-  margin: 0 20px;
+  padding: 50px 0;
 }
 
 section:last-of-type {
@@ -21,17 +22,138 @@ body {
   padding: 100px 0 0;
 }
 
+.technology-list-wrapper {
+  text-align: left;
+}
+
+.technology-list {
+  text-align: center;
+}
+
+.technology-list ul {
+  list-style-type: none;
+}
+
+.intro-section {
+  position: relative;
+}
+
+.intro-section .custom-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-section ul {
+  list-style-type: none;
+}
+
+.intro-section ul li {
+  font-weight: bold;
+}
+
+.intro-section ul li + li {
+  margin-top: 10px;
+}
+
+.technology-section {
+  background-color: var(--purple);
+  position: relative;
+}
+
+.technology-section::before {
+  content: '';
+  position: absolute;
+  top: -13px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+
+  backdrop-filter: blur(8px); /* The actual blur */
+  -webkit-backdrop-filter: blur(8px); /* For Safari */
+
+  background: rgba(180, 100, 156, 0.05); /* Optional: adds a soft tint */
+  z-index: 1;
+}
+
+.technology-section button {
+  color: var(--gray);
+  background-color: var(--warm-pink);
+  border-color: var(--warm-pink);
+}
+
+.technology-section svg {
+  fill: var(--white);
+}
+
+.contact-section {
+  position: relative;
+}
+
+.contact-section::before {
+  content: '';
+  position: absolute;
+  top: -25px;
+  left: 0;
+  width: 100%;
+  height: 30px;
+
+  backdrop-filter: blur(8px); /* The actual blur */
+  -webkit-backdrop-filter: blur(8px); /* For Safari */
+
+  background: rgba(180, 100, 156, 0.05); /* Optional: adds a soft tint */
+  z-index: 1;
+}
+
 @media (min-width: 769px) {
+
+  section {
+    padding: 80px 0;
+  }
 
   .planet-generator {
     padding: 125px 0 0;
+  }
+
+  .technology-list-wrapper {
+    margin-top: 24px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .technology-list {
+    flex-basis: calc(33% - 9px);
+  }
+
+  .technology-list ul {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .intro-section ul li + li {
+    margin-top: 0;
   }
 }
 
 @media (min-width: 1201px) {
 
+  .custom-container {
+    margin: 0 50px;
+  }
+
+  section {
+    padding: 100px 0;
+  }
+
   .planet-generator {
     padding: 200px 0 0;
+  }
+
+  .technology-list-wrapper {
+    margin-top: 50px;
   }
 }
 

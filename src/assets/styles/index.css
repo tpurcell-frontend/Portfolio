@@ -13,6 +13,8 @@
   --purple: #b4649c;
   --purple2: #9b4b83;
   --purple3: #a4508b;
+  --pink: #fd746c;
+  --warm-pink: #fc4036;
 
   --border-color: #ddd;
   --dark-bg: #242424;
@@ -20,6 +22,11 @@
   /* Gradients */
   --gradient1: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
   --gradient2: linear-gradient(90deg,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+  --blue-gradient: linear-gradient(to top,
+                      #0f2027 0%,     /* deep navy blue */
+                      #203a43 50%,    /* steel blue */
+                      #2c5364 100%);
+
 
   /* Planet Colors */
   --solar-flare: #ff5e00;

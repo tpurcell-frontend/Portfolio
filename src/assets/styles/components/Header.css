@@ -1,5 +1,5 @@
 header {
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: var(--dark-bg);
   padding: 25px;
 }
 
@@ -10,6 +10,7 @@ header span {
 header a {
   color: var(--white);
   text-decoration: none;
+  transition: color 0.5s;
 }
 
 header a:hover,

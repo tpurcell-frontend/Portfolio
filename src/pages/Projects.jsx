@@ -10,13 +10,17 @@ function Projects() {
         <>
             {/* Header */}
             <Header />
-            
-            <h1>This is the Projects page</h1>
-            <h2>
-                <NavLink to="/planet-generator">Planet Generator</NavLink>
-                <RocketIcon className="rocketIcon" />
-            </h2>
-            <h2>Check back later for more!</h2>
+                
+            <section>
+                <div class="custom-container">
+                    <h1>This is the Projects page</h1>
+                    <h2>
+                        <NavLink to="/planet-generator">Planet Generator</NavLink>
+                        <RocketIcon className="rocketIcon" />
+                    </h2>
+                    <p>Check back later for more!</p>
+                </div>
+            </section>
         </>
     )
 }
