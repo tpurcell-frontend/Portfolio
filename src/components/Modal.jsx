@@ -11,7 +11,14 @@ function Modal(props) {
                 <div id="planet-modal" className="modal-content">
                     <div className="modal-header">
                         <h2>{props.heading}</h2>
-                        <CloseIcon tabIndex="0" className="closeBtn animation-glow" onClick={props.closeBtn} onKeyDown={props.closeBtn}/>
+                        <CloseIcon tabIndex="0" className="closeBtn animation-glow" 
+                            onClick={props.closeBtn} 
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault(); 
+                                    props.closeBtn();
+                                }
+                            }}/>
                     </div>
                     <div className="modal-body">
                         <Form generatePlanet={props.generatePlanet} />

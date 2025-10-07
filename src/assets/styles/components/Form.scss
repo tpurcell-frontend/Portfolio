@@ -1,5 +1,13 @@
 @use '../variables.scss' as *;
 
+form a.btn {
+
+  &:hover,
+  &:focus-visible {
+    background-color: $dark-bg;
+  }
+}
+
 form label {
   font-family: $sans-serif;
   font-weight: 500;

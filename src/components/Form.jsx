@@ -1,5 +1,4 @@
-import React from 'react'; 
-import { useState } from 'react'
+import React, { useRef, useState} from 'react'; 
 import Button from './Button'
 import FormOptions from '../subcomponents/FormOptions'
 import galaxyOptions from "../data/galaxy-options.js"
@@ -12,6 +11,7 @@ function Form(props) {
     const [buttonClass, setbuttonClass] = useState('btn-secondary');
     const [page, setPage] = useState(1);
     const [formLabel, setFormLabel] = useState('Choose a galaxy');
+    const formRef = useRef();
     const [selected, setSelected] = useState(null);
     const [selectedOptions, setSelectedOptions] = useState({
         galaxyOption: null,
@@ -42,7 +42,8 @@ function Form(props) {
 
     function formNextPage () {
 
-        if (selected) {
+        // Trigger form validation
+        if (formRef.current.reportValidity()) {
             const nextPage = page + 1;
             setPage(nextPage);
             updateFormLabel(nextPage);
@@ -86,22 +87,29 @@ function Form(props) {
     }
 
     function generatePlanet() {
-        if (selected) {
+        // Trigger form validation
+        if (formRef.current.reportValidity()) {
             props.generatePlanet(selectedOptions)
             setSelected(null);
             setPage(1);
-        }
 
         
-        setTimeout(() => {
-            const planet = document.getElementById('planet')            ;
-            planet.focus();
-        }, 250)
+            setTimeout(() => {
+                const planet = document.getElementById('planet')            ;
+                planet.focus();
+
+                setSelectedOptions({
+                    galaxyOption: null,
+                    sizeOption: null,
+                    surfaceOption: null,
+                })
+            }, 250)
+        }
     }
 
     return (
         
-        <form>
+        <form ref={formRef}>
             <label>{formLabel} <span className="asterisk">*</span></label>
 
             {/* Page 1 */}
@@ -111,7 +119,14 @@ function Form(props) {
                         {galaxyOptions.map(createOption)}
                     </div>
                     <div className="button-wrapper mt-4">
-                        <Button onClick={formNextPage} buttonClass={buttonClass} text="Next"/>
+                        <Button onClick={formNextPage}  
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault(); 
+                                    formNextPage();
+                                }
+                            }} 
+                            text="Next"/>
                     </div>
                 </>
             )}
@@ -124,9 +139,23 @@ function Form(props) {
                     </div>
 
                     <div className="button-wrapper mt-4">
-                        <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
+                        <Button onClick={formPreviousPage} 
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault(); 
+                                        formPreviousPage();
+                                    }
+                                }} 
+                                buttonDirection="Previous"  text="Previous" />
 
-                        <Button onClick={formNextPage} buttonClass={buttonClass} buttonDirection="Next" text="Next"/>
+                        <Button onClick={formNextPage} 
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault(); 
+                                        formNextPage();
+                                    }
+                                }} 
+                                buttonDirection="Next" text="Next"/>
                     </div>
                 </>
             )}
@@ -139,9 +168,23 @@ function Form(props) {
                     </div>
 
                     <div className="button-wrapper mt-4">
-                        <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
+                        <Button onClick={formPreviousPage} 
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault(); 
+                                        formPreviousPage();
+                                    }
+                                }} 
+                                buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
 
-                        <Button onClick={generatePlanet} buttonClass={buttonClass} text="Generate"/>
+                        <Button onClick={generatePlanet} 
+                                onKeyDown={(e) => {
+                                    if (e.key === 'Enter' || e.key === ' ') {
+                                        e.preventDefault(); 
+                                        generatePlanet();
+                                    }
+                                }} 
+                                buttonClass={buttonClass} text="Generate"/>
                     </div>
                 </>
             )}

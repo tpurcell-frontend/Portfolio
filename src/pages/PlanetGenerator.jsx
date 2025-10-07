@@ -9,7 +9,6 @@ import '../assets/styles/App.scss'
 import '../assets/styles/components/Planet.scss'
 
 function PlanetGenerator() {
-    const [buttonClass, setbuttonClass] = useState('btn-primary');
     const [buttonText, setButtonText] = useState('Launch');
     var countdown = 3;
     const [modalStatus, setModalStatus] = useState(false);
@@ -35,19 +34,9 @@ function PlanetGenerator() {
         }, 250);
     }
 
-    function hideModal(event) {
-
-        // On click
-        if (event.key == undefined) {
-            setModalStatus(false);
-            setButtonText('Launch');
-        }
-
-        // On Enter keydown 
-        else if ( event.key === 'Enter') {
-            setModalStatus(false);
-            setButtonText('Launch');
-        }
+    function hideModal() {
+        setModalStatus(false);
+        setButtonText('Launch');
     }
 
     function generatePlanet(selectedOptions) {
@@ -79,7 +68,14 @@ function PlanetGenerator() {
                             <Heading title="Planet Generator" />
                             {planetResult ? <p className="tooltip-hint mt-4">Hover, tap or focus your planet to view the results.</p> : ""}
                             <div className="button-wrapper mt-4">
-                                <Button onClick={showModal} buttonClass={`animation-glow ${buttonClass}`} text={buttonText} />
+                                <Button onClick={showModal} 
+                                        onKeyDown={(e) => {
+                                            if (e.key === 'Enter' || e.key === ' ') {
+                                                e.preventDefault(); 
+                                                showModal();
+                                            }
+                                        }}
+                                        text={buttonText} />
                             </div>
                         </div>
                     </div>
@@ -100,7 +96,9 @@ function PlanetGenerator() {
             : ""}
 
             {/* Modal */}
-            <Modal heading="Customize Your Planet" generatePlanet={generatePlanet} closeBtn={hideModal} modalStatus={modalStatus} />
+            <Modal heading="Customize Your Planet" generatePlanet={generatePlanet} 
+                    closeBtn={hideModal} 
+                    modalStatus={modalStatus} />
         </>
     )
 }

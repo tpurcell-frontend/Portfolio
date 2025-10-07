@@ -20,10 +20,11 @@ function Button(props) {
 
     return (
         <a 
-            tabindex="0"
+            tabIndex="0"
             href={props.to}
             onClick={() => props.onClick()} 
-            className={`btn ${props.buttonClass || ''} ${reverseButton ? "btn-reverse" : ""} `} 
+            onKeyDown={(e) => props.onKeyDown(e)} 
+            className={`btn animation-glow ${reverseButton ? "btn-reverse" : ""} `} 
             type={props.buttonType} 
         >
             {props.text} 

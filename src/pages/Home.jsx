@@ -47,8 +47,10 @@ function Home() {
             <section className="intro-section">
                 <div className="container">
                     <h1 className="mb-0">Hello, my name is Travis. </h1>
-                    <p className="mb-0 mt-4">I'm a Front-End Developer with over 6 years of experience crafting responsive, scalable, and functional web applications. I specialize in React.js, modern JavaScript, and CMS platforms like Drupal and WordPress.</p>
-                    <p className="mb-0 mt-4">At my core, I’m a problem-solver and lifelong learner. Whether it’s building custom components, integrating RESTful APIs, or optimizing page performance, I take pride in writing clean, maintainable code that meets both user and business needs.</p>
+                    <p className="mb-0 mt-4">I'm a Full-Stack Developer with over 6 years of experience crafting responsive, scalable, and functional web applications. I specialize in React.js, modern JavaScript, and CMS platforms, including Drupal and WordPress.</p>
+                    <p className="mb-0 mt-4">I excel at dissecting complex problems and implementing repeatable and transferrable solutions. I'm a lifelong learner, who is always working to improve my knowledge and abilities.</p>
+                    <p className="mb-0 mt-4">From developing custom components, engineering Back-End architecture, or optimizing the user experience, I strive to write clean and efficient code that serves as a lasting asset to business needs.</p>
+                    {/* Moon Background */}
                     <div className={`moon-wrapper mt-5 ${moonClassName}`}  ref={moonRef}>
                         <div className="moon"></div>
                     </div>
