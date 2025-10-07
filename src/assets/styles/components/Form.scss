@@ -1,9 +1,19 @@
 @use '../variables.scss' as *;
 
+form label {
+  font-family: $sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  
+  color: $white;
+  display: flex;
+  align-items: center;
+}
+
 form > label {
     margin-top: 16px;
     font-style: italic;
-    font-size: 16px;
+    font-size: 20px;
 }
 
 form .radio-group label:hover,
@@ -55,12 +65,6 @@ input[type="radio"]:checked::after {
   opacity: 1;
 }
 
-form label {
-    color: $white;
-    display: flex;
-    align-items: center;
-}
-
 form .radio-group {
     display: flex;
     flex-direction: column;
@@ -105,8 +109,13 @@ form .required-message span {
 
 @media (min-width: 769px) {
 
+
+  form label {
+    font-size: 18px;
+  }
+
   form > label {
-      font-size: 22px;
+    font-size: 24px;
   }
 
   form .page-wrapper {
@@ -123,12 +132,15 @@ form .required-message span {
   form .selectedOptions p {
     display: flex;
     align-items: center;
+    font-size: 20px;
+    font-family: $sans-serif;
   }
 
   form .selectedOptions p + p::before {
     content: '·';
     display: inline-block;
     margin-right: 20px;
+    margin-bottom: -4px;
   }
 
   form .required-message {

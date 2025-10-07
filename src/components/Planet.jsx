@@ -11,7 +11,7 @@ function Planet(props) {
     const [discoveredResource, survivability] = generateDiscoveredResource();
     var planetName = '';
     const generatedPlanetName = generatePlanetName();
-    var requiredScore = 75;
+    var requiredScore = 100;
 
     function generatePlanetName() {
         planetName = planetNames[Math.floor( Math.random() * planetNames.length )];
@@ -33,7 +33,7 @@ function Planet(props) {
             <div tabIndex="0" className={`planet animation--glow ${props.planetResult ? galaxy + ' ' + size + ' ' + surface : ''}`}></div>
             {props.planetResult ? 
                 <div className="planet-results">
-                    <h3>Planet Name: {generatedPlanetName}</h3>
+                    <h3>Planet Name: <strong>{generatedPlanetName}</strong></h3>
                     <ul>
                         <li><ChevronRightIcon /><strong>Galaxy:&nbsp;</strong> {galaxy.charAt(0).toUpperCase() + galaxy.slice(1)}</li>
                         <li><ChevronRightIcon /><strong>Size:&nbsp;</strong> {size.charAt(0).toUpperCase() + size.slice(1)}</li>
@@ -52,7 +52,7 @@ function Planet(props) {
                         {discoveredResource === "Fresh Water" ? "Your chance of survival is all but guaranteed!" 
                         : discoveredResource === "Monsters" ? "You're doomed." 
                         : survivability > requiredScore ? "This planet is viable for life!"
-                        : "Life on this planet is not sustainable."}
+                        : <span className="noLife">Life on this planet is not sustainable.</span>}
                     </strong></p>
                 </div>
             : ""}

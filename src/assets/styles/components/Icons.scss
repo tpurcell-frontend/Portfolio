@@ -12,7 +12,6 @@ svg.MuiSvgIcon-root:focus-visible {
 
 .closeBtn {
   fill: #fff !important;
-  margin-top: 10px;
 }
 
 .closeBtn:hover,
@@ -31,11 +30,4 @@ svg.MuiSvgIcon-root:focus-visible {
 .rocketLaunchIcon {
     margin-bottom: -4px;
     transition: transform 0.25s !important;
-}
-
-@media (min-width: 769px) {
-
-  .closeBtn {
-    margin-top: 15px;
-  }
 }

@@ -104,7 +104,7 @@ function Form(props) {
                     <div className="radio-group">
                         {galaxyOptions.map(createOption)}
                     </div>
-                    <div className="button-wrapper">
+                    <div className="button-wrapper mt-4">
                         <Button onClick={formNextPage} buttonClass={buttonClass} text="Next"/>
                     </div>
                 </>
@@ -117,7 +117,7 @@ function Form(props) {
                         {sizeOptions.map(createOption)}
                     </div>
 
-                    <div className="button-wrapper">
+                    <div className="button-wrapper mt-4">
                         <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
 
                         <Button onClick={formNextPage} buttonClass={buttonClass} buttonDirection="Next" text="Next"/>
@@ -132,7 +132,7 @@ function Form(props) {
                         {surfaceOptions.map(createOption)}
                     </div>
 
-                    <div className="button-wrapper">
+                    <div className="button-wrapper mt-4">
                         <Button onClick={formPreviousPage} buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
 
                         <Button onClick={generatePlanet} buttonClass={buttonClass} text="Generate"/>

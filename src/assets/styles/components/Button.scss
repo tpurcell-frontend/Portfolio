@@ -5,7 +5,6 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    margin: 16px auto 0;
     gap: 16px;
 }
 
@@ -13,6 +12,7 @@
     text-decoration: none;
 }
 
+a.btn,
 button {
     color: $white;
     -webkit-text-fill-color: $white;
@@ -22,14 +22,18 @@ button {
     gap: 8px;
     
     border: 1px solid $blue;
-    border-radius: 8px;
+    border-radius: 8px !important;
     background-color: transparent;
     padding: 10px 15px;
     transition: background 0.25s linear, border-color 0.25s linear;
 
     font-size: 16px;
+    font-weight: 700;
 }
 
+a.btn:hover,
+a.btn:focus,
+a.btn:focus-visible
 button:hover,
 button:focus,
 button:focus-visible {
@@ -38,28 +42,39 @@ button:focus-visible {
     cursor: pointer;
 }
 
+a.btn:hover .rocketIcon,
+a.btn:focus .rocketIcon,
+a.btn:focus-visible .rocketIcon,
 button:hover .rocketIcon,
 button:focus .rocketIcon,
 button:focus-visible .rocketIcon {
     transform: rotate(-90deg) translate(0px, -5px);
 }
 
+a.btn:hover .rocketLaunchIcon,
+a.btn:focus .rocketLaunchIcon,
+a.btn:focus-visible .rocketLaunchIcon,
 button:hover .rocketLaunchIcon,
 button:focus .rocketLaunchIcon,
 button:focus-visible .rocketLaunchIcon {
     transform: translate(5px, -5px);
 }
 
+a.btn.btn-homepage,
 button.btn-homepage {
     text-align: center;
 }
 
+a.btn.btn-secondary,
 button.btn-secondary {
     border-color: $white;
     color: $white;
     -webkit-text-fill-color: $white;
 }
 
+a.btn.btn-secondary:hover,
+a.btn.btn-secondary:focus,
+a.btn.btn-secondary:focus-visible,
 button.btn-secondary:hover,
 button.btn-secondary:focus,
 button.btn-secondary:focus-visible {
@@ -69,16 +84,14 @@ button.btn-secondary:focus-visible {
     background-color: $dark-bg;
 }
 
+a.btn.btn-reverse,
 button.btn-reverse {
     flex-direction: row-reverse;
 }
 
 @media (min-width: 769px) {
 
-    .button-wrapper {
-        margin-top: 24px;
-    }
-
+    a.btn,
     button {
         font-size: 20px;
     }

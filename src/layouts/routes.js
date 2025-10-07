@@ -10,8 +10,6 @@ import Home from '../pages/Home.jsx'
 import PlanetGenerator from "../pages/PlanetGenerator.jsx";
 import Projects from '../pages/Projects.jsx'
 
-import App from '../App.jsx'
-
 const router = createBrowserRouter([
   {
     path: "/",

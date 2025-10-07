@@ -58,32 +58,49 @@ function PlanetGenerator() {
 
     return (
         <>
-        {/* Header */}
-        <Header />
-
-        {/* Stars Background */}
-        <div className="star-background">
-            <div className="stars"></div>
-        </div>
-
-        {/* Planet Generator */}
-        <section className="planet-generator">
-            <Heading title="Planet Generator" />
-            {planetResult ? <p className="tooltip-hint">Hover or tap your planet to view the results.</p> : ""}
-            <div className="button-wrapper">
-            <Button onClick={showModal} buttonClass={`animation-glow ${buttonClass}`} text={buttonText} />
+            { /* Starfield Background */}
+            <div className="starfield">
+                <div className="stars"></div>
             </div>
-        </section>
+            
+            {/* Header */}
+            <Header />
 
-        {/* Planet */}
-        {planetResult ? 
-            <section className="planet-wrapper">
-            <Planet planetResult={planetResult} />
+            {/* Sun Background */}
+            <div className="sun-wrapper mt-5">
+                <div className="sun"></div>
+            </div>
+
+            {/* Planet Generator */}
+            <section className="planet-generator">
+                <div className="container">
+                    <div className="row">
+                        <div className="col">
+                            <Heading title="Planet Generator" />
+                            {planetResult ? <p className="tooltip-hint mt-4">Hover, tap or focus your planet to view the results.</p> : ""}
+                            <div className="button-wrapper mt-4">
+                                <Button onClick={showModal} buttonClass={`animation-glow ${buttonClass}`} text={buttonText} />
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </section>
-        : ""}
 
-        {/* Modal */}
-        <Modal heading="Customize Your Planet" generatePlanet={generatePlanet} closeBtn={hideModal} modalStatus={modalStatus} />
+            {/* Planet */}
+            {planetResult ? 
+                <section className="planet-wrapper">
+                    <div className="container">
+                        <div className="row">
+                            <div className="col">
+                                <Planet planetResult={planetResult} />
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            : ""}
+
+            {/* Modal */}
+            <Modal heading="Customize Your Planet" generatePlanet={generatePlanet} closeBtn={hideModal} modalStatus={modalStatus} />
         </>
     )
 }

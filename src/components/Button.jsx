@@ -19,13 +19,16 @@ function Button(props) {
     }
 
     return (
-        <button onClick={() => props.onClick()} 
-            className={` ${props.buttonClass} ${reverseButton ? "btn-reverse" : ""} `} 
+        <a 
+            tabindex="0"
+            href={props.to}
+            onClick={() => props.onClick()} 
+            className={`btn ${props.buttonClass || ''} ${reverseButton ? "btn-reverse" : ""} `} 
             type={props.buttonType} 
         >
             {props.text} 
             {buttonDirection()}
-        </button>
+        </a>
     )
 }
 

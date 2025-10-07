@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
+
 /* Default reset */
 * {
   margin: 0;
@@ -18,52 +21,55 @@
     margin-top: 0;
 }
 
-  /* Colors */
-  $black: #000;
-  $white: #fff;
-  $gray: #333;
-  $red: #f00;
-  $blue: #4087a5;
-  $purple: #b4649c;
-  $purple2: #9b4b83;
-  $purple3: #a4508b;
-  $pink: #fd746c;
-  $warm-pink: #fc4036;
+/* Colors */
+$black: #000;
+$white: #fff;
+$gray: #333;
+$red: #f00;
+$blue: #4087a5;
+$purple: #b4649c;
+$purple2: #9b4b83;
+$purple3: #a4508b;
+$pink: #fd746c;
+$warm-pink: #fc4036;
 
-  $border-color: #ddd;
-  $dark-bg: #242424;
+$border-color: #ddd;
+$dark-bg: #242424;
 
-  /* Gradients */
-  $gradient1: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-  $gradient2: linear-gradient(90deg,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
-  $blue-gradient: linear-gradient(to top,
-                                #0f2027 0%,     /* deep navy blue */
-                                #203a43 50%,    /* steel blue */
-                                #2c5364 100%
-                                );
+/* Gradients */
+$gradient1: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+$gradient2: linear-gradient(90deg,rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
+$blue-gradient: linear-gradient(to top,
+                            #0f2027 0%,     /* deep navy blue */
+                            #203a43 50%,    /* steel blue */
+                            #2c5364 100%
+                            );
 
 
-  /* Planet Colors */
-  $solar-flare: #ff5e00;
-  $solar-flare2: #802f00;
-  
-  $starlight-rose: #a58abf;
-  $starlight-rose2: #815ba4;
+/* Planet Colors */
+$solar-flare: #ff5e00;
+$solar-flare2: #802f00;
 
-  $ion-blue: #6b9ecb;
-  $ion-blue2: #2e5c84;
+$starlight-rose: #a58abf;
+$starlight-rose2: #815ba4;
 
-  $corefire-green: #48d597;    
-  $corefire-green2: #1f5a3f; 
+$ion-blue: #6b9ecb;
+$ion-blue2: #2e5c84;
+
+$corefire-green: #48d597;    
+$corefire-green2: #1f5a3f; 
 
 /* Typography Styles */
-h1 {
-    font-size: 48px;
+$sans-serif: "Outfit", sans-serif;
+$serif: "Domine", serif;
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: $sans-serif;
 }
 
-h2, .h2 {
-    font-size: 32px;
-    margin-top: 24px;
+p, li, blockquote {
+    font-family: $serif;
+    line-height: 2;
 }
 
 h2 .rocketIcon {
@@ -73,19 +79,8 @@ h2 .rocketIcon {
     height: auto;
 }
 
-h3, .h3 {
-    font-size: 24px;
-    margin-top: 24px;
-}
-
-h4, .h4 {
-    font-size: 20px;
-}
-
-p {
-    font-size: 16px;
-    margin-top: 16px;
-    line-height: 2;
+strong {
+    font-weight: 800;
 }
 
 a:not(button) {
@@ -94,35 +89,4 @@ a:not(button) {
 
 @media (min-width: 769px) {
 
-    .custom-container {
-        margin: 0 40px;
-    }
-   
-    h1 {
-        font-size: 64px;
-    }
-
-    h2, .h2 {
-        font-size: 48px;
-    }
-
-    h3, .h3 {
-        font-size: 32px;
-        margin-top: 32px;
-    }
-
-    h4, .h4 {
-        font-size: 24px;
-    }
-
-    p {
-        font-size: 18px;
-        margin-top: 24px;
-    }
-}
-
-@media (min-width: 1201px) {
-    .custom-container {
-        margin: 0 50px;
-    }
 }
