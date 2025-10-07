@@ -91,6 +91,12 @@ function Form(props) {
             setSelected(null);
             setPage(1);
         }
+
+        
+        setTimeout(() => {
+            const planet = document.getElementById('planet')            ;
+            planet.focus();
+        }, 250)
     }
 
     return (

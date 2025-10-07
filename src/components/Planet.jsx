@@ -30,7 +30,7 @@ function Planet(props) {
     return (
 
         <div className="planet-container">
-            <div tabIndex="0" className={`planet animation--glow ${props.planetResult ? galaxy + ' ' + size + ' ' + surface : ''}`}></div>
+            <div tabIndex="0" id="planet" className={`planet animation--glow ${props.planetResult ? galaxy + ' ' + size + ' ' + surface : ''}`}></div>
             {props.planetResult ? 
                 <div className="planet-results">
                     <h3>Planet Name: <strong>{generatedPlanetName}</strong></h3>
