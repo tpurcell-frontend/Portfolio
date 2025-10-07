@@ -11,7 +11,7 @@ function Planet(props) {
     const [discoveredResource, survivability] = generateDiscoveredResource();
     var planetName = '';
     const generatedPlanetName = generatePlanetName();
-    var requiredScore = 100;
+    var requiredScore = 75;
 
     function generatePlanetName() {
         planetName = planetNames[Math.floor( Math.random() * planetNames.length )];
