@@ -1,5 +1,12 @@
 @use '../variables.scss' as *;
 
+svg.MuiSvgIcon-root.external {
+  color: $solar-flare;
+  width: 16px;
+  margin-left: 2px;
+  margin-bottom: 1px;
+}
+
 svg.MuiSvgIcon-root {
   transition: fill 0.25s linear;
 }

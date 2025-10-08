@@ -146,23 +146,35 @@ body {
 
 .technology-list-wrapper {
   text-align: left;
+  margin-top: 24px;
 }
 
 .technology-list {
   text-align: center;
+  padding: 0 20px !important;
+  font-size: 18px;
+
+  & + & {
+    margin-top: 32px;
+  }
+}
+
+.technology-list h3 {
+  text-align: left;
 }
 
 .technology-list ul {
   list-style-type: none;
-  max-width: 200px;
-  margin: 25px auto 0;
+  margin: 16px auto 0;
   padding: 0;
 }
 
 .technology-list li {
-  background-color: $dark-bg;
-  padding: 5px;
-  border-radius: 5px;
+  text-align: left;
+
+  & + li {
+    margin-top: 16px;
+  }
 }
 
 .technology-list svg {
@@ -173,18 +185,33 @@ body {
   display: none;
 }
 
-.technology-list li + li {
-  margin-top: 24px;
-}
-
 .intro-section {
   position: relative;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
+  font-size: 18px;
+}
+
+.intro-section a {
+  color: $corefire-green;
+  font-weight: bold;
+  transition: color 0.5s;
+  text-decoration: none;
+
+  &:hover,
+  &:focus-visible {
+    color: $solar-flare;
+    
+    & + svg {
+      transform: translate(1px, -2px);
+      transition: transform 0.2s ease-in-out;
+    }
+  }
 }
 
 .intro-section ul {
   list-style-type: none;
+  padding: 0;
 }
 
 .intro-section ul li {
@@ -260,10 +287,16 @@ body {
 
   .technology-list {
     flex-basis: calc(33% - 9px);
+    font-size: 20px;
   }
 
   .technology-list + .technology-list {
     border-left: 1px solid $white;
+    margin-top: 0;
+  }
+
+  .intro-section {
+    font-size: 20px;
   }
 
   .intro-section ul li + li {

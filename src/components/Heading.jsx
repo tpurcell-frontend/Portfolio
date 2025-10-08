@@ -5,6 +5,7 @@ function Heading(props) {
     return (
         <div className="heading">
             <h1>{props.title}</h1>
+            {props.subheading ? <p className="mt-4 mb-0">{props.subheading}</p>: "" }
         </div>
     )
 }

@@ -1,5 +1,10 @@
 @use '../variables.scss' as *;
 
+.heading {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
 .heading h1 {
   font-style: italic;
   margin: 0;

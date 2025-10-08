@@ -7,7 +7,7 @@ import Button from '../components/Button.jsx'
 import { useFadeInBottom } from '../assets/animations/useScrollFadeIn';
 import { useFadeInMoon } from '../assets/animations/useFadeInMoon';
 
-import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 function Home() {
   const { ref: bottomRef, className: bottomClassName } = useFadeInBottom();
@@ -47,9 +47,16 @@ function Home() {
             <section className="intro-section">
                 <div className="container">
                     <h1 className="mb-0">Hello, my name is Travis. </h1>
-                    <p className="mb-0 mt-4">I'm a Full-Stack Developer with over 6 years of experience crafting responsive, scalable, and functional web applications. I specialize in React.js, modern JavaScript, and CMS platforms, including Drupal and WordPress.</p>
-                    <p className="mb-0 mt-4">I excel at dissecting complex problems and implementing repeatable and transferrable solutions. I'm a lifelong learner, who is always working to improve my knowledge and abilities.</p>
+                    <p className="mb-0 mt-4">I'm a Full-Stack Developer looking for a React or JavaScript-focused Full-Time position.</p>
+                    <p className="mb-0 mt-4">For over 6 years, I've crafted numerous responsive, scalable, and functional web applications for presitigous financial institutions and universities.</p>
                     <p className="mb-0 mt-4">From developing custom components, engineering Back-End architecture, or optimizing the user experience, I strive to write clean and efficient code that serves as a lasting asset to business needs.</p>
+                    <p className="mb-0 mt-4">My previous projects include:</p>
+                    <ul>
+                        <li><a className="external" target="_blank" href="https://salve.edu/">Salve Regina University</a><ArrowOutwardIcon className="external"/></li>
+                        <li><a className="external" target="_blank" href="https://y12investmentpartners.com/">Y-12 Investment Partners</a><ArrowOutwardIcon className="external"/></li>
+                        <li>Yale University</li>
+                        <li>Harvard University</li>
+                    </ul>
                     {/* Moon Background */}
                     <div className={`moon-wrapper mt-5 ${moonClassName}`}  ref={moonRef}>
                         <div className="moon"></div>
@@ -66,7 +73,7 @@ function Home() {
                     <div className="technology-list-wrapper">
                         <div className="container">
                             <div className="row">
-                                <div className={`technology-list mt-5 col-12 col-md-4 fade-in-bottom ${bottomClassName}`}  ref={bottomRef}>
+                                <div className={`technology-list col-12 col-md-4 fade-in-bottom ${bottomClassName}`}  ref={bottomRef}>
                                     <h3>Tools & Frameworks</h3>
                                     <ul>
                                         {tools.map((item, index) => (
@@ -79,12 +86,11 @@ function Home() {
                                                 >
                                                     {item}
                                                 </li>
-                                                <ArrowDownwardIcon />
                                             </>
                                         ))}
                                     </ul>
                                 </div>
-                                <div className={`technology-list mt-5 col-12 col-md-4 ${bottomClassName}`}  ref={bottomRef}>
+                                <div className={`technology-list col-12 col-md-4 ${bottomClassName}`}  ref={bottomRef}>
                                     <h3>Deployment & Workflow</h3>
                                     <ul>
                                         {platforms.map((item, index) => (
@@ -93,16 +99,15 @@ function Home() {
                                                     key={item}
                                                     className={`fade-in-bottom ${bottomClassName}`} 
                                                     ref={bottomRef}
-                                                    style={{ animationDelay: `${index * 0.6}s` }}
+                                                    style={{ animationDelay: `${index * 0.5}s` }}
                                                 >
                                                     {item}
                                                 </li>
-                                                <ArrowDownwardIcon />
                                             </>
                                         ))}
                                     </ul>
                                 </div>
-                                <div className={`technology-list mt-5 col-12 col-md-4 ${bottomClassName}`}  ref={bottomRef}>
+                                <div className={`technology-list col-12 col-md-4 ${bottomClassName}`}  ref={bottomRef}>
                                     <h3>CMS & Version Control</h3>
                                     <ul>
                                         {cms.map((item, index) => (
@@ -111,11 +116,10 @@ function Home() {
                                                     key={item}
                                                     className={`fade-in-bottom ${bottomClassName}`} 
                                                     ref={bottomRef}
-                                                    style={{ animationDelay: `${index * 0.7}s` }}
+                                                    style={{ animationDelay: `${index * 0.5}s` }}
                                                 >
                                                     {item}
                                                 </li>
-                                                <ArrowDownwardIcon />
                                             </>
                                         ))}
                                     </ul>
@@ -130,9 +134,9 @@ function Home() {
                 <div className="container">
                     <h2>Resources</h2>
                     <div className="button-wrapper mt-4">
-                        <Button to="/planet-generator" buttonclassName="animation-glow btn-homepage" text="Get Started" />
+                        <Button to="/planet-generator" buttonclassName="animation-glow btn-homepage" text="Visit the Planet Generator" />
                         <Button target="_blank" to="https://www.linkedin.com/in/travis-purcell-97b365174/" buttonclassName="animation-glow btn-homepage" text="Let's Connect" />
-                        <Button target="_blank" to="https://github.com/tpurcell-frontend" buttonclassName="animation-glow btn-homepage" text="Code Repos" />
+                        <Button target="_blank" to="https://github.com/tpurcell-frontend" buttonclassName="animation-glow btn-homepage" text="See Code Repos" />
                     </div>
                 </div>
             </section>

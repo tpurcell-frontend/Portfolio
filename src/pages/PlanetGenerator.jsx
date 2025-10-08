@@ -65,8 +65,8 @@ function PlanetGenerator() {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <Heading title="Planet Generator" />
-                            {planetResult ? <p className="tooltip-hint mt-4">Hover, tap or focus your planet to view the results.</p> : ""}
+                            <Heading title="Planet Generator" subheading=" The Planet Generator is an example of React componentization, user input and data manipulation, resulting in the output of flexible and scalable objects." />
+                            {planetResult ? <p className="tooltip-hint mt-4 mb-0">Hover, tap or focus your planet to view the results.</p> : ""}
                             <div className="button-wrapper mt-4">
                                 <Button onClick={showModal} 
                                         onKeyDown={(e) => {
