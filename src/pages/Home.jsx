@@ -52,8 +52,8 @@ function Home() {
                     <p className="mb-0 mt-4">From developing custom components, engineering Back-End architecture, or optimizing the user experience, I strive to write clean and efficient code that serves as a lasting asset to business needs.</p>
                     <p className="mb-0 mt-4">My previous projects include:</p>
                     <ul>
-                        <li><a className="external" target="_blank" href="https://salve.edu/">Salve Regina University</a><ArrowOutwardIcon className="external"/></li>
-                        <li><a className="external" target="_blank" href="https://y12investmentpartners.com/">Y-12 Investment Partners</a><ArrowOutwardIcon className="external"/></li>
+                        <li><a className="external" target="_blank" rel="noopener noreferrer" href="https://salve.edu/">Salve Regina University</a><ArrowOutwardIcon className="external"/></li>
+                        <li><a className="external" target="_blank" rel="noopener noreferrer" href="https://y12investmentpartners.com/">Y-12 Investment Partners</a><ArrowOutwardIcon className="external"/></li>
                         <li>Yale University</li>
                         <li>Harvard University</li>
                     </ul>
@@ -135,8 +135,8 @@ function Home() {
                     <h2>Resources</h2>
                     <div className="button-wrapper mt-4">
                         <Button to="/planet-generator" buttonclassName="animation-glow btn-homepage" text="Visit the Planet Generator" />
-                        <Button target="_blank" to="https://www.linkedin.com/in/travis-purcell-97b365174/" buttonclassName="animation-glow btn-homepage" text="Let's Connect" />
-                        <Button target="_blank" to="https://github.com/tpurcell-frontend" buttonclassName="animation-glow btn-homepage" text="See Code Repos" />
+                        <Button target="_blank" rel="noopener noreferrer" to="https://www.linkedin.com/in/travis-purcell-97b365174/" buttonclassName="animation-glow btn-homepage" text="Let's Connect" />
+                        <Button target="_blank" rel="noopener noreferrer" to="https://github.com/tpurcell-frontend" buttonclassName="animation-glow btn-homepage" text="See Code Repos" />
                     </div>
                 </div>
             </section>

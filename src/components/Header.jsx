@@ -17,8 +17,8 @@ function Header() {
                                 <ul>
                                     <li><a href="/planet-generator">Planet Generator</a></li>
                                     {/* <li><a href="/projects">Projects</a></li> */}
-                                    <li><a target="_blank" href="https://www.linkedin.com/in/travis-purcell-97b365174/">LinkedIn</a><ArrowOutwardIcon className="external"/></li>
-                                    <li><a target="_blank" href="https://github.com/tpurcell-frontend">Github</a><ArrowOutwardIcon className="external"/></li>
+                                    <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/travis-purcell-97b365174/">LinkedIn</a><ArrowOutwardIcon className="external"/></li>
+                                    <li><a target="_blank"  href="https://github.com/tpurcell-frontend">Github</a><ArrowOutwardIcon className="external"/></li>
                                 </ul>
                             </nav>
                         </div>
