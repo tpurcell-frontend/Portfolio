@@ -8,16 +8,15 @@ import surfaceOptions from "../data/surface-options.js"
 import '../assets/styles/components/Form.scss'
 
 function Form(props) {
-    const [buttonClass, setbuttonClass] = useState('btn-secondary');
     const [page, setPage] = useState(1);
     const [formLabel, setFormLabel] = useState('Choose a galaxy');
-    const formRef = useRef();
     const [selected, setSelected] = useState(null);
     const [selectedOptions, setSelectedOptions] = useState({
         galaxyOption: null,
         sizeOption: null,
         surfaceOption: null,
     });
+    const formRef = useRef();
     const optionKey = page === 1 ? "galaxyOption" : page === 2 ? "sizeOption" : "surfaceOption";
 
     function updateForm(formValue) {
@@ -175,7 +174,7 @@ function Form(props) {
                                         formPreviousPage();
                                     }
                                 }} 
-                                buttonClass={buttonClass} buttonDirection="Previous"  text="Previous" />
+                                buttonDirection="Previous"  text="Previous" />
 
                         <Button onClick={generatePlanet} 
                                 onKeyDown={(e) => {
@@ -184,7 +183,7 @@ function Form(props) {
                                         generatePlanet();
                                     }
                                 }} 
-                                buttonClass={buttonClass} text="Generate"/>
+                                text="Generate"/>
                     </div>
                 </>
             )}

@@ -261,15 +261,15 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .planet.small {
-    animation: logo-spin infinite 10s linear;
+    animation: planet-spin infinite 10s linear;
   }
 
   .planet.medium {
-    animation: logo-spin infinite 25s linear;
+    animation: planet-spin infinite 25s linear;
   }
 
   .planet.large {
-    animation: logo-spin infinite 50s linear;
+    animation: planet-spin infinite 50s linear;
   }
 }
 
