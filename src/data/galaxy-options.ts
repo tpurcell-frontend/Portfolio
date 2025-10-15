@@ -1,4 +1,6 @@
-const galaxyOptions = [
+import { OptionItem } from '../types/OptionItem';
+
+const galaxyOptions: OptionItem[] = [
     {
         id: 'milkyway',
         name: 'galaxy',

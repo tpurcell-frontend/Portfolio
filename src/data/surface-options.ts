@@ -1,4 +1,6 @@
-const surfaceOptions = [
+import { OptionItem } from '../types/OptionItem';
+
+const surfaceOptions: OptionItem[] = [
     {
         id: 'solid',
         name: 'surface',

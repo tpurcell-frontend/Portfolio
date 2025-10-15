@@ -4,10 +4,20 @@ import resources from "../data/resources.js";
 import {resourceSurvivability} from "../data/resources.js";
 import ChevronRightIcon from '@mui/icons-material/ChevronRight';
 
-function Planet(props) {
-    const galaxy = props.planetResult.galaxyOption;
-    const size = props.planetResult.sizeOption;
-    const surface = props.planetResult.surfaceOption;
+type PlanetResult = {
+    galaxyOption: string;
+    sizeOption: string;
+    surfaceOption: string;
+}
+
+type PlanetProps = {
+    planetResult: PlanetResult;
+}
+
+function Planet({planetResult}: PlanetProps) {
+    const galaxy = planetResult.galaxyOption;
+    const size = planetResult.sizeOption;
+    const surface = planetResult.surfaceOption;
     const [discoveredResource, survivability] = generateDiscoveredResource();
     var planetName = '';
     const generatedPlanetName = generatePlanetName();
@@ -16,12 +26,15 @@ function Planet(props) {
     function generatePlanetName() {
         planetName = planetNames[Math.floor( Math.random() * planetNames.length )];
 
-        return planetName.charAt().toUpperCase() + planetName.slice(1);
+        return planetName.charAt(0).toUpperCase() + planetName.slice(1);
     };
 
-    function generateDiscoveredResource() {
+    function generateDiscoveredResource(): [keyof typeof resourceSurvivability, number] {
+        type ResourceType = keyof typeof resourceSurvivability;
+        const resources: ResourceType[] = Object.keys(resourceSurvivability) as ResourceType[];
+        
         const randomIndex = Math.floor( Math.random() * resources.length);
-        const selectedResource = resources[randomIndex];
+        const selectedResource: ResourceType = resources[randomIndex];
         const survivabilityScore = resourceSurvivability[selectedResource];
         
         return [selectedResource, survivabilityScore];
@@ -30,8 +43,8 @@ function Planet(props) {
     return (
 
         <div className="planet-container">
-            <div tabIndex="0" id="planet" className={`planet animation--glow ${props.planetResult ? galaxy + ' ' + size + ' ' + surface : ''}`}></div>
-            {props.planetResult ? 
+            <div tabIndex={0} id="planet" className={`planet animation--glow ${planetResult ? galaxy + ' ' + size + ' ' + surface : ''}`}></div>
+            {planetResult && 
                 <div className="planet-results">
                     <h3>Planet Name: <strong>{generatedPlanetName}</strong></h3>
                     <ul>
@@ -49,13 +62,14 @@ function Planet(props) {
                     <p>A survivability score of <strong>{requiredScore}%</strong> is required to survive.</p>
                     <p><strong>{generatedPlanetName}'s</strong> abundance of <strong>{discoveredResource}</strong> gives you a <strong>{survivability}%</strong> chance of survival.</p>
                     <p><strong>
-                        {discoveredResource === "Fresh Water" ? "Your chance of survival is all but guaranteed!" 
-                        : discoveredResource === "Monsters" ? <span className="noLife">You're doomed.</span> 
-                        : survivability > requiredScore ? "This planet is viable for life!"
-                        : <span className="noLife">Life on this planet is not sustainable.</span>}
+                        {
+                            discoveredResource === "Fresh Water" ? "Your chance of survival is all but guaranteed!" 
+                            : discoveredResource === "Monsters" ? <span className="noLife">You're doomed.</span> 
+                            : survivability > requiredScore ? "This planet is viable for life!"
+                            : <span className="noLife">Life on this planet is not sustainable.</span>
+                        }
                     </strong></p>
-                </div>
-            : ""}
+                </div>}
         </div>
     )
 }

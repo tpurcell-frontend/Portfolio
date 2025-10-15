@@ -1,4 +1,6 @@
-const sizeOptions = [
+import { OptionItem } from '../types/OptionItem';
+
+const sizeOptions: OptionItem[] = [
     {
         id: 'small',
         name: 'size',

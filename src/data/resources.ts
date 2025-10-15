@@ -44,7 +44,7 @@ const resourceSurvivability = {
   "Obsidian": 39,
   "Ice Blocks": 63,
   "Monsters": 0
-};
+}
 
 export default resources;
 export { resourceSurvivability };

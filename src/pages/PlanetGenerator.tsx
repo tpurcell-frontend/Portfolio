@@ -8,11 +8,28 @@ import Planet from '../components/Planet'
 import '../assets/styles/App.scss'
 import '../assets/styles/components/Planet.scss'
 
+import { SelectedOptions } from '../types/SelectedOptions';
+
+type PlanetResult =  {
+  galaxyOption: string;
+  sizeOption: string;
+  surfaceOption: string;
+}
+
+function toPlanetResult(options: SelectedOptions): PlanetResult {
+  
+    return {
+        galaxyOption: options.galaxyOption ?? '',
+        sizeOption: options.sizeOption ?? '',
+        surfaceOption: options.surfaceOption ?? '',
+    };
+}
+
 function PlanetGenerator() {
     const [buttonText, setButtonText] = useState('Launch');
     var countdown = 3;
     const [modalStatus, setModalStatus] = useState(false);
-    const [planetResult, setPlanetResult] = useState('');
+    const [planetResult, setPlanetResult] = useState<SelectedOptions>();
 
     function showModal() {
         setButtonText('T-minus ' + countdown + '...');
@@ -28,7 +45,7 @@ function PlanetGenerator() {
                 setTimeout(() => {
                     setModalStatus(true);
                     const planetModal = document.getElementById('planet-modal');
-                    planetModal.focus();
+                    planetModal?.focus();
                 }, 250);
             }
         }, 250);
@@ -39,7 +56,7 @@ function PlanetGenerator() {
         setButtonText('Launch');
     }
 
-    function generatePlanet(selectedOptions) {
+    function generatePlanet(selectedOptions: SelectedOptions) {
         setButtonText('Launch');
         setModalStatus(false);
         setPlanetResult(selectedOptions);
@@ -88,7 +105,7 @@ function PlanetGenerator() {
                     <div className="container">
                         <div className="row">
                             <div className="col">
-                                <Planet planetResult={planetResult} />
+                                <Planet planetResult={toPlanetResult(planetResult)} />
                             </div>
                         </div>
                     </div>

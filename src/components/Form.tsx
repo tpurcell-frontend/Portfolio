@@ -1,25 +1,37 @@
 import React, { useRef, useState} from 'react'; 
 import Button from './Button'
 import FormOptions from '../subcomponents/FormOptions'
-import galaxyOptions from "../data/galaxy-options.js"
-import sizeOptions from "../data/size-options.js"
-import surfaceOptions from "../data/surface-options.js"
+import galaxyOptions from '../data/galaxy-options'
+import sizeOptions from '../data/size-options'
+import surfaceOptions from '../data/surface-options'
 
 import '../assets/styles/components/Form.scss'
 
-function Form(props) {
-    const [page, setPage] = useState(1);
+import { OptionItem } from '../types/OptionItem';
+
+type FormOptionValue = OptionItem;
+
+import { SelectedOptions } from '../types/SelectedOptions';
+
+type OptionKey = keyof SelectedOptions;
+
+type FormProps = {
+  generatePlanet: (options: SelectedOptions) => void;
+};
+
+function Form({generatePlanet}: FormProps) {
+    const [page, setPage] = useState<number>(1);
     const [formLabel, setFormLabel] = useState('Choose a galaxy');
-    const [selected, setSelected] = useState(null);
-    const [selectedOptions, setSelectedOptions] = useState({
+    const [selected, setSelected] = useState<string | null>(null);
+    const [selectedOptions, setSelectedOptions] = useState<SelectedOptions>({
         galaxyOption: null,
         sizeOption: null,
         surfaceOption: null,
     });
-    const formRef = useRef();
-    const optionKey = page === 1 ? "galaxyOption" : page === 2 ? "sizeOption" : "surfaceOption";
+    const formRef = useRef<HTMLFormElement>(null);
+    const optionKey: OptionKey = page === 1 ? "galaxyOption" : page === 2 ? "sizeOption" : "surfaceOption";
 
-    function updateForm(formValue) {
+    function updateForm(formValue: string) {
         setSelected(formValue);
 
         setSelectedOptions(prevOptions => ({
@@ -42,7 +54,7 @@ function Form(props) {
     function formNextPage () {
 
         // Trigger form validation
-        if (formRef.current.reportValidity()) {
+        if (formRef.current?.reportValidity()) {
             const nextPage = page + 1;
             setPage(nextPage);
             updateFormLabel(nextPage);
@@ -50,7 +62,7 @@ function Form(props) {
         }
     }
 
-    function updateFormLabel(page) {
+    function updateFormLabel(page: number) {
 
         switch (page) {
             case 1: 
@@ -65,7 +77,7 @@ function Form(props) {
         }
     }
 
-    function createOption(FormOption) {
+    function createOption(FormOption: FormOptionValue) {
 
         return  (
             <FormOptions
@@ -81,21 +93,21 @@ function Form(props) {
         )
     }
 
-    function displaySelectedOptions(selectedOption) {
+    function displaySelectedOptions(selectedOption: string) {
         return <p key={selectedOption}>{selectedOption}</p> 
     }
 
-    function generatePlanet() {
+    function handlePlanet() {
         // Trigger form validation
-        if (formRef.current.reportValidity()) {
-            props.generatePlanet(selectedOptions)
+        if (formRef.current?.reportValidity()) {
+            generatePlanet(selectedOptions)
             setSelected(null);
             setPage(1);
 
         
             setTimeout(() => {
                 const planet = document.getElementById('planet')            ;
-                planet.focus();
+                planet?.focus();
 
                 setSelectedOptions({
                     galaxyOption: null,
@@ -118,7 +130,8 @@ function Form(props) {
                         {galaxyOptions.map(createOption)}
                     </div>
                     <div className="button-wrapper mt-4">
-                        <Button onClick={formNextPage}  
+                        <Button 
+                            onClick={formNextPage}  
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
                                     e.preventDefault(); 
@@ -138,23 +151,27 @@ function Form(props) {
                     </div>
 
                     <div className="button-wrapper mt-4">
-                        <Button onClick={formPreviousPage} 
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter' || e.key === ' ') {
-                                        e.preventDefault(); 
-                                        formPreviousPage();
-                                    }
-                                }} 
-                                buttonDirection="Previous"  text="Previous" />
+                        <Button 
+                            onClick={formPreviousPage} 
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault(); 
+                                    formPreviousPage();
+                                }
+                            }} 
+                            buttonDirection="Previous"  
+                            text="Previous" />
 
-                        <Button onClick={formNextPage} 
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter' || e.key === ' ') {
-                                        e.preventDefault(); 
-                                        formNextPage();
-                                    }
-                                }} 
-                                buttonDirection="Next" text="Next"/>
+                        <Button 
+                            onClick={formNextPage} 
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault(); 
+                                    formNextPage();
+                                }
+                            }} 
+                            buttonDirection="Next" 
+                            text="Next"/>
                     </div>
                 </>
             )}
@@ -176,11 +193,11 @@ function Form(props) {
                                 }} 
                                 buttonDirection="Previous"  text="Previous" />
 
-                        <Button onClick={generatePlanet} 
+                        <Button onClick={handlePlanet} 
                                 onKeyDown={(e) => {
                                     if (e.key === 'Enter' || e.key === ' ') {
                                         e.preventDefault(); 
-                                        generatePlanet();
+                                        handlePlanet();
                                     }
                                 }} 
                                 text="Generate"/>
@@ -192,11 +209,13 @@ function Form(props) {
             <div className="page-wrapper">Page {page}</div>
 
             {/* Selected Optons */}
-            {Object.values(selectedOptions)[0] ? (
+            {Object.values(selectedOptions)[0] && (
                 <div className="selectedOptions">
-                    {Object.values(selectedOptions).filter(Boolean).map(displaySelectedOptions)}
+                    {Object.values(selectedOptions)
+                        .filter((val): val is string => typeof val === 'string')
+                        .map(displaySelectedOptions)}
                 </div>
-            ) : ""}
+            )}
 
             {/* Required Message */}
             <div className="required-message">

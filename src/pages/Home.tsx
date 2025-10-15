@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router";
 
 import Header from '../components/Header'
-import Button from '../components/Button.jsx'
+import Button from '../components/Button'
 
 import { useFadeInBottom } from '../assets/animations/useScrollFadeIn';
 import { useFadeInMoon } from '../assets/animations/useFadeInMoon';
@@ -134,9 +134,9 @@ function Home() {
                 <div className="container">
                     <h2>Resources</h2>
                     <div className="button-wrapper mt-4">
-                        <Button to="/planet-generator" buttonclassName="animation-glow btn-homepage" text="Visit the Planet Generator" />
-                        <Button target="_blank" rel="noopener noreferrer" to="https://www.linkedin.com/in/travis-purcell-97b365174/" buttonclassName="animation-glow btn-homepage" text="Let's Connect" />
-                        <Button target="_blank" rel="noopener noreferrer" to="https://github.com/tpurcell-frontend" buttonclassName="animation-glow btn-homepage" text="See Code Repos" />
+                        <Button to="/planet-generator" className="animation-glow btn-homepage" text="Visit the Planet Generator" />
+                        <Button target="_blank" rel="noopener noreferrer" to="https://www.linkedin.com/in/travis-purcell-97b365174/" className="animation-glow btn-homepage" text="Let's Connect" />
+                        <Button target="_blank" rel="noopener noreferrer" to="https://github.com/tpurcell-frontend" className="animation-glow btn-homepage" text="See Code Repos" />
                     </div>
                 </div>
             </section>

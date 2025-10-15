@@ -1,6 +1,7 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import babel from "vite-plugin-babel";
+import checker from 'vite-plugin-checker';
 
 const ReactCompilerConfig = { /* ... */ }
 
@@ -12,10 +13,14 @@ export default defineConfig({
         plugins: ['babel-plugin-react-compiler'],
       },
     }),
+    checker({ typescript: true}),
     babel({
       filter: /\.[jt]sx?$/,
       babelConfig: {
-        presets: ["@babel/preset-react"], // if you use TypeScript
+        presets: [
+          "@babel/preset-react",
+          '@babel/preset-typescript'
+        ],
         plugins: [
           ["babel-plugin-react-compiler", ReactCompilerConfig],
         ],

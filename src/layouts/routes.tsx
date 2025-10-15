@@ -6,9 +6,9 @@ import {
 } from "react-router";
 import { NavLink } from "react-router";
 
-import Home from '../pages/Home.jsx'
-import PlanetGenerator from "../pages/PlanetGenerator.jsx";
-import Projects from '../pages/Projects.jsx'
+import Home from '../pages/Home.js'
+import PlanetGenerator from "../pages/PlanetGenerator.js";
+import Projects from '../pages/Projects.js'
 
 const router = createBrowserRouter([
   {
