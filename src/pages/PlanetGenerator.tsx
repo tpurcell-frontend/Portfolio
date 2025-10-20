@@ -82,17 +82,19 @@ function PlanetGenerator() {
                 <div className="container">
                     <div className="row">
                         <div className="col">
-                            <Heading title="Planet Generator" subheading=" The Planet Generator is an example of React componentization, user input and data manipulation, resulting in the output of flexible and scalable objects." />
-                            {planetResult ? <p className="tooltip-hint mt-4 mb-0">Hover, tap or focus your planet to view the results.</p> : ""}
+                            <Heading title="Planet Generator" subheading="The Planet Generator is an example of React componentization, user input and data manipulation, resulting in the output of flexible and scalable objects. This project is written in TypeScript and uses Cypress testing." />
+                            {planetResult && <p className="tooltip-hint mt-4 mb-0">Hover, tap or focus your planet to view the results.</p>}
                             <div className="button-wrapper mt-4">
+                                <Button target="_blank" rel="noopener noreferrer" text="See the Code Repo" to="https://github.com/tpurcell-frontend/Portfolio" />
                                 <Button onClick={showModal} 
-                                        onKeyDown={(e) => {
-                                            if (e.key === 'Enter' || e.key === ' ') {
-                                                e.preventDefault(); 
-                                                showModal();
-                                            }
-                                        }}
-                                        text={buttonText} />
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter' || e.key === ' ') {
+                                            e.preventDefault(); 
+                                            showModal();
+                                        }
+                                    }}
+                                    text={buttonText} 
+                                />
                             </div>
                         </div>
                     </div>

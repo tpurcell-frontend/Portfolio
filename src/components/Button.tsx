@@ -17,7 +17,7 @@ type ButtonProps = {
     onKeyDown?: (e: React.KeyboardEvent<HTMLAnchorElement>) => void;
 };
 
-function Button({className, buttonDirection, to, buttonType, text, onClick, onKeyDown}: ButtonProps) {
+function Button({target, rel, className, buttonDirection, to, buttonType, text, onClick, onKeyDown}: ButtonProps) {
     const [reverseButton, setReverseButton] = useState(false);
 
     function renderIcon() {
@@ -32,6 +32,8 @@ function Button({className, buttonDirection, to, buttonType, text, onClick, onKe
 
     return (
         <a 
+            target={target}
+            rel={rel}
             tabIndex={0}
             href={to}
             onClick={() => onClick && onClick()} 
