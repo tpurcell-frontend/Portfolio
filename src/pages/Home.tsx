@@ -48,7 +48,7 @@ function Home() {
                 <div className="container">
                     <h1 className="mb-0">Hello, my name is Travis. </h1>
                     <p className="mb-0 mt-4">I'm a Full-Stack Developer with 6+ years of experience building responsive, scalable, and functional web applications.</p>
-                    <p className="mb-0 mt-4">Hands-on experience in React.ks, Next.js JavaScript, TypeScript, CSS, HTML, PHP, Figma, WordPress and Drupal. Skilled in building front-end interfaces, implementing back-end logic, and integrating APIs to deliver end-to-end solutions.</p>
+                    <p className="mb-0 mt-4">Hands-on experience in React.js, Next.js JavaScript, TypeScript, CSS, HTML, PHP, Figma, WordPress and Drupal. Skilled in building front-end interfaces, implementing back-end logic, and integrating APIs to deliver end-to-end solutions.</p>
                     <p className="mb-0 mt-4">Experienced in Agile, interdepartmental collaboration, mentoring and maintaining high-quality code.</p>
                     <p className="mb-0 mt-4">My previous projects include:</p>
                     <ul>
