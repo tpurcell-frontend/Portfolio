@@ -7,8 +7,9 @@ import {
 import { NavLink } from "react-router";
 
 import Home from '../pages/Home.js'
-import PlanetGenerator from "../pages/PlanetGenerator.js";
 import Projects from '../pages/Projects.js'
+import PlanetGenerator from "../pages/PlanetGenerator.js";
+import SandwichMaker from "../pages/SandwichMaker.js";
 
 const router = createBrowserRouter([
   {
@@ -17,14 +18,18 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />
-      },
+      },    
       {
-        path: 'planet-generator',
-        element: <PlanetGenerator />,
-      },
-      {
-        path: 'projects',
-        element: <Projects />,
+        children: [
+          {
+            path: '/projects/planet-generator',
+            element: <PlanetGenerator />,
+          },
+          {
+            path: '/projects/sandwich-maker',
+            element: <SandwichMaker />,
+          },
+        ]
       },
     ]
   },

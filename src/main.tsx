@@ -14,6 +14,6 @@ if (!container) throw new Error("Root container missing in index.html");
 createRoot(container).render(
   <StrictMode>
     <RouterProvider router={router} />
-    <Analytics />
+    {/* <Analytics /> */}
   </StrictMode>,
 )

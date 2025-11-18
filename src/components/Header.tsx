@@ -1,6 +1,7 @@
 import React from "react";
 
 import '../assets/styles/components/Header.scss'
+import '../assets/styles/components/Menu.scss'
 
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
@@ -13,10 +14,16 @@ function Header() {
                     <div className="col">
                         <div className="header-info">
                             <span><a href="/">Travis Purcell's Portfolio</a></span>
-                            <nav>
+                            <nav className="menu">
                                 <ul>
-                                    <li><a href="/planet-generator">Planet Generator</a></li>
-                                    <li><a target="_blank" href="https://portfolio-wp-eta.vercel.app/">WordPress Portfolio</a></li>
+                                    <li>
+                                        <a href="#">Projects</a>
+                                        <ul className="menu-dropdown">
+                                            <li><a href="/projects/planet-generator">Planet Generator</a></li>
+                                            <li><a href="/projects/sandwich-maker">Sandwich Maker</a></li>
+                                            <li><a target="_blank" href="https://portfolio-wp-eta.vercel.app/">WordPress Portfolio</a></li>
+                                        </ul>
+                                    </li>
                                     <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/travis-purcell-97b365174/">LinkedIn</a><ArrowOutwardIcon className="external"/></li>
                                     <li><a target="_blank"  href="https://github.com/tpurcell-frontend">Github</a><ArrowOutwardIcon className="external"/></li>
                                 </ul>
