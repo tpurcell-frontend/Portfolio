@@ -20,6 +20,7 @@ function Header() {
                                         <a href="#">Projects</a>
                                         <ul className="menu-dropdown">
                                             <li><a href="/projects/planet-generator">Planet Generator</a></li>
+                                            <li><a href="/projects/todo-list">ToDo List</a></li>
                                             <li><a href="/projects/sandwich-maker">Sandwich Maker</a></li>
                                             <li><a target="_blank" href="https://portfolio-wp-eta.vercel.app/">WordPress Portfolio</a></li>
                                         </ul>

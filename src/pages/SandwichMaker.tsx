@@ -8,7 +8,7 @@ import '../assets/styles/components/Sandwich.scss'
 
 import RocketIcon from '@mui/icons-material/Rocket';
 
-function Projects() {
+function SandwichMaker() {
     const [buttonText, setButtonText] = useState('Launch');
     const [modalStatus, setModalStatus] = useState(false);
 
@@ -51,4 +51,4 @@ function Projects() {
     )
 }
 
-export default Projects;
+export default SandwichMaker;

@@ -7,6 +7,7 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 type ButtonProps = {
     className?: string;
+    spaceship?: boolean;
     target?: string;
     rel?: string;
     buttonDirection?: string; 
@@ -17,16 +18,18 @@ type ButtonProps = {
     onKeyDown?: (e: React.KeyboardEvent<HTMLAnchorElement>) => void;
 };
 
-function Button({target, rel, className, buttonDirection, to, buttonType, text, onClick, onKeyDown}: ButtonProps) {
+function Button({target, rel, className, spaceship, buttonDirection, to, buttonType, text, onClick, onKeyDown}: ButtonProps) {
     const [reverseButton, setReverseButton] = useState(false);
 
     function renderIcon() {
 
-        if (buttonDirection == "Previous") {
-            setReverseButton(true);
-            return <RocketIcon className="rocketIcon" />
-        } else {
-            return <RocketLaunchIcon className="rocketLaunchIcon" />
+        if (spaceship) {
+            if (buttonDirection == "Previous") {
+                setReverseButton(true);
+                return <RocketIcon className="rocketIcon" />
+            } else {
+                return <RocketLaunchIcon className="rocketLaunchIcon" />
+            }
         }
     }
 

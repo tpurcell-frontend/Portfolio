@@ -85,8 +85,8 @@ function PlanetGenerator() {
                             <Heading title="Planet Generator" subheading="The Planet Generator is an example of React componentization, user input and data manipulation, resulting in the output of flexible and scalable objects. This project is written in TypeScript and uses Cypress testing." />
                             {planetResult && <p className="tooltip-hint mt-4 mb-0">Hover, tap or focus your planet to view the results.</p>}
                             <div className="button-wrapper mt-4">
-                                <Button target="_blank" rel="noopener noreferrer" text="See the Code Repo" to="https://github.com/tpurcell-frontend/Portfolio" />
-                                <Button onClick={showModal} 
+                                <Button spaceship={true} target="_blank" rel="noopener noreferrer" text="See the Code Repo" to="https://github.com/tpurcell-frontend/Portfolio" />
+                                <Button spaceship={true} onClick={showModal} 
                                     onKeyDown={(e) => {
                                         if (e.key === 'Enter' || e.key === ' ') {
                                             e.preventDefault(); 

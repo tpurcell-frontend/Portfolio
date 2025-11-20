@@ -10,6 +10,7 @@ import Home from '../pages/Home.js'
 import Projects from '../pages/Projects.js'
 import PlanetGenerator from "../pages/PlanetGenerator.js";
 import SandwichMaker from "../pages/SandwichMaker.js";
+import ToDoList from "../pages/ToDoList.js";
 
 const router = createBrowserRouter([
   {
@@ -24,6 +25,10 @@ const router = createBrowserRouter([
           {
             path: '/projects/planet-generator',
             element: <PlanetGenerator />,
+          },
+          {
+            path: '/projects/todo-list',
+            element: <ToDoList />,
           },
           {
             path: '/projects/sandwich-maker',

@@ -131,6 +131,7 @@ function Form({generatePlanet}: FormProps) {
                     </div>
                     <div className="button-wrapper mt-4">
                         <Button 
+                            spaceship={true}
                             onClick={formNextPage}  
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
@@ -152,6 +153,7 @@ function Form({generatePlanet}: FormProps) {
 
                     <div className="button-wrapper mt-4">
                         <Button 
+                            spaceship={true}
                             onClick={formPreviousPage} 
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
@@ -163,6 +165,7 @@ function Form({generatePlanet}: FormProps) {
                             text="Previous" />
 
                         <Button 
+                            spaceship={true}
                             onClick={formNextPage} 
                             onKeyDown={(e) => {
                                 if (e.key === 'Enter' || e.key === ' ') {
@@ -184,23 +187,27 @@ function Form({generatePlanet}: FormProps) {
                     </div>
 
                     <div className="button-wrapper mt-4">
-                        <Button onClick={formPreviousPage} 
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter' || e.key === ' ') {
-                                        e.preventDefault(); 
-                                        formPreviousPage();
-                                    }
-                                }} 
-                                buttonDirection="Previous"  text="Previous" />
+                        <Button 
+                            spaceship={true}
+                            onClick={formPreviousPage} 
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault(); 
+                                    formPreviousPage();
+                                }
+                            }} 
+                            buttonDirection="Previous"  text="Previous" />
 
-                        <Button onClick={handlePlanet} 
-                                onKeyDown={(e) => {
-                                    if (e.key === 'Enter' || e.key === ' ') {
-                                        e.preventDefault(); 
-                                        handlePlanet();
-                                    }
-                                }} 
-                                text="Generate"/>
+                        <Button 
+                            spaceship={true}
+                            onClick={handlePlanet} 
+                            onKeyDown={(e) => {
+                                if (e.key === 'Enter' || e.key === ' ') {
+                                    e.preventDefault(); 
+                                    handlePlanet();
+                                }
+                            }} 
+                            text="Generate"/>
                     </div>
                 </>
             )}

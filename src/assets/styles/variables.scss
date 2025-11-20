@@ -27,6 +27,7 @@ $white: #fff;
 $gray: #333;
 $red: #f00;
 $blue: #4087a5;
+$blue2: #29ABE2;
 $purple: #b4649c;
 $purple2: #9b4b83;
 $purple3: #a4508b;
@@ -94,3 +95,6 @@ a:not(button) {
         font-size: 20px;
     }
 }
+
+// Transitions
+$primary-transition: all 0.25s ease-in-out !default;
