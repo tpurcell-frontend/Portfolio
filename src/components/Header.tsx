@@ -22,7 +22,7 @@ function Header() {
                                             <li><a href="/projects/planet-generator">Planet Generator</a></li>
                                             <li><a href="/projects/todo-list">ToDo List</a></li>
                                             <li><a href="/projects/sandwich-maker">Sandwich Maker</a></li>
-                                            <li><a target="_blank" href="https://portfolio-wp-eta.vercel.app/">WordPress Portfolio</a></li>
+                                            {/* <li><a target="_blank" href="https://portfolio-wp-eta.vercel.app/">WordPress Portfolio</a></li> */}
                                         </ul>
                                     </li>
                                     <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/travis-purcell-97b365174/">LinkedIn</a><ArrowOutwardIcon className="external"/></li>
