@@ -1,0 +1,117 @@
+import { DashboardCard } from '../types/DashboardCard';
+
+const cards: DashboardCard[] = [
+  {
+    title: 'Dashboard',
+    description: 'This dashboard provides a clear, real-time overview of the user’s financial health across all accounts. It highlights key banking metrics such as total balances, spending trends, upcoming bills, credit score status, investment performance, and security alerts. Each card surfaces essential information at a glance while offering quick navigation to deeper details. The layout is designed for simplicity, clarity, and quick decision-making, helping users monitor activity, manage finances, and stay informed with minimal effort.',
+    width: '100%'
+  },
+  {
+    title: 'Planet Generator',
+    description: 'The Planet Generator is an example of React componentization, user input and data manipulation, resulting in the output of flexible and scalable objects. This project is written in TypeScript and uses Cypress testing.',
+    footer: 'See the Project',
+    link: '/projects/planet-generator',
+    width: `calc(33.33% - 8px)`,
+    project: true,
+    blank: true,
+  },
+  {
+    title: 'Sandwich Maker',
+    description: 'The Sandwich Maker is an example of React componentization, user input and data manipulation, resulting in the output of flexible and scalable objects. This project is written in TypeScript and uses Cypress testing.',
+    footer: 'See the Project',
+    link: '/projects/sandwich-maker',
+    width: `calc(33.33% - 8px)`,
+    project: true,
+    blank: true,
+
+  },
+  {
+    title: 'ToDo List',
+    description: 'The To-Do List renders a dynamic To-Do list where users can add and delete tasks. It uses localStorage to save tasks without using the database for demonstration purposes.',
+    footer: 'See the Project',
+    link: '/projects/todo-list',
+    width: `calc(33.33% - 8px)`,
+    project: true,
+    blank: true,
+  },
+  {
+    title: 'Total Account Balance',
+    value: '$128,450.22',
+    description: 'Combined balance across checking, savings, and investment accounts.',
+    footer: 'Updated 5 minutes ago',
+    width: `calc(33.33% - 8px)`,
+  },
+  {
+    title: 'Monthly Spending',
+    value: '$3,742.10',
+    description: 'Total spending for the current billing cycle across all linked cards.',
+    footer: 'Spending breakdown',
+    link: '#spending',
+    width: `calc(33.33% - 8px)`,
+  },
+  {
+    title: 'Fraud Alerts',
+    value: 'No alerts',
+    description: 'No unusual activity detected across any accounts.',
+    footer: 'Security center',
+    link: '#security',
+    width: `calc(33.33% - 8px)`,
+  },
+  {
+    title: 'Credit Score',
+    value: '782',
+    description: 'Excellent credit rating with no issues detected in the last 90 days.',
+    footer: 'Last pulled today',
+    width: '100%'
+
+  },
+  {
+    title: 'Pending Transactions',
+    value: '14',
+    description: 'Transactions currently awaiting merchant confirmation.',
+    footer: 'Review transactions',
+    link: '#transactions/pending',
+    width: `calc(50% - 6px)`
+  },
+  {
+    title: 'Savings Goal Progress',
+    value: '62%',
+    description: 'You’re on track to reach your “Emergency Fund” goal of $20,000.',
+    footer: 'Estimated completion: 5 months',
+    width: `calc(50% - 6px)`
+  },
+  {
+    title: 'Investment Portfolio',
+    value: '+4.8% this month',
+    description: 'Portfolio continues upward trend driven by tech sector gains.',
+    footer: 'View investments',
+    link: '#investments',
+    width: '100%'
+  },
+  {
+    title: 'Upcoming Bills',
+    value: '$1,230.95',
+    description: 'Auto-pay scheduled for 8 upcoming bills this month.',
+    footer: 'Manage auto-pay',
+    link: '#billing',
+    width: `calc(33.33% - 8px)`,
+  },
+  {
+    title: 'Loan Status',
+    value: '$92,100 remaining',
+    description: 'Mortgage loan at 3.2% APR — 17 years left.',
+    footer: 'View amortization',
+    link: '#loans/mortgage',
+    width: `calc(33.33% - 8px)`,
+  },
+  {
+    title: 'Rewards Points',
+    value: '84,920 pts',
+    description: 'Points redeemable for travel, cash back, or gift cards.',
+    footer: 'Redeem points',
+    link: '#rewards',
+    width: `calc(33.33% - 8px)`,
+  },
+];
+
+export default cards;

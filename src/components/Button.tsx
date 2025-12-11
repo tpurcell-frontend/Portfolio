@@ -7,13 +7,13 @@ import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 type ButtonProps = {
     className?: string;
-    spaceship?: boolean;
+    spaceship?: boolean | "" | null;
     target?: string;
     rel?: string;
     buttonDirection?: string; 
     to?: string; 
     buttonType?: string; 
-    text: string; 
+    text: string | null; 
     onClick?: () => void;
     onKeyDown?: (e: React.KeyboardEvent<HTMLAnchorElement>) => void;
 };

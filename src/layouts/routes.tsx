@@ -7,10 +7,11 @@ import {
 import { NavLink } from "react-router";
 
 import Home from '../pages/Home.js'
-import Projects from '../pages/Projects.js'
-import PlanetGenerator from "../pages/PlanetGenerator.js";
-import SandwichMaker from "../pages/SandwichMaker.js";
-import ToDoList from "../pages/ToDoList.js";
+import Projects from '../pages/Projects'
+import Dashboard from "../pages/Dashboard";
+import PlanetGenerator from "../pages/PlanetGenerator";
+import SandwichMaker from "../pages/SandwichMaker";
+import ToDoList from "../pages/ToDoList";
 
 const router = createBrowserRouter([
   {
@@ -23,16 +24,20 @@ const router = createBrowserRouter([
       {
         children: [
           {
+            path: '/projects/dashboard',
+            element: <Dashboard />,
+          },
+          {
             path: '/projects/planet-generator',
             element: <PlanetGenerator />,
           },
           {
-            path: '/projects/todo-list',
-            element: <ToDoList />,
-          },
-          {
             path: '/projects/sandwich-maker',
             element: <SandwichMaker />,
+          },
+          {
+            path: '/projects/todo-list',
+            element: <ToDoList />,
           },
         ]
       },

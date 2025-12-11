@@ -1,0 +1,93 @@
+@use '../variables.scss' as *;
+
+.dashboard {
+
+  .MuiCard-root {
+    background-color: $dashboard;
+    border-radius: 10px;
+    color: $white;
+    width: 100%;
+    max-height: 400px;
+    overflow-y: scroll;
+
+    .MuiCardContent-root {
+      padding: 40px;
+    }
+
+    h3 {
+      color: $blue2;
+      font-weight: bold;
+    }
+  }
+}
+
+.col.dashboard__menu {
+  position: relative;
+  background-color: $dashboard;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: 100%;
+
+  .dashboard__sticky-container {
+    border-radius: 10px;
+  }
+
+  svg {
+    width: 1.25em;
+    height: 1.25em;
+  }
+}
+
+.dashboard__card-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.dashboard__card-project {
+  color: $blue2;
+}
+
+.dashboard__card-footer {
+
+  p {
+    font-size: 14px;
+    margin-top: 50px;
+  }
+}
+
+@media (min-width: 769px) {
+
+  .dashboard {
+
+    .MuiCard-root {
+      max-height: 100%;
+    }
+  }
+
+  .col.dashboard__menu {
+    background-color: $dashboard;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-width: 75px;
+    height: 100%;
+
+    .dashboard__sticky-container {
+      position: fixed;
+
+      background-color: $dashboard;
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      row-gap: 1.25em;
+      padding: 1.5em 0;
+      max-width: 75px;
+      width: 100%;
+    }
+  }
+}
