@@ -11,7 +11,7 @@
     overflow-y: scroll;
 
     .MuiCardContent-root {
-      padding: 40px;
+      padding: 20px;
     }
 
     h3 {
@@ -23,7 +23,6 @@
 
 .col.dashboard__menu {
   position: relative;
-  background-color: $dashboard;
   align-items: center;
   display: flex;
   flex-direction: column;
@@ -31,7 +30,10 @@
   height: 100%;
 
   .dashboard__sticky-container {
+    background-color: $dashboard;
     border-radius: 10px;
+    padding: 20px;
+    width: 100%;
   }
 
   svg {
@@ -40,10 +42,27 @@
   }
 }
 
-.dashboard__card-wrapper {
+.dashboard__menu-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1em;
+}
+
+.dashboard__menu-bottom {
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 1px solid $white;
+  gap: 1em;
+  padding-top: 1em;
+  margin-top: 1em;
+}
+
+
+.col.dashboard__card-wrapper {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+  margin-top: 1em;
 }
 
 .dashboard__card-project {
@@ -64,6 +83,10 @@
 
     .MuiCard-root {
       max-height: 100%;
+
+      .MuiCardContent-root {
+        padding: 40px;
+      }
     }
   }
 
@@ -89,5 +112,20 @@
       max-width: 75px;
       width: 100%;
     }
+  }
+
+  .dashboard__menu-top {
+    flex-direction: column;
+    row-gap: 1.25em;
+  }
+
+  .dashboard__menu-bottom {
+    flex-direction: column;
+    row-gap: 1.25em;
+    margin-top: 0;
+  }
+
+  .col.dashboard__card-wrapper {
+    margin-top: 0;
   }
 }

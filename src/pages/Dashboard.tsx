@@ -13,6 +13,11 @@ import AddTaskIcon from '@mui/icons-material/AddTask';
 import ApiIcon from '@mui/icons-material/Api';
 import GridViewIcon from '@mui/icons-material/GridView';
 import LogoutIcon from '@mui/icons-material/Logout';
+
+import Filter1Icon from '@mui/icons-material/Filter1';
+import Filter2Icon from '@mui/icons-material/Filter2';
+import Filter3Icon from '@mui/icons-material/Filter3';
+
 import Tooltip from '@mui/material/Tooltip'
 
 import Card from '@mui/material/Card';
@@ -71,32 +76,45 @@ function Dashboard() {
                     <div className="row">
                         <div className="col col-12 col-md-1 dashboard__menu">
                             <div className="dashboard__sticky-container">
-                                {/* Account balance */}
-                                <Tooltip title="Account balance" arrow>
-                                    <AccountBalanceIcon />
-                                </Tooltip>
-                                {/* Add a card */}
-                                <Tooltip title="Add a card" arrow>
-                                    <AddCardIcon />
-                                </Tooltip>
-                                {/* Admin panel settings */}
-                                <Tooltip title="Admin panel settings" arrow>
-                                    <AdminPanelSettingsIcon />
-                                </Tooltip>
-                                {/* Add a task */}
-                                <Tooltip title="Add a task" arrow>
-                                    <AddTaskIcon />
-                                </Tooltip>
-                                {/* Api */}
-                                <Tooltip title="Api tool" arrow>
-                                    <ApiIcon />
-                                </Tooltip>
-                                <Tooltip title="Toggle Gridview" arrow>
-                                    <GridViewIcon />
-                                </Tooltip>
-                                <Tooltip title="Logout" arrow>
-                                    <LogoutIcon />
-                                </Tooltip>
+                                <div className="dashboard__menu-top">
+                                    {/* Account balance */}
+                                    <Tooltip title="Account balance" arrow>
+                                        <AccountBalanceIcon />
+                                    </Tooltip>
+                                    {/* Add a card */}
+                                    <Tooltip title="Add a card" arrow>
+                                        <AddCardIcon />
+                                    </Tooltip>
+                                    {/* Admin panel settings */}
+                                    <Tooltip title="Admin panel settings" arrow>
+                                        <AdminPanelSettingsIcon />
+                                    </Tooltip>
+                                    {/* Add a task */}
+                                    <Tooltip title="Add a task" arrow>
+                                        <AddTaskIcon />
+                                    </Tooltip>
+                                    {/* Api */}
+                                    <Tooltip title="Api tool" arrow>
+                                        <ApiIcon />
+                                    </Tooltip>
+                                    <Tooltip title="Toggle Gridview" arrow>
+                                        <GridViewIcon />
+                                    </Tooltip>
+                                    <Tooltip title="Logout" arrow>
+                                        <LogoutIcon />
+                                    </Tooltip>
+                                </div>
+                                <div className="dashboard__menu-bottom">
+                                    <Tooltip title="Filter 1" arrow>
+                                        <Filter1Icon />
+                                    </Tooltip>
+                                    <Tooltip title="Filter 2" arrow>
+                                        <Filter2Icon />
+                                    </Tooltip>
+                                    <Tooltip title="Filter 2" arrow>
+                                        <Filter3Icon />
+                                    </Tooltip>
+                                </div>
                             </div>
                         </div>
                         <div className="col col-12 col-md-11 dashboard__card-wrapper">
