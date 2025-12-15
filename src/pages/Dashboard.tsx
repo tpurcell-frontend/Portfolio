@@ -6,45 +6,80 @@ import Button from '../components/Button'
 import '../assets/styles/App.scss'
 import '../assets/styles/components/Dashboard.scss'
 
-import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
-import AddCardIcon from '@mui/icons-material/AddCard';
-import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
-import AddTaskIcon from '@mui/icons-material/AddTask';
-import ApiIcon from '@mui/icons-material/Api';
-import GridViewIcon from '@mui/icons-material/GridView';
-import LogoutIcon from '@mui/icons-material/Logout';
 
-import Filter1Icon from '@mui/icons-material/Filter1';
-import Filter2Icon from '@mui/icons-material/Filter2';
-import Filter3Icon from '@mui/icons-material/Filter3';
 
 import Tooltip from '@mui/material/Tooltip'
 
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
+// Dashboard Cards
 import dashboardCards from '../data/dashboard-cards';
 import { DashboardCard } from '../types/DashboardCard';
 
-function Dashboard() {
+// Icons & Tooltips
+import DashboardIcon from '@mui/icons-material/Dashboard';
+import AccountTreeIcon from '@mui/icons-material/AccountTree';
+import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import SavingsIcon from '@mui/icons-material/Savings';
+import CreditCardIcon from '@mui/icons-material/CreditCard';
+import ElectricBoltIcon from '@mui/icons-material/ElectricBolt';
+import RestartAltIcon from '@mui/icons-material/RestartAlt';
 
-    function createCard(CardItem: DashboardCard) {
+import AccountBalanceIcon from '@mui/icons-material/AccountBalance';
+import AddCardIcon from '@mui/icons-material/AddCard';
+import AdminPanelSettingsIcon from '@mui/icons-material/AdminPanelSettings';
+import AddTaskIcon from '@mui/icons-material/AddTask';
+import ApiIcon from '@mui/icons-material/Api';
+import LogoutIcon from '@mui/icons-material/Logout';
+
+import { TooltipItem } from '../types/TooltipItem';
+
+const dashboardFilterIcons: TooltipItem[] = [
+    {title: 'Filter main', icon: <DashboardIcon/>, filter: true},
+    {title: 'Filter projects', icon: <AccountTreeIcon/>, filter: true},
+    {title: 'Filter spending', icon: <ShoppingCartCheckoutIcon/>, filter: true},
+    {title: 'Filter savings', icon: <SavingsIcon/>, filter: true},
+    {title: 'Filted debt', icon: <CreditCardIcon/>, filter: true},
+    {title: 'Filter utilities', icon: <ElectricBoltIcon/>, filter: true},
+    {title: 'Reset filters', icon: <RestartAltIcon/>, filter: true},
+];
+
+const dashboardIcons: TooltipItem[] = [
+    {title: 'Account balance', icon: <AccountBalanceIcon/>},
+    {title: 'Add a card', icon: <AddCardIcon/>},
+    {title: 'Admin panel settings', icon: <AdminPanelSettingsIcon/>},
+    {title: 'Add a task', icon: <AddTaskIcon/>},
+    {title: 'API tool', icon: <ApiIcon/>},
+    {title: 'Logout', icon: <LogoutIcon/>},
+];
+
+function Dashboard() {
+    const [cardFilter, setCardFilter] = useState<string[]>([]);
+    const iconStyle = {fill: '#29ABE2'};
+
+    function createCard(CardItem: DashboardCard, index: number) {
 
         return (
-            <Card sx={{ 
-                maxWidth: 
-                    { 
-                        xs: '100%', 
-                        md: CardItem.width,
-                    }
-                }}>
+            <Card
+                key={index}
+                sx={{ 
+                    maxWidth: 
+                        { 
+                            xs: '100%', 
+                            md: CardItem.width,
+                        }
+                    }}
+                >
                 <CardContent>
                     {CardItem.project ? 
                         <h2 className="dashboard__card-project">{CardItem.title}</h2>
                     :
                         <h2>{CardItem.title}</h2>
                     }
-                    <h3 className="mb-0 mt-4">{CardItem.value}</h3>
+                    {CardItem.value &&  
+                        <h3 className="mb-0 mt-4">{CardItem.value}</h3> 
+                    }
                     <p className="mb-0 mt-2">{CardItem.description}</p>
                     {CardItem.footer && CardItem.link ?
                         <div className="button-wrapper mb-0 mt-4">
@@ -57,6 +92,24 @@ function Dashboard() {
                     }
                 </CardContent>
             </Card>
+        )
+    }
+
+    function createTooltip(item: TooltipItem) {
+
+        return (
+            <Tooltip 
+                title={item.title} 
+                style={cardFilter.includes(item.title) ? iconStyle : undefined}
+                arrow placement="right" 
+                onClick={
+                    item.filter ?
+                    () => {
+                        item.title == 'Reset filters' ? setCardFilter([]) : setCardFilter([...cardFilter, item.title]);
+                    } : undefined
+                }>
+                {item.icon}
+            </Tooltip>
         )
     }
 
@@ -77,49 +130,20 @@ function Dashboard() {
                         <div className="col col-12 col-md-1 dashboard__menu">
                             <div className="dashboard__sticky-container">
                                 <div className="dashboard__menu-top">
-                                    {/* Account balance */}
-                                    <Tooltip title="Account balance" arrow>
-                                        <AccountBalanceIcon />
-                                    </Tooltip>
-                                    {/* Add a card */}
-                                    <Tooltip title="Add a card" arrow>
-                                        <AddCardIcon />
-                                    </Tooltip>
-                                    {/* Admin panel settings */}
-                                    <Tooltip title="Admin panel settings" arrow>
-                                        <AdminPanelSettingsIcon />
-                                    </Tooltip>
-                                    {/* Add a task */}
-                                    <Tooltip title="Add a task" arrow>
-                                        <AddTaskIcon />
-                                    </Tooltip>
-                                    {/* Api */}
-                                    <Tooltip title="Api tool" arrow>
-                                        <ApiIcon />
-                                    </Tooltip>
-                                    <Tooltip title="Toggle Gridview" arrow>
-                                        <GridViewIcon />
-                                    </Tooltip>
-                                    <Tooltip title="Logout" arrow>
-                                        <LogoutIcon />
-                                    </Tooltip>
+                                    {dashboardFilterIcons.map(createTooltip)}
                                 </div>
                                 <div className="dashboard__menu-bottom">
-                                    <Tooltip title="Filter 1" arrow>
-                                        <Filter1Icon />
-                                    </Tooltip>
-                                    <Tooltip title="Filter 2" arrow>
-                                        <Filter2Icon />
-                                    </Tooltip>
-                                    <Tooltip title="Filter 2" arrow>
-                                        <Filter3Icon />
-                                    </Tooltip>
+                                   {dashboardIcons.map(createTooltip)}
                                 </div>
                             </div>
                         </div>
                         <div className="col col-12 col-md-11 dashboard__card-wrapper">
                             {/* Card Item */}
-                            {dashboardCards.map(createCard)}
+                            {
+                                cardFilter.length === 0 ? 
+                                dashboardCards.map(createCard) : 
+                                dashboardCards.filter(CardItem => cardFilter.includes(CardItem.filter)).map(createCard)
+                            }
                         </div>
                     </div>
                 </div>

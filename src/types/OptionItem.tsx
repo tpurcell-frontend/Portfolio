@@ -1,4 +1,4 @@
-export type OptionItem = {
+export interface OptionItem {
   id: string;
   name: string;
   value: string;

@@ -43,6 +43,11 @@
     width: 1.25em;
     height: 1.25em;
   }
+
+  svg:hover,
+  svg:focus-visible {
+    fill: $blue2;
+  }
 }
 
 .dashboard__menu-top {

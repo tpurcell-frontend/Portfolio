@@ -1,4 +1,4 @@
-export type DashboardCard = {
+export interface DashboardCard {
   title: string;
   value?: string;
   description: string;
@@ -7,4 +7,5 @@ export type DashboardCard = {
   width: string;
   project?: boolean;
   blank?: boolean;
+  filter: string;
 };
