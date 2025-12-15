@@ -63,9 +63,9 @@ function Dashboard() {
     return (
         <>
             { /* Starfield Background */}
-            {/* <div className="starfield">
+            <div className="starfield">
                 <div className="stars"></div>
-            </div> */}
+            </div>
             
             {/* Header */}
             <Header />

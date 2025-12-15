@@ -4,10 +4,6 @@ header {
   padding: 25px 0;
   position: relative;
   z-index: 3;
-
-  &:has(+ .dashboard) {
-    background-color: $dashboard;
-  }
 }
 
 header span {
