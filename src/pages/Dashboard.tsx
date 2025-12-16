@@ -36,12 +36,12 @@ import LogoutIcon from '@mui/icons-material/Logout';
 import { TooltipItem } from '../types/TooltipItem';
 
 const dashboardFilterIcons: TooltipItem[] = [
-    {title: 'Filter main', icon: <DashboardIcon/>, filter: true},
-    {title: 'Filter projects', icon: <AccountTreeIcon/>, filter: true},
-    {title: 'Filter spending', icon: <ShoppingCartCheckoutIcon/>, filter: true},
-    {title: 'Filter savings', icon: <SavingsIcon/>, filter: true},
-    {title: 'Filter debt', icon: <CreditCardIcon/>, filter: true},
-    {title: 'Filter utilities', icon: <ElectricBoltIcon/>, filter: true},
+    {title: 'Main', icon: <DashboardIcon/>, filter: true},
+    {title: 'Projects', icon: <AccountTreeIcon/>, filter: true},
+    {title: 'Spending', icon: <ShoppingCartCheckoutIcon/>, filter: true},
+    {title: 'Savings', icon: <SavingsIcon/>, filter: true},
+    {title: 'Debt', icon: <CreditCardIcon/>, filter: true},
+    {title: 'Utilities', icon: <ElectricBoltIcon/>, filter: true},
     {title: 'Reset filters', icon: <RestartAltIcon/>, filter: true},
 ];
 
@@ -90,6 +90,9 @@ function Dashboard() {
                             <p>{CardItem.footer}</p>
                         </div>
                     }
+                    <div className="dashboard__card-filter">
+                        <p>{CardItem.filter}</p>
+                    </div>
                 </CardContent>
             </Card>
         )

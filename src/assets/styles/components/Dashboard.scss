@@ -85,6 +85,17 @@
   }
 }
 
+.dashboard__card-filter {
+    
+  p {
+    color: $blue2;
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 50px;
+  }
+}
+
+
 @media (min-width: 769px) {
 
   .dashboard {
