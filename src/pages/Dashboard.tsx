@@ -40,7 +40,7 @@ const dashboardFilterIcons: TooltipItem[] = [
     {title: 'Filter projects', icon: <AccountTreeIcon/>, filter: true},
     {title: 'Filter spending', icon: <ShoppingCartCheckoutIcon/>, filter: true},
     {title: 'Filter savings', icon: <SavingsIcon/>, filter: true},
-    {title: 'Filted debt', icon: <CreditCardIcon/>, filter: true},
+    {title: 'Filter debt', icon: <CreditCardIcon/>, filter: true},
     {title: 'Filter utilities', icon: <ElectricBoltIcon/>, filter: true},
     {title: 'Reset filters', icon: <RestartAltIcon/>, filter: true},
 ];
@@ -104,9 +104,20 @@ function Dashboard() {
                 arrow placement="right" 
                 onClick={
                     item.filter ?
+                    // If the item is filtered, run the function.
                     () => {
-                        item.title == 'Reset filters' ? setCardFilter([]) : setCardFilter([...cardFilter, item.title]);
-                    } : undefined
+                        // If the item is the reset filters button, empty the filter array.
+                        item.title == 'Reset filters' ? setCardFilter([]) 
+                        // Else check the filter array.
+                        : setCardFilter(prev => 
+                            prev.includes(item.title) 
+                            // If the filter array includes the selected item title, remove the item from the array.
+                            ? prev.filter(f => f !== item.title)
+                            // Else add the item to the array.
+                            : [...prev, item.title]
+                        )
+                    } 
+                    : undefined
                 }>
                 {item.icon}
             </Tooltip>
