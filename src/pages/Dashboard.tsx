@@ -55,6 +55,7 @@ const dashboardIcons: TooltipItem[] = [
 ];
 
 function Dashboard() {
+    const [searchTerm, setSearchTerm] = useState('');
     const [cardFilter, setCardFilter] = useState<string[]>([]);
     const iconStyle = {fill: '#29ABE2'};
 
@@ -141,8 +142,9 @@ function Dashboard() {
             <section className="dashboard">
                 <div className="container">
                     <div className="row">
-                        <div className="col col-12 col-md-1 dashboard__menu">
+                        <div className="col col-12 col-lg-1 dashboard__menu">
                             <div className="dashboard__sticky-container">
+                                {/* Toolbar */}
                                 <div className="dashboard__menu-top">
                                     {dashboardFilterIcons.map(createTooltip)}
                                 </div>
@@ -151,7 +153,12 @@ function Dashboard() {
                                 </div>
                             </div>
                         </div>
-                        <div className="col col-12 col-md-11 dashboard__card-wrapper">
+                        {/* Content Wrapper */}
+                        <div className="col col-12 col-lg-11 dashboard__card-wrapper">
+                            {/* Search Bar */}
+                            <div className="dashboard__search">
+                                <input type="text" placeholder="Search.."></input>
+                            </div>
                             {/* Card Item */}
                             {
                                 cardFilter.length === 0 ? 
