@@ -56,8 +56,8 @@ const dashboardIcons: TooltipItem[] = [
 ];
 
 function Dashboard() {
-    const [searchTerm, setSearchTerm] = useState('');
     const [cardFilter, setCardFilter] = useState<string[]>([]);
+    const [searchTerm, setSearchTerm] = useState<string>('');
     const iconStyle = {fill: '#29ABE2'};
 
     const renderedDashboardCards = dashboardCards.filter(card => {
@@ -68,7 +68,9 @@ function Dashboard() {
 
         const matchesSearch =
             searchTerm === '' ||
-            card.title.toLowerCase().includes(searchTerm.toLowerCase());
+            card.title.toLowerCase().includes(searchTerm.toLowerCase())  ||
+            card.description.toLowerCase().includes(searchTerm.toLowerCase()) ||
+            card.filter.toLowerCase().includes(searchTerm.toLowerCase())
 
         return matchesFilter && matchesSearch;
     });
