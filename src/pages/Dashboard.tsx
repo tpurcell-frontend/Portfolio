@@ -59,7 +59,6 @@ function Dashboard() {
     const [cardFilter, setCardFilter] = useState<string[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const iconStyle = {fill: '#29ABE2'};
-
     const renderedDashboardCards = dashboardCards.filter(card => {
         
         const matchesFilter =
@@ -182,7 +181,13 @@ function Dashboard() {
                             </div>
 
                             {/* Card Item */}
-                            {renderedDashboardCards.map(createCard)}
+                            {
+                                renderedDashboardCards.length === 0 ?
+                                // No results
+                                <div className="dashboard__no-results"><h3>No Results Found.</h3></div>
+                                // Filtered items
+                                : renderedDashboardCards.map(createCard)
+                            }
                         </div>
                     </div>
                 </div>

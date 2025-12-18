@@ -147,6 +147,32 @@
   }
 }
 
+// Results
+.dashboard__no-results {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+
+  height: 100%;
+  width: 100%;
+
+  h3 {
+    font-size: 24px;
+  }
+}
+
+@media (min-width: 769px) {
+  
+  // Results
+  .dashboard__no-results {
+
+    h3 {
+      font-size: 32px;
+    }
+  }
+}
+
 @media (min-width: 1025px) {
 
   .dashboard {
@@ -206,6 +232,17 @@
     input {
       font-size: 1.5em;
       padding: 15px 20px;
+    }
+  }
+}
+
+@media (min-width: 1201px) {
+  
+  // Results
+  .dashboard__no-results {
+
+    h3 {
+      font-size: 42px;
     }
   }
 }
