@@ -34,6 +34,7 @@ import ApiIcon from '@mui/icons-material/Api';
 import LogoutIcon from '@mui/icons-material/Logout';
 
 import { TooltipItem } from '../types/TooltipItem';
+import { create } from '@mui/material/styles/createTransitions'
 
 const dashboardFilterIcons: TooltipItem[] = [
     {title: 'Main', icon: <DashboardIcon/>, filter: true},
@@ -58,6 +59,19 @@ function Dashboard() {
     const [searchTerm, setSearchTerm] = useState('');
     const [cardFilter, setCardFilter] = useState<string[]>([]);
     const iconStyle = {fill: '#29ABE2'};
+
+    const renderedDashboardCards = dashboardCards.filter(card => {
+        
+        const matchesFilter =
+            cardFilter.length === 0 ||
+            cardFilter.includes(card.filter);
+
+        const matchesSearch =
+            searchTerm === '' ||
+            card.title.toLowerCase().includes(searchTerm.toLowerCase());
+
+        return matchesFilter && matchesSearch;
+    });
 
     function createCard(CardItem: DashboardCard, index: number) {
 
@@ -157,14 +171,16 @@ function Dashboard() {
                         <div className="col col-12 col-lg-11 dashboard__card-wrapper">
                             {/* Search Bar */}
                             <div className="dashboard__search">
-                                <input type="text" placeholder="Search.."></input>
+                                <input 
+                                    type="text" 
+                                    placeholder="Search.."
+                                    onChange={e => setSearchTerm(e.target.value)}
+                                    value={searchTerm}>
+                                </input>
                             </div>
+
                             {/* Card Item */}
-                            {
-                                cardFilter.length === 0 ? 
-                                dashboardCards.map(createCard) : 
-                                dashboardCards.filter(CardItem => cardFilter.includes(CardItem.filter)).map(createCard)
-                            }
+                            {renderedDashboardCards.map(createCard)}
                         </div>
                     </div>
                 </div>
