@@ -8,4 +8,5 @@ export interface DashboardCard {
   project?: boolean;
   blank?: boolean;
   filter: string;
+  modal?: string;
 };

@@ -1,15 +1,12 @@
 import React, {useState} from 'react'
 import Header from '../components/Header'
-import Heading from '../components/Heading'
 import Button from '../components/Button'
+import Modal from '../components/Modal'
 
 import '../assets/styles/App.scss'
 import '../assets/styles/components/Dashboard.scss'
 
-
-
 import Tooltip from '@mui/material/Tooltip'
-
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 
@@ -59,6 +56,17 @@ function Dashboard() {
     const [cardFilter, setCardFilter] = useState<string[]>([]);
     const [searchTerm, setSearchTerm] = useState<string>('');
     const iconStyle = {fill: '#29ABE2'};
+    const activeCard = {boxShadow: '0 0 8px rgba(41, 171, 226, 0.7), 0 0 20px rgba(41, 171, 226, 0.35)'};
+    const [modalStatus, setModalStatus] = useState(false);
+
+    function showModal() {
+        setModalStatus(true);
+    }
+
+    function hideModal() {
+        setModalStatus(false);
+    }
+    
     const renderedDashboardCards = dashboardCards.filter(card => {
         
         const matchesFilter =
@@ -78,6 +86,12 @@ function Dashboard() {
 
         return (
             <Card
+                style={
+                    cardFilter.includes(CardItem.filter) || 
+                    searchTerm.length > 0 && CardItem.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                    searchTerm.length > 0 && CardItem.description.toLowerCase().includes(searchTerm.toLowerCase()) ? 
+                    activeCard : undefined
+                }
                 key={index}
                 sx={{ 
                     maxWidth: 
@@ -136,6 +150,10 @@ function Dashboard() {
                             : [...prev, item.title]
                         )
                     } 
+                    : item.modal ? 
+                    () => {
+                        setModalStatus(true);
+                    }
                     : undefined
                 }>
                 {item.icon}

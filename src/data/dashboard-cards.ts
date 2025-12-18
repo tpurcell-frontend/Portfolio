@@ -44,6 +44,7 @@ const cards: DashboardCard[] = [
     footer: 'Updated 5 minutes ago',
     width: `calc(33.33% - 8px)`,
     filter: 'Spending',
+    modal: 'account_balance',
   },
   {
     title: 'Monthly Spending',
