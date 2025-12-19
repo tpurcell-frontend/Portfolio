@@ -1,12 +1,12 @@
 import { DashboardCard } from '../types/DashboardCard';
 
 const cards: DashboardCard[] = [
-  {
-    title: 'Dashboard',
-    description: 'This dashboard provides a clear, real-time overview of the user’s financial health across all accounts. It highlights key banking metrics such as total balances, spending trends, upcoming bills, credit score status, investment performance, and security alerts. Each card surfaces essential information at a glance while offering quick navigation to deeper details. The layout is designed for simplicity, clarity, and quick decision-making, helping users monitor activity, manage finances, and stay informed with minimal effort.',
-    width: '100%',
-    filter: 'Main',
-  },
+  // {
+  //   title: 'Dashboard',
+  //   description: 'This dashboard provides a clear, real-time overview of the user’s financial health across all accounts. It highlights key banking metrics such as total balances, spending trends, upcoming bills, credit score status, investment performance, and security alerts. Each card surfaces essential information at a glance while offering quick navigation to deeper details. The layout is designed for simplicity, clarity, and quick decision-making, helping users monitor activity, manage finances, and stay informed with minimal effort.',
+  //   width: '100%',
+  //   filter: 'Main',
+  // },
   {
     title: 'Planet Generator',
     description: 'The Planet Generator is an example of React componentization, user input and data manipulation, resulting in the output of flexible and scalable objects. This project is written in TypeScript and uses Cypress testing.',

@@ -1,5 +1,6 @@
 import React, {useState} from 'react'
 import Header from '../components/Header'
+import Heading from '../components/Heading'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
 
@@ -34,7 +35,7 @@ import { TooltipItem } from '../types/TooltipItem';
 import { create } from '@mui/material/styles/createTransitions'
 
 const dashboardFilterIcons: TooltipItem[] = [
-    {title: 'Main', icon: <DashboardIcon/>, filter: true},
+    // {title: 'Main', icon: <DashboardIcon/>, filter: true},
     {title: 'Projects', icon: <AccountTreeIcon/>, filter: true},
     {title: 'Spending', icon: <ShoppingCartCheckoutIcon/>, filter: true},
     {title: 'Savings', icon: <SavingsIcon/>, filter: true},
@@ -189,6 +190,11 @@ function Dashboard() {
             <section className="dashboard">
                 <div className="container">
                     <div className="row">
+                        <div className="col col-12">
+                            <Heading title="Dashboard" subheading="The Dashboard component serves as the central interactive hub of the application. It is responsible for displaying a dynamic collection of cards that represent different tools, actions, or sections of the app. The component combines filtering, search, and UI state management to give users a fast and intuitive way to navigate content." />
+                        </div>
+                    </div>
+                    <div className="row mt-5 mb-0">
                         <div className="col col-12 col-lg-1 dashboard__menu">
                             <div className="dashboard__sticky-container">
                                 {/* Toolbar */}
