@@ -113,7 +113,21 @@ function Dashboard() {
                     <p className="mb-0 mt-2">{CardItem.description}</p>
                     {CardItem.footer && CardItem.link ?
                         <div className="button-wrapper mb-0 mt-4">
-                            <Button spaceship={true} target={CardItem.blank ? "_blank" : "_self"} rel="noopener noreferrer" text={CardItem.footer} to={CardItem.link} />
+                            <Button
+                                spaceship={true} 
+                                target={CardItem.blank ? "_blank" : "_self"} 
+                                rel="noopener noreferrer" 
+                                text={CardItem.footer[0]} 
+                                to={CardItem.link[0]} 
+                            />
+                            {CardItem.footer[1] &&
+                            <Button
+                                spaceship={true} 
+                                target={CardItem.blank ? "_blank" : "_self"} 
+                                rel="noopener noreferrer" 
+                                text={CardItem.footer[1]} 
+                                to={CardItem.link[1]} 
+                            />}
                         </div>
                     : CardItem.footer &&
                         <div className="dashboard__card-footer">
