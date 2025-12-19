@@ -195,15 +195,13 @@ function Dashboard() {
                         </div>
                     </div>
                     <div className="row mt-5 mb-0">
-                        <div className="col col-12 col-lg-1 dashboard__menu">
-                            <div className="dashboard__sticky-container">
-                                {/* Toolbar */}
-                                <div className="dashboard__menu-top">
-                                    {dashboardFilterIcons.map(createTooltip)}
-                                </div>
-                                <div className="dashboard__menu-bottom">
-                                   {dashboardIcons.map(createTooltip)}
-                                </div>
+                        <div className="col col-12 col-lg-1 dashboard__sticky-container">
+                            {/* Toolbar */}
+                            <div className="dashboard__menu-top">
+                                {dashboardFilterIcons.map(createTooltip)}
+                            </div>
+                            <div className="dashboard__menu-bottom">
+                                {dashboardIcons.map(createTooltip)}
                             </div>
                         </div>
                         {/* Content Wrapper */}

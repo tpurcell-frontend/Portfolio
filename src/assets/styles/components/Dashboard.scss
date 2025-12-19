@@ -31,32 +31,33 @@
 }
 
 // Sidebar toolbar
-.col.dashboard__menu {
-  position: relative;
-  align-items: center;
+.col.dashboard__sticky-container {
+  position: sticky;
+  top: 0;
+  z-index: 3;
+
   display: flex;
+  align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
+  
+  box-shadow: 5px 0px 10px 5px rgba(0, 0, 0, 0.5);
+  background-color: $dashboard;
+  border-radius: 10px;
+  margin: 0 auto;
+  padding: 20px;
   height: 100%;
+  width: calc(100% - 24px);
+}
 
+svg {
+  width: 1.25em;
+  height: 1.25em;
+}
 
-  .dashboard__sticky-container {
-    background-color: $dashboard;
-    border-radius: 10px;
-    padding: 20px;
-    width: 100%;
-    box-shadow: 5px 0px 10px 5px rgba(0, 0, 0, 0.5);
-  }
-
-  svg {
-    width: 1.25em;
-    height: 1.25em;
-  }
-
-  svg:hover,
-  svg:focus-visible {
-    fill: $blue2;
-  }
+svg:hover,
+svg:focus-visible {
+  fill: $blue2;
 }
 
 .dashboard__menu-top {
@@ -173,7 +174,7 @@
   }
 }
 
-@media (min-width: 1025px) {
+@media (min-width: 992px) {
 
   .dashboard {
 
@@ -187,28 +188,12 @@
     }
   }
 
-  .col.dashboard__menu {
-    background-color: $dashboard;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+  .col.dashboard__sticky-container {
+    padding: 1.5em 0;
     max-width: 75px;
-    height: 100%;
-
-    .dashboard__sticky-container {
-      position: fixed;
-
-      background-color: $dashboard;
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      flex-wrap: wrap;
-      row-gap: 1.25em;
-      padding: 1.5em 0;
-      max-width: 75px;
-      width: 100%;
-    }
+    width: 100%;
+    row-gap: 1.25em;
+    top: 20px;
   }
 
   .dashboard__menu-top {
