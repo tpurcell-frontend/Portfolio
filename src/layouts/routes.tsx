@@ -31,10 +31,10 @@ const router = createBrowserRouter([
             path: '/projects/planet-generator',
             element: <PlanetGenerator />,
           },
-          {
-            path: '/projects/sandwich-maker',
-            element: <SandwichMaker />,
-          },
+          // {
+          //   path: '/projects/sandwich-maker',
+          //   element: <SandwichMaker />,
+          // },
           {
             path: '/projects/todo-list',
             element: <ToDoList />,
