@@ -85,14 +85,14 @@ export default function Chatbot() {
     setLoading(true);
 
     try {
-      const response = await fetch("/api/chat", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
+      const response = await fetch('/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           system: SYSTEM_PROMPT,
-          messages: updatedMessages.filter(
-            (m, i) => !(i === 0 && m.role === "assistant")
-          ),
+          messages: updatedMessages
+            .filter((m, i) => !(i === 0 && m.role === 'assistant'))
+            .map((m) => ({ role: m.role, content: m.content })),
         }),
       });
 
