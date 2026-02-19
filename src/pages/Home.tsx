@@ -7,7 +7,7 @@ import Button from '../components/Button'
 import { useFadeInBottom } from '../assets/animations/useScrollFadeIn';
 import { useFadeInMoon } from '../assets/animations/useFadeInMoon';
 
-import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 function Home() {
   const { ref: bottomRef, className: bottomClassName } = useFadeInBottom();
@@ -46,17 +46,25 @@ function Home() {
 
             <section className="intro-section">
                 <div className="container">
-                    <h1 className="mb-0">Hello, my name is Travis. </h1>
-                    <p className="mb-0 mt-4">I'm a Full-Stack Developer with 6+ years of experience building responsive, scalable, and functional web applications.</p>
-                    <p className="mb-0 mt-4">Hands-on experience in React.js, Next.js JavaScript, TypeScript, CSS, HTML, PHP, Figma, WordPress and Drupal. Skilled in building front-end interfaces, implementing back-end logic, and integrating APIs to deliver end-to-end solutions.</p>
-                    <p className="mb-0 mt-4">Experienced in Agile, interdepartmental collaboration, mentoring and maintaining high-quality code.</p>
-                    <p className="mb-0 mt-4">My previous projects include:</p>
-                    <ul>
-                        <li><a className="external" target="_blank" rel="noopener noreferrer" href="https://salve.edu/">Salve Regina University</a><ArrowOutwardIcon className="external"/></li>
-                        <li><a className="external" target="_blank" rel="noopener noreferrer" href="https://y12investmentpartners.com/">Y-12 Investment Partners</a><ArrowOutwardIcon className="external"/></li>
-                        <li>Yale University</li>
-                        <li>Harvard University</li>
-                    </ul>
+                    <h1 className="mb-0">Frontend Developer</h1>
+                    <h2 className="mb-0 mt-2 intro-section__subheading">Always learning. Always growing.</h2>
+                    <p className="mb-0 mt-4">6+ years building responsive React and WordPress applications with a focus on performance, accessibility, and clean code. From modernizing legacy codebases with TypeScript and Tailwind to implementing CI/CD pipelines and automated testing with Cypress, I write scalable and maintainable code that minimizes tech debt to keep your codebase evolving.</p>
+                    <p className="mb-0 mt-4 intro-section__callout">Component-driven architecture · BEM methodology · JSDoc documentation · Code reviews · CI/CD</p>
+                    <div className="mb-0 mt-4 intro-section__projects">
+                        <h2>Projects</h2>
+                        <div className="mb-0 pt-4 intro-section__projects__wrapper">
+                            <div className="pt-3 intro-section__projects__item">
+                                <a className="external" target="_blank" rel="noopener noreferrer" href="https://salve.edu/">Salve Regina University
+                                    <RocketLaunchIcon className="rocketLaunchIcon" />
+                                </a>
+                            </div>
+                            <div className="pt-3 intro-section__projects__item">
+                                <a className="external" target="_blank" rel="noopener noreferrer" href="https://learn.hms.harvard.edu/">Harvard University
+                                    <RocketLaunchIcon className="rocketLaunchIcon" />
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                     {/* Moon Background */}
                     <div className={`moon-wrapper mt-5 ${moonClassName}`}  ref={moonRef}>
                         <div className="moon"></div>

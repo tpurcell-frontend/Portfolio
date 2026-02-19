@@ -192,35 +192,67 @@ body {
   font-size: 18px;
 }
 
-.intro-section a {
+.intro-section__subheading {
   color: $corefire-green;
-  font-weight: bold;
-  transition: color 0.5s;
-  text-decoration: none;
+}
 
-  &:hover,
-  &:focus-visible {
-    color: $solar-flare;
-    
-    & + svg {
-      transform: translate(1px, -2px);
-      transition: transform 0.2s ease-in-out;
+.intro-section__callout {
+  background-color: $gray;
+  border-radius: 10px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.intro-section__projects h2 {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+
+  &::after {
+    content: '';
+    display: block;
+    border-top: 1px solid $white;
+    margin-left: 25px;
+    width: 100%;
+  }
+}
+
+.intro-section__projects__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.intro-section__projects__item {
+
+  a {
+    background-color: $warm-pink;
+    border: 2px solid $warm-pink;
+    padding: 15px;
+    border-radius: 10px;
+    color: $white;
+    font-weight: bold;
+    transition: color 0.5s;
+    text-decoration: none;
+
+    svg.MuiSvgIcon-root {
+      color: $white;
+      margin-left: 5px;
+      margin-bottom: 5px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: transparent;
+      
+      svg.MuiSvgIcon-root {
+        transform: translate(3px, -5px);
+        transition: transform 0.2s ease-in-out;
+      }
     }
   }
 }
 
-.intro-section ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.intro-section ul li {
-  font-weight: bold;
-}
-
-.intro-section ul li + li {
-  margin-top: 10px;
-}
 
 .technology-section {
   background-color: $blue;
