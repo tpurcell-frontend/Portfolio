@@ -199,8 +199,16 @@ body {
 .intro-section__callout {
   background-color: $gray;
   border-radius: 10px;
-  padding: 5px;
+  padding: 15px;
   font-weight: bold;
+}
+
+.intro-section__skill {
+  color: $corefire-green;
+}
+
+.intro-section__projects {
+  text-align: left;
 }
 
 .intro-section__projects h2 {
@@ -224,8 +232,10 @@ body {
 }
 
 .intro-section__projects__item {
+  position: relative;
 
   a {
+    display: block;
     background-color: $warm-pink;
     border: 2px solid $warm-pink;
     padding: 15px;
@@ -253,6 +263,15 @@ body {
   }
 }
 
+.intro-section__projects__item__description {
+  position: absolute;
+  margin-top: 25px;
+  padding: 15px;
+  background-color: $gray;
+  border-radius: 10px;
+  opacity: 0.8;
+  width: 100%;
+}
 
 .technology-section {
   background-color: $blue;
