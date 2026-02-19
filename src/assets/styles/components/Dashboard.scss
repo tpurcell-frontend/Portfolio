@@ -28,6 +28,16 @@
       font-weight: bold;
     }
   }
+
+  svg {
+    width: 1.25em;
+    height: 1.25em;
+  }
+
+  svg:hover,
+  svg:focus-visible {
+    fill: $blue2;
+  }
 }
 
 // Sidebar toolbar
@@ -48,16 +58,6 @@
   padding: 20px;
   height: 100%;
   width: calc(100% - 24px);
-}
-
-svg {
-  width: 1.25em;
-  height: 1.25em;
-}
-
-svg:hover,
-svg:focus-visible {
-  fill: $blue2;
 }
 
 .dashboard__menu-top {
