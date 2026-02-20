@@ -90,8 +90,8 @@ function Home() {
                             <span className="intro-section__skill"> Yarn</span>,
                             <span className="intro-section__skill"> Npm</span>,
                             <span className="intro-section__skill"> WCAG 2.2</span>.
-                            Additional skills will be displayed on projects contained in this portfolio.
                         </p>
+                        <p className="mb-0 mt-4 text-left">Additional skills will be displayed on projects contained in this portfolio.</p>
                     </div>
                     {/* Moon Background */}
                     <div className={`moon-wrapper mt-5 ${moonClassName}`}  ref={moonRef}>
