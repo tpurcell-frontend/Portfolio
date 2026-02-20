@@ -9,8 +9,10 @@ import { useFadeInMoon } from '../assets/animations/useFadeInMoon';
 
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
+import ChatIcon from '../components/ChatIcon'
+
 function Home() {
-  const { ref: bottomRef, className: bottomClassName } = useFadeInBottom();
+    const { ref: bottomRef, className: bottomClassName } = useFadeInBottom();
     const { ref: moonRef, className: moonClassName } = useFadeInMoon();
 
     const tools = [
@@ -174,6 +176,8 @@ function Home() {
                     </div>
                 </div>
             </section>
+
+            <ChatIcon />
         </>
     )
 }

@@ -1,5 +1,6 @@
 import React from "react";
 import { useState, useRef, useEffect, KeyboardEvent } from "react";
+import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
 interface Message {
   role: "user" | "assistant";
@@ -50,10 +51,7 @@ CONTACT:
 Keep answers concise and relevant. If asked something you don't know about Travis, say you don't have that information but encourage them to reach out to Travis directly at travis.n.purcell@gmail.com.`;
 
 const SUGGESTED_QUESTIONS: string[] = [
-  "What is Travis's experience with React?",
   "What makes Travis stand out?",
-  "Has Travis worked with accessibility standards?",
-  "What testing tools does Travis use?",
 ];
 
 export default function Chatbot() {
@@ -121,7 +119,7 @@ export default function Chatbot() {
   };
 
   return (
-    <div style={styles.page}>
+    <div className="chat-bot">
       <style>{`
         @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500&display=swap');
 
@@ -156,55 +154,30 @@ export default function Chatbot() {
         textarea::placeholder { color: #555; }
       `}</style>
 
-      <div style={styles.container}>
-        {/* Header */}
-        <div style={styles.header}>
-          <div style={styles.headerLeft}>
-            <div style={styles.avatar}>TP</div>
-            <div>
-              <div style={styles.headerName}>Travis Purcell</div>
-              <div style={styles.headerSub}>
-                <span style={styles.onlineDot} />
-                AI Assistant Active
-              </div>
-            </div>
-          </div>
-          <div style={styles.headerTag}>Frontend Developer</div>
-        </div>
-
+      <div className="chat-bot__container">
         {/* Messages */}
-        <div style={styles.messagesArea}>
+        <div className="chat-bot__messages-area">
           {messages.map((msg, i) => (
             <div
               key={i}
-              className="message-bubble"
-              style={{
-                ...styles.messageRow,
-                justifyContent: msg.role === "user" ? "flex-end" : "flex-start",
-              }}
+              className={`chat-bot__message-row chat-bot__message-row--${msg.role}`}
             >
               {msg.role === "assistant" && (
-                <div style={styles.assistantAvatar}>AI</div>
+                <div className="chat-bot__assistant-avatar">AI</div>
               )}
-              <div
-                style={
-                  msg.role === "user"
-                    ? styles.userBubble
-                    : styles.assistantBubble
-                }
-              >
+              <div className={`chat-bot__bubble chat-bot__bubble--${msg.role}`}>
                 {msg.content}
               </div>
             </div>
           ))}
 
           {loading && (
-            <div style={styles.messageRow} className="message-bubble">
-              <div style={styles.assistantAvatar}>AI</div>
-              <div style={styles.assistantBubble}>
-                <span style={{ ...styles.dot, animationDelay: "0s" }}>●</span>
-                <span style={{ ...styles.dot, animationDelay: "0.2s" }}>●</span>
-                <span style={{ ...styles.dot, animationDelay: "0.4s" }}>●</span>
+            <div className="chat-bot__message-row">
+              <div className="chat-bot__assistant-avatar">AI</div>
+              <div className="chat-bot__bubble chat-bot__bubble--assistant">
+                <span className="chat-bot__dot chat-bot__dot--1">●</span>
+                <span className="chat-bot__dot chat-bot__dot--2">●</span>
+                <span className="chat-bot__dot chat-bot__dot--3">●</span>
               </div>
             </div>
           )}
@@ -213,44 +186,40 @@ export default function Chatbot() {
 
         {/* Suggested Questions */}
         {messages.length <= 1 && (
-          <div style={styles.suggestedArea}>
-            <div style={styles.suggestedLabel}>Suggested questions</div>
-            <div style={styles.suggestedGrid}>
-              {SUGGESTED_QUESTIONS.map((q, i) => (
-                <button
-                  key={i}
-                  className="suggested-btn"
-                  onClick={() => sendMessage(q)}
-                  style={styles.suggestedBtn}
-                >
-                  {q}
-                </button>
-              ))}
-            </div>
+          <div className="chat-bot__suggested-area">
+            <div className="chat-bot__suggested-label">Suggested questions</div>
+            {SUGGESTED_QUESTIONS.map((q, i) => (
+              <button
+                key={i}
+                className="chat-bot__suggested-btn"
+                onClick={() => sendMessage(q)}
+              >
+                {q}
+              </button>
+            ))}
           </div>
         )}
 
         {/* Input */}
-        <div style={styles.inputArea}>
-          <div style={styles.inputWrapper}>
+        <div className="chat-bot__input-area">
+          <div className="chat-bot__input-wrapper">
             <textarea
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              placeholder="Ask about Travis's experience, skills, or background..."
+              placeholder="Ask about Travis"
               rows={1}
-              style={styles.textarea}
+              className="chat-bot__textarea"
             />
             <button
-              className="send-btn"
+              className="chat-bot__send-btn"
               onClick={() => sendMessage()}
               disabled={!input.trim() || loading}
-              style={styles.sendBtn}
             >
-              ↑
+            <RocketLaunchIcon className="rocketLaunchIcon" />
             </button>
           </div>
-          <div style={styles.inputFooter}>
+          <div className="chat-bot__input-footer">
             Powered by Claude · Press Enter to send
           </div>
         </div>
@@ -258,217 +227,3 @@ export default function Chatbot() {
     </div>
   );
 }
-
-const styles: Record<string, React.CSSProperties> = {
-  page: {
-    minHeight: "100vh",
-    background: "#0a0a0a",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontFamily: "'DM Sans', sans-serif",
-    padding: "20px",
-  },
-  container: {
-    width: "100%",
-    maxWidth: "680px",
-    background: "#111",
-    border: "1px solid #222",
-    borderRadius: "16px",
-    overflow: "hidden",
-    display: "flex",
-    flexDirection: "column",
-    height: "680px",
-    boxShadow: "0 0 60px rgba(0,0,0,0.6)",
-  },
-  header: {
-    padding: "20px 24px",
-    borderBottom: "1px solid #1e1e1e",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    background: "#111",
-  },
-  headerLeft: {
-    display: "flex",
-    alignItems: "center",
-    gap: "12px",
-  },
-  avatar: {
-    width: "40px",
-    height: "40px",
-    borderRadius: "10px",
-    background: "#fff",
-    color: "#000",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontFamily: "'DM Mono', monospace",
-    fontSize: "13px",
-    fontWeight: "500",
-    letterSpacing: "0.05em",
-  },
-  headerName: {
-    color: "#fff",
-    fontSize: "15px",
-    fontWeight: "500",
-    letterSpacing: "-0.01em",
-  },
-  headerSub: {
-    color: "#555",
-    fontSize: "12px",
-    display: "flex",
-    alignItems: "center",
-    gap: "6px",
-    marginTop: "2px",
-  },
-  onlineDot: {
-    width: "6px",
-    height: "6px",
-    borderRadius: "50%",
-    background: "#4ade80",
-    display: "inline-block",
-  },
-  headerTag: {
-    fontFamily: "'DM Mono', monospace",
-    fontSize: "11px",
-    color: "#444",
-    border: "1px solid #222",
-    borderRadius: "6px",
-    padding: "4px 10px",
-    letterSpacing: "0.05em",
-  },
-  messagesArea: {
-    flex: 1,
-    overflowY: "auto",
-    padding: "24px",
-    display: "flex",
-    flexDirection: "column",
-    gap: "16px",
-  },
-  messageRow: {
-    display: "flex",
-    alignItems: "flex-start",
-    gap: "10px",
-  },
-  assistantAvatar: {
-    width: "28px",
-    height: "28px",
-    borderRadius: "7px",
-    background: "#1e1e1e",
-    border: "1px solid #2a2a2a",
-    color: "#666",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    fontSize: "10px",
-    fontFamily: "'DM Mono', monospace",
-    flexShrink: 0,
-    marginTop: "2px",
-  },
-  assistantBubble: {
-    background: "#161616",
-    border: "1px solid #1e1e1e",
-    borderRadius: "4px 12px 12px 12px",
-    padding: "12px 16px",
-    color: "#ccc",
-    fontSize: "14px",
-    lineHeight: "1.6",
-    maxWidth: "85%",
-    letterSpacing: "-0.01em",
-  },
-  userBubble: {
-    background: "#fff",
-    borderRadius: "12px 4px 12px 12px",
-    padding: "12px 16px",
-    color: "#000",
-    fontSize: "14px",
-    lineHeight: "1.6",
-    maxWidth: "85%",
-    letterSpacing: "-0.01em",
-  },
-  dot: {
-    display: "inline-block",
-    fontSize: "8px",
-    color: "#555",
-    animation: "pulse 1.2s ease-in-out infinite",
-    marginRight: "3px",
-  },
-  suggestedArea: {
-    padding: "0 24px 16px",
-  },
-  suggestedLabel: {
-    color: "#333",
-    fontSize: "11px",
-    fontFamily: "'DM Mono', monospace",
-    letterSpacing: "0.08em",
-    marginBottom: "10px",
-    textTransform: "uppercase",
-  },
-  suggestedGrid: {
-    display: "grid",
-    gridTemplateColumns: "1fr 1fr",
-    gap: "8px",
-  },
-  suggestedBtn: {
-    background: "transparent",
-    border: "1px solid #1e1e1e",
-    borderRadius: "8px",
-    padding: "10px 12px",
-    color: "#555",
-    fontSize: "12px",
-    cursor: "pointer",
-    textAlign: "left",
-    lineHeight: "1.4",
-    transition: "all 0.15s ease",
-    fontFamily: "'DM Sans', sans-serif",
-  },
-  inputArea: {
-    padding: "16px 24px 20px",
-    borderTop: "1px solid #1a1a1a",
-  },
-  inputWrapper: {
-    display: "flex",
-    alignItems: "flex-end",
-    gap: "10px",
-    background: "#161616",
-    border: "1px solid #222",
-    borderRadius: "12px",
-    padding: "12px 12px 12px 16px",
-  },
-  textarea: {
-    flex: 1,
-    background: "transparent",
-    border: "none",
-    color: "#ccc",
-    fontSize: "14px",
-    resize: "none",
-    fontFamily: "'DM Sans', sans-serif",
-    lineHeight: "1.5",
-    letterSpacing: "-0.01em",
-  },
-  sendBtn: {
-    width: "32px",
-    height: "32px",
-    borderRadius: "8px",
-    background: "#fff",
-    border: "none",
-    color: "#000",
-    fontSize: "16px",
-    cursor: "pointer",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-    flexShrink: 0,
-    transition: "background 0.15s ease",
-    fontWeight: "600",
-  },
-  inputFooter: {
-    color: "#2a2a2a",
-    fontSize: "11px",
-    fontFamily: "'DM Mono', monospace",
-    textAlign: "center",
-    marginTop: "10px",
-    letterSpacing: "0.05em",
-  },
-};
