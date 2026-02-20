@@ -26,6 +26,7 @@ function Header() {
                                             {/* <li><a target="_blank" href="https://portfolio-wp-eta.vercel.app/">WordPress Portfolio</a></li> */}
                                         </ul>
                                     </li>
+                                    <li><a target="_blank" rel="noopener noreferrer" href="mailto:travis.n.purcell@gmail.com">Email</a><ArrowOutwardIcon className="external"/></li>
                                     <li><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/travis-purcell-97b365174/">LinkedIn</a><ArrowOutwardIcon className="external"/></li>
                                     <li><a target="_blank"  href="https://github.com/tpurcell-frontend">Github</a><ArrowOutwardIcon className="external"/></li>
                                 </ul>
