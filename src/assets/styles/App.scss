@@ -3,7 +3,6 @@
 #root {
   color: $white;
   text-align: center;
-
   padding: 0;
   background: $black;
 }
@@ -185,6 +184,7 @@ body {
   display: none;
 }
 
+// Intro Section
 .intro-section {
   position: relative;
   max-width: 1000px;
@@ -192,8 +192,21 @@ body {
   font-size: 18px;
 }
 
+.intro-section__heading {
+  margin: 0;
+}
+
 .intro-section__subheading {
   color: $corefire-green;
+  margin-top: 12px;
+}
+
+.intro-section__description {
+  margin-top: 24px;
+
+  p {
+    margin: 0;
+  }
 }
 
 .intro-section__callout {
@@ -201,27 +214,25 @@ body {
   border-radius: 10px;
   padding: 15px;
   font-weight: bold;
+  margin: 48px 0 0;
 }
 
-.intro-section__skill {
-  color: $corefire-green;
-}
-
-.intro-section__projects {
+.intro-section__group {
   text-align: left;
-}
+  margin-top: 48px;
 
-.intro-section__projects h2 {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+  h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-  &::after {
-    content: '';
-    display: block;
-    border-top: 1px solid $white;
-    margin-left: 25px;
-    width: 100%;
+    &::after {
+      content: '';
+      display: block;
+      border-top: 1px solid $white;
+      margin-left: 25px;
+      width: 100%;
+    }
   }
 }
 
@@ -273,6 +284,15 @@ body {
   width: 100%;
 }
 
+.intro-section__skills {
+}
+
+.intro-section__skill {
+  color: $corefire-green;
+}
+
+// Technology Section
+
 .technology-section {
   background-color: $blue;
   position: relative;
@@ -322,7 +342,7 @@ body {
   z-index: 1;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 768px) {
 
   section {
     padding: 80px 0;
@@ -346,16 +366,29 @@ body {
     margin-top: 0;
   }
 
+  // Intro Section
   .intro-section {
     font-size: 20px;
+  }
+
+  .intro-section__description {
+    margin-top: 24px;
+  }
+
+  .intro-section__callout {
+    margin-top: 32px;
   }
 
   .intro-section ul li + li {
     margin-top: 0;
   }
+
+  .intro-section__group {
+    margin-top: 64px;
+  }
 }
 
-@media (min-width: 1201px) {
+@media (min-width: 1200px) {
 
   section {
     padding: 100px 0;

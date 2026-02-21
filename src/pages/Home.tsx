@@ -48,14 +48,16 @@ function Home() {
 
             <section className="intro-section">
                 <div className="container">
-                    <h1 className="mb-0">Frontend Developer</h1>
-                    <h2 className="mb-0 mt-2 intro-section__subheading">Always learning. Always growing.</h2>
-                    <p className="mb-0 mt-4">6+ years building responsive React and WordPress applications with a focus on performance, accessibility, and clean code. From modernizing legacy codebases with TypeScript and Tailwind to implementing CI/CD pipelines and automated testing with Cypress, I write scalable and maintainable code that minimizes tech debt to keep your codebase evolving.</p>
-                    <p className="mb-0 mt-4 intro-section__callout">Component-driven architecture · BEM methodology · AI Integration · Code reviews · CI/CD</p>
-                    <div className="mb-0 mt-4 intro-section__projects">
+                    <h1 className="intro-section__heading">Frontend Developer</h1>
+                    <h2 className="intro-section__subheading">Always learning. Always growing.</h2>
+                    <div className="intro-section__description">
+                        <p>6+ years building responsive React and WordPress applications with a focus on performance, accessibility, and clean code. From modernizing legacy codebases with TypeScript and Tailwind to implementing CI/CD pipelines and automated testing with Cypress, I write scalable and maintainable code that minimizes tech debt to keep your codebase evolving.</p>
+                    </div>
+                    <p className="intro-section__callout">Component-driven architecture · BEM methodology · AI Integration · Code reviews · CI/CD</p>
+                    <div className="intro-section__group">
                         <h2>Projects</h2>
-                        <p className="mb-0 mt-4 text-left">I have built or heavily contributed to the following enterprise-level projects:</p> 
-                        <div className="mb-0 pt-4 intro-section__projects__wrapper">
+                        <p className="text-left">I have built or heavily contributed to the following enterprise-level projects:</p> 
+                        <div className="intro-section__projects__wrapper">
                             <div className="intro-section__projects__item">
                                 <a className="external" target="_blank" rel="noopener noreferrer" href="https://salve.edu/">Salve Regina University
                                     <RocketLaunchIcon className="rocketLaunchIcon" />
@@ -72,7 +74,10 @@ function Home() {
                                 </a>
                             </div>
                         </div>
-                        <p className="mb-0 mt-4 text-left">These skills include 
+                    </div>
+                    <div className="intro-section__group">
+                        <h2>Skills</h2>
+                        <p className="text-left">The skills used in those projects include 
                             <span className="intro-section__skill"> Drupal 11</span>,
                             <span className="intro-section__skill"> WordPresss</span>,
                             <span className="intro-section__skill"> Twig </span>,
@@ -91,7 +96,7 @@ function Home() {
                             <span className="intro-section__skill"> Npm</span>,
                             <span className="intro-section__skill"> WCAG 2.2</span>.
                         </p>
-                        <p className="mb-0 mt-4 text-left">Additional skills will be displayed on projects contained in this portfolio.</p>
+                        <p>Additional skills will be displayed on projects contained in this portfolio.</p>
                     </div>
                     {/* Moon Background */}
                     <div className={`moon-wrapper mt-5 ${moonClassName}`}  ref={moonRef}>
