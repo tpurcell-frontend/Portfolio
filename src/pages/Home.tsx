@@ -1,51 +1,55 @@
 import React from "react";
-import { NavLink } from "react-router";
 
+// Components
+import StarfieldBackground from '../components/StarfieldBackground'
 import Header from '../components/Header'
 import Button from '../components/Button'
+import ChatIcon from '../components/ChatIcon'
 
+// Animations
 import { useFadeInBottom } from '../assets/animations/useScrollFadeIn';
 import { useFadeInMoon } from '../assets/animations/useFadeInMoon';
 
+// Material UI
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 
-import ChatIcon from '../components/ChatIcon'
+// Styles
+import '../assets/styles/components/SkillsList.scss'
 
 function Home() {
     const { ref: bottomRef, className: bottomClassName } = useFadeInBottom();
     const { ref: moonRef, className: moonClassName } = useFadeInMoon();
 
-    const tools = [
-        'React.js',
-        'Material UI',
-        'Cypress React Testing',
-        'Bootstrap'
-    ];
+    function SkillsList({title, items}: {title: string, items: string[]}) {
 
-    const platforms = [
-        'Pantheon',
-        'Node.js',
-        'Docker',
-        'Jira',
-    ];
-
-    const cms = [
-        'WordPress',
-        'Drupal',
-        'Git',
-        'Bitbucket'
-    ];
+        return(
+            <div className={`technology-list col-12 col-md-2 fade-in-bottom ${bottomClassName}`}  ref={bottomRef}>
+                <h3>{title}</h3>
+                <ul>
+                    {items.map((item: string, index: number) => (
+                        <li
+                            key={item}
+                            className={`fade-in-bottom ${bottomClassName}`} 
+                            ref={bottomRef}
+                            style={{ animationDelay: `${index * 0.5}s` }}
+                        >
+                            {item}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+        )
+    }
 
     return (
         <>
-            { /* Starfield Background */}
-            <div className="starfield">
-                <div className="stars"></div>
-            </div>
+            {/* Background */}
+            <StarfieldBackground />
 
             {/* Header */}
             <Header />
 
+            {/* Intro Section */}
             <section className="intro-section">
                 <div className="container">
                     <h1 className="intro-section__heading">Frontend Developer</h1>
@@ -104,74 +108,32 @@ function Home() {
                     </div>
                 </div>
             </section>
-            <section className={`technology-section ${bottomClassName}`}  ref={bottomRef}>
+
+            {/* Skills Section */}
+            <section className={`skills-section ${bottomClassName}`}  ref={bottomRef}>
                 <div className="container">
                     <div className="row">
                         <div className="col">
                             <h2>Skills & Knowledge</h2>
                         </div>
                     </div>
-                    <div className="technology-list-wrapper">
+                    <div className="skills-list-wrapper">
                         <div className="container">
                             <div className="row">
-                                <div className={`technology-list col-12 col-md-4 fade-in-bottom ${bottomClassName}`}  ref={bottomRef}>
-                                    <h3>Tools & Frameworks</h3>
-                                    <ul>
-                                        {tools.map((item, index) => (
-                                            <>
-                                                <li
-                                                    key={item}
-                                                    className={`fade-in-bottom ${bottomClassName}`} 
-                                                    ref={bottomRef}
-                                                    style={{ animationDelay: `${index * 0.5}s` }}
-                                                >
-                                                    {item}
-                                                </li>
-                                            </>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div className={`technology-list col-12 col-md-4 ${bottomClassName}`}  ref={bottomRef}>
-                                    <h3>Deployment & Workflow</h3>
-                                    <ul>
-                                        {platforms.map((item, index) => (
-                                            <>
-                                                <li
-                                                    key={item}
-                                                    className={`fade-in-bottom ${bottomClassName}`} 
-                                                    ref={bottomRef}
-                                                    style={{ animationDelay: `${index * 0.5}s` }}
-                                                >
-                                                    {item}
-                                                </li>
-                                            </>
-                                        ))}
-                                    </ul>
-                                </div>
-                                <div className={`technology-list col-12 col-md-4 ${bottomClassName}`}  ref={bottomRef}>
-                                    <h3>CMS & Version Control</h3>
-                                    <ul>
-                                        {cms.map((item, index) => (
-                                            <>
-                                                <li
-                                                    key={item}
-                                                    className={`fade-in-bottom ${bottomClassName}`} 
-                                                    ref={bottomRef}
-                                                    style={{ animationDelay: `${index * 0.5}s` }}
-                                                >
-                                                    {item}
-                                                </li>
-                                            </>
-                                        ))}
-                                    </ul>
-                                </div>
+                                <SkillsList title="Programming" items={['JavaScript', 'TypeScript', 'PHP', 'React 18', 'Next.js', 'Redux', 'Node.js', 'jQuery']}/>
+                                <SkillsList title="Styling" items={['CSS', 'SASS', 'CSS Modules', 'Styled-Components', 'Bootstrap', 'Material UI', 'Tailwind', 'Foundation']}/>
+                                <SkillsList title="Standards, Build Tools & AI" items={['Webpack', 'Vite', 'npm', 'Yarn', 'WCAG 2.2', 'Claude', 'CoPilot']}/>
+                                <SkillsList title="Collaboration Tools" items={['Jira', 'Confluence', 'GitHub', 'Git', 'Figma']}/>
+                                <SkillsList title="Testing" items={['Chrome Developer Tools', 'Jest', 'Cypress', 'BrowserStack']}/>
+                                <SkillsList title="CMS" items={['WordPress', 'Drupal 11']}/>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+
+            {/* Contact Section */}
             <section className="contact-section">
-                {/* Stars Background */}
                 <div className="container">
                     <h2>Resources</h2>
                     <div className="button-wrapper mt-4">
@@ -182,6 +144,7 @@ function Home() {
                 </div>
             </section>
 
+            {/* Chatbot */}
             <ChatIcon />
         </>
     )
