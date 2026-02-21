@@ -25,6 +25,7 @@
 $black: #000;
 $white: #fff;
 $gray: #333;
+$dark-purple: #050816;
 $red: #f00;
 $blue: #4087a5;
 $blue2: #29ABE2;
@@ -39,6 +40,38 @@ $dashboard--light: #BCC3C8;
 
 $border-color: #ddd;
 $dark-bg: #242424;
+
+$color-bg-primary: #0a0e1a;
+$color-card-dark: #1a2332;
+$color-card-mid: #151d2b;
+$color-card-hover-dark: #1d2738;
+$color-card-hover-mid: #18202e;
+
+$color-text-primary: #e8edf2;
+$color-text-secondary: #b8c5d6;
+$color-text-tertiary: #8b9bb0;
+$color-text-hover: #c5d3e3;
+
+$color-accent-blue-light: rgba(150, 180, 200, 0.3);
+$color-accent-blue-medium: rgba(120, 160, 190, 0.25);
+$color-accent-blue-dark: rgba(100, 150, 180, 0.15);
+$color-accent-blue-glow: rgba(120, 160, 190, 0.4);
+$color-accent-blue-bright: rgba(150, 180, 200, 0.8);
+$color-accent-blue-strong: rgba(120, 160, 190, 0.6);
+
+$color-overlay-light: rgba(255, 255, 255, 0.05);
+$color-overlay-medium: rgba(255, 255, 255, 0.08);
+$color-overlay-texture: rgba(255, 255, 255, 0.01);
+$color-shadow: rgba(0, 0, 0, 0.4);
+$color-shadow-light: rgba(0, 0, 0, 0.3);
+$color-shadow-dark: rgba(0, 0, 0, 0.5);
+
+$color-glow-primary: rgba(120, 160, 190, 0.3);
+$color-glow-hover: rgba(150, 180, 200, 0.6);
+$color-border-card: rgba(100, 150, 180, 0.1);
+
+$color-radial-1: rgba(100, 150, 180, 0.08);
+$color-radial-2: rgba(120, 160, 190, 0.06);
 
 /* Gradients */
 $gradient1: radial-gradient(circle, rgba(238, 174, 202, 1) 0%, rgba(148, 187, 233, 1) 100%);
