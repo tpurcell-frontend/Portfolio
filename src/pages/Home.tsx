@@ -1,5 +1,3 @@
-import React from "react";
-
 // Components
 import ChatIcon from '../components/ChatIcon'
 import ContactSection from '../components/ContactSection'

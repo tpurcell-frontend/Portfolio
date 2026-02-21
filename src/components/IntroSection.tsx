@@ -1,5 +1,3 @@
-import React from "react";
-
 // Animations
 import { useFadeInBottom } from '../assets/animations/useScrollFadeIn';
 import { useFadeInMoon } from '../assets/animations/useFadeInMoon';

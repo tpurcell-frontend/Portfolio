@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink } from "react-router";
 
 import RocketIcon from '@mui/icons-material/Rocket';

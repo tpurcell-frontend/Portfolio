@@ -1,4 +1,4 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
 import Heading from '../components/Heading'
 import Button from '../components/Button'
 import Modal from '../components/Modal'

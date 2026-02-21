@@ -1,11 +1,15 @@
-import React, {useEffect, useState} from 'react'
-import Heading from '../components/Heading'
-import Button from '../components/Button'
+import {useState, useEffect} from "react";
 
-import '../assets/styles/App.scss'
-import '../assets/styles/components/ToDoList.scss'
+// Components
+import Heading from '../components/Heading';
+import Button from '../components/Button';
 
+// Material UI
 import RocketIcon from '@mui/icons-material/Rocket';
+
+// Styles
+import '../assets/styles/App.scss';
+import '../assets/styles/components/ToDoList.scss';
 
 type Task =  {
   text: string,

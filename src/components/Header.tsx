@@ -1,9 +1,9 @@
-import React from "react";
+// Material UI
+import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
+// Styles
 import '../assets/styles/components/Header.scss'
 import '../assets/styles/components/Menu.scss'
-
-import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
 export default function Header() {
 

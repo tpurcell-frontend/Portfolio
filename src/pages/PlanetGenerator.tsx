@@ -1,12 +1,16 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
+
+// Components
 import Heading from '../components/Heading'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
 import Planet from '../components/Planet'
 
+// Styles
 import '../assets/styles/App.scss'
 import '../assets/styles/components/Planet.scss'
 
+// Types
 import { SelectedOptions } from '../types/SelectedOptions';
 
 type PlanetResult =  {

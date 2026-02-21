@@ -1,4 +1,3 @@
-import React from 'react'; 
 import '../assets/styles/components/Heading.scss'
 
 type HeadingProps = {

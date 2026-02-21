@@ -1,4 +1,4 @@
-import React, { useRef, useState} from 'react'; 
+import { useRef, useState} from 'react'; 
 import Button from './Button'
 import FormOptions from '../subcomponents/FormOptions'
 import galaxyOptions from '../data/galaxy-options'

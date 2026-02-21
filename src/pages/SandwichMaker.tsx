@@ -1,11 +1,15 @@
-import React, {useState} from 'react'
+import {useState} from 'react'
+
+// Components
 import Heading from '../components/Heading'
 import Button from '../components/Button'
 
+// Material UI
+import RocketIcon from '@mui/icons-material/Rocket';
+
+// Styles
 import '../assets/styles/App.scss'
 import '../assets/styles/components/Sandwich.scss'
-
-import RocketIcon from '@mui/icons-material/Rocket';
 
 function SandwichMaker() {
     const [buttonText, setButtonText] = useState('Launch');
