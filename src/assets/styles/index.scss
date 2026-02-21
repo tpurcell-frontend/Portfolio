@@ -2,6 +2,12 @@
 @use './components/Animations.scss' as *;
 @use './components/Icons.scss' as *;
 
+@import "bootstrap/scss/bootstrap";
+
+// @tailwind base;
+// @tailwind components;
+// @tailwind utilities;
+
 :root {   
   font-family: "Orbitron", sans-serif;
   line-height: 1.5;
