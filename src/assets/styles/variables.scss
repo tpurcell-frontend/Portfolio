@@ -97,40 +97,7 @@ $corefire-green: #48d597;
 $corefire-green2: #1f5a3f; 
 
 /* Typography Styles */
-$sans-serif: "Outfit", sans-serif;
-$serif: "Domine", serif;
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: $sans-serif;
-}
-
-p, li, blockquote {
-    font-family: $serif;
-    line-height: 2;
-    font-size: 18px;
-}
-
-h2 .rocketIcon {
-    transform: rotate(90deg);
-    margin-left: 10px;
-    width: 40px;
-    height: auto;
-}
-
-strong {
-    font-weight: 800;
-}
-
-a:not(button) {
-    color: $white;
-}
-
-@media (min-width: 768px) {
-
-    p, li, blockquote {
-        font-size: 20px;
-    }
-}
 
 // Transitions
 $primary-transition: all 0.25s ease-in-out !default;

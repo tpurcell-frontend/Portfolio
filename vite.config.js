@@ -16,4 +16,19 @@ export default defineConfig({
     }),
     checker({ typescript: true}),
   ],
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use "@/assets/styles/variables" as *;
+          @use "@/assets/styles/typography" as *;
+        `
+      }
+    }
+  },
+  resolve: {
+    alias: {
+      '@': '/src'
+    }
+  }
 })
