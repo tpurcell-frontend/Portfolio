@@ -5,7 +5,7 @@ import '../assets/styles/components/Menu.scss'
 
 import ArrowOutwardIcon from '@mui/icons-material/ArrowOutward';
 
-function Header() {
+export default function Header() {
 
     return (
         <header>
@@ -37,5 +37,3 @@ function Header() {
         </header>
     )
 }
-
-export default Header;
