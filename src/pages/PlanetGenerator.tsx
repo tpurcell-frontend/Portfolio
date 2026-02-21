@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Header from '../components/Header'
 import Heading from '../components/Heading'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
@@ -64,14 +63,6 @@ function PlanetGenerator() {
 
     return (
         <>
-            { /* Starfield Background */}
-            <div className="starfield">
-                <div className="stars"></div>
-            </div>
-            
-            {/* Header */}
-            <Header />
-
             {/* Sun Background */}
             <div className="sun-wrapper mt-5">
                 <div className="sun"></div>

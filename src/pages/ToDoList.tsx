@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react'
-import Header from '../components/Header'
 import Heading from '../components/Heading'
 import Button from '../components/Button'
 
@@ -56,14 +55,6 @@ function ToDoList() {
 
 	return (
         <>
-            { /* Starfield Background */}
-            <div className="starfield">
-                <div className="stars"></div>
-            </div>
-            
-            {/* Header */}
-            <Header />
-
             <section className="todo-list-section">
                 <div className="container">
                     <div className="row">

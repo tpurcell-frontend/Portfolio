@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Header from '../components/Header'
 import Heading from '../components/Heading'
 import Button from '../components/Button'
 
@@ -17,14 +16,6 @@ function SandwichMaker() {
 
     return (
         <>
-            { /* Starfield Background */}
-            <div className="starfield">
-                <div className="stars"></div>
-            </div>
-            
-            {/* Header */}
-            <Header />
-                
            {/* Sandwich Generator */}
             <section className="sandwich-generator">
                 <div className="container">

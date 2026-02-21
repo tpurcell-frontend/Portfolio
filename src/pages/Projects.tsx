@@ -1,21 +1,11 @@
 import React from "react";
 import { NavLink } from "react-router";
 
-import Header from '../components/Header'
-
 import RocketIcon from '@mui/icons-material/Rocket';
 
 function Projects() {
     return (
         <>
-            { /* Starfield Background */}
-            <div className="starfield">
-                <div className="stars"></div>
-            </div>
-            
-            {/* Header */}
-            <Header />
-                
             <section>
                 <div className="container">
                     <div className="row">

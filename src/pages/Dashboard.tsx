@@ -1,5 +1,4 @@
 import React, {useState} from 'react'
-import Header from '../components/Header'
 import Heading from '../components/Heading'
 import Button from '../components/Button'
 import Modal from '../components/Modal'
@@ -178,14 +177,6 @@ function Dashboard() {
 
     return (
         <>
-            { /* Starfield Background */}
-            <div className="starfield">
-                <div className="stars"></div>
-            </div>
-            
-            {/* Header */}
-            <Header />
-                
            {/* Dashboard */}
             <section className="dashboard">
                 <div className="container">

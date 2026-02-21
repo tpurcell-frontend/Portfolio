@@ -1,0 +1,130 @@
+@use '../variables.scss' as *;
+
+.intro-section {
+  position: relative;
+  max-width: 1000px;
+  margin: 0 auto;
+  font-size: 18px;
+}
+
+.intro-section__heading {
+  margin: 0;
+}
+
+.intro-section__subheading {
+  color: $corefire-green;
+  margin-top: 12px;
+}
+
+.intro-section__description {
+  margin-top: 24px;
+
+  p {
+    margin: 0;
+  }
+}
+
+.intro-section__callout {
+  background-color: $gray;
+  border-radius: 10px;
+  padding: 15px;
+  font-weight: bold;
+  margin: 48px 0 0;
+}
+
+.intro-section__group {
+  text-align: left;
+  margin-top: 48px;
+
+  h2 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    &::after {
+      content: '';
+      display: block;
+      border-top: 1px solid $white;
+      margin-left: 25px;
+      width: 100%;
+    }
+  }
+}
+
+.intro-section__projects__wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.intro-section__projects__item {
+  position: relative;
+
+  a {
+    display: block;
+    background-color: $warm-pink;
+    border: 2px solid $warm-pink;
+    padding: 15px;
+    border-radius: 10px;
+    color: $white;
+    font-weight: bold;
+    transition: color 0.5s;
+    text-decoration: none;
+
+    svg.MuiSvgIcon-root {
+      color: $white;
+      margin-left: 5px;
+      margin-bottom: 5px;
+    }
+
+    &:hover,
+    &:focus-visible {
+      background-color: transparent;
+      
+      svg.MuiSvgIcon-root {
+        transform: translate(3px, -5px);
+        transition: transform 0.2s ease-in-out;
+      }
+    }
+  }
+}
+
+.intro-section__projects__item__description {
+  position: absolute;
+  margin-top: 25px;
+  padding: 15px;
+  background-color: $gray;
+  border-radius: 10px;
+  opacity: 0.8;
+  width: 100%;
+}
+
+.intro-section__skills {
+}
+
+.intro-section__skill {
+  color: $corefire-green;
+}
+
+@media (min-width: 768px) {
+
+.intro-section {
+    font-size: 20px;
+  }
+
+  .intro-section__description {
+    margin-top: 24px;
+  }
+
+  .intro-section__callout {
+    margin-top: 32px;
+  }
+
+  .intro-section ul li + li {
+    margin-top: 0;
+  }
+
+  .intro-section__group {
+    margin-top: 64px;
+  }
+}
