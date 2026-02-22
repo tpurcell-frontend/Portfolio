@@ -7,7 +7,7 @@ export default function SkillsSection() {
 
         return(
             <div className="skills-section__list">
-                <h3>{title}</h3>
+                <h3 className="h4">{title}</h3>
                 <ul>
                     {items.map((item: string, index: number) => (
                         <li
@@ -25,7 +25,7 @@ export default function SkillsSection() {
         <section className="skills-section">
             <div className="container">
                 <h2>Skills & Knowledge</h2>
-                <div className="skills-section__wrapper">
+                <div className="skills-section__wrapper mt-8 md:mt-12">
                     <SkillsList title="Programming" items={['JavaScript', 'TypeScript', 'PHP', 'React 18', 'Next.js', 'Redux', 'Node.js', 'jQuery']}/>
                     <SkillsList title="Styling" items={['CSS', 'SASS', 'CSS Modules', 'Styled-Components', 'Bootstrap', 'Material UI', 'Tailwind', 'Foundation']}/>
                     <SkillsList title="Standards, Build Tools & AI" items={['Webpack', 'Vite', 'npm', 'Yarn', 'WCAG 2.2', 'Claude', 'CoPilot']}/>

@@ -10,6 +10,7 @@ import RocketIcon from '@mui/icons-material/Rocket';
 // Styles
 import '../assets/styles/App.scss';
 import '../assets/styles/components/ToDoList.scss';
+import '../assets/styles/bootstrap.scss';
 
 type Task =  {
   text: string,

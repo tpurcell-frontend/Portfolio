@@ -1,18 +1,72 @@
 @use './variables.scss' as *;
+@use './mixins.scss' as *;
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Domine:wght@400..700&display=swap');
 
 $sans-serif: "Outfit", sans-serif;
 $serif: "Domine", serif;
 
-h1, h2, h3, h4, h5, h6 {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
     font-family: $sans-serif;
+    line-height: 1.15;
+}
+
+h1, .h1 {
+    font-size: 32px;
+
+    @include md {
+        font-size: 48px;
+    }
+
+    @include lg {
+        font-size: 64px; 
+    }
+
+    @include xl {
+        font-size: 72px;  
+    }
+}
+
+h2, .h2 {
+    font-size: 24px;
+
+    @include md {
+        font-size: 32px;
+    }
+
+    @include lg {
+        font-size: 48px; 
+    }
+}
+
+h3, .h3 {
+    font-size: 24px;
+
+    @include md {
+        font-size: 32px;
+    }
+
+    @include lg {
+        font-size: 40px; 
+    }
+}
+
+h4, .h4 {
+    font-size: 20px;
+
+    @include md {
+        font-size: 24px;
+    }
 }
 
 p, li, blockquote {
     font-family: $serif;
-    line-height: 2;
     font-size: 18px;
+    line-height: 2;
+
+    @include md {
+        font-size: 20px;
+    }
 }
 
 h2 .rocketIcon {

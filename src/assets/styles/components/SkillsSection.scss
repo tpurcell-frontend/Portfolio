@@ -1,6 +1,5 @@
 .skills-section {
     background: $color-bg-primary;
-    padding: 80px 20px;
     position: relative;
 
     &::before {
@@ -31,16 +30,6 @@
         );
         border-radius: inherit;
         pointer-events: none;
-    }
-
-    h2 {
-        font-size: 42px;
-        font-weight: 600;
-        color: $color-text-primary;
-        letter-spacing: -0.02em;
-        text-shadow: 0 2px 10px $color-shadow-light;
-        text-align: center;
-        margin-bottom: 60px;
     }
 }
 
@@ -86,7 +75,6 @@
     }
 
     h3 {
-      font-size: 14px;
       font-weight: 600;
       margin-bottom: 24px;
       color: $color-text-secondary;
@@ -119,7 +107,6 @@
     }
 
     li {
-      font-size: 15px;
       font-weight: 400;
       color: $color-text-tertiary;
       line-height: 1.6;

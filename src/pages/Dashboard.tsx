@@ -1,18 +1,17 @@
 import {useState} from 'react'
-import Heading from '../components/Heading'
-import Button from '../components/Button'
-import Modal from '../components/Modal'
-
-import '../assets/styles/App.scss'
-import '../assets/styles/components/Dashboard.scss'
-
-import Tooltip from '@mui/material/Tooltip'
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
+import Heading from '../components/Heading';
+import Button from '../components/Button';
+import Modal from '../components/Modal';
 
 // Dashboard Cards
 import dashboardCards from '../data/dashboard-cards';
 import { DashboardCard } from '../types/DashboardCard';
+
+// Material UI
+import Tooltip from '@mui/material/Tooltip';
+import Card from '@mui/material/Card';
+import CardContent from '@mui/material/CardContent';
+import { create } from '@mui/material/styles/createTransitions'
 
 // Icons & Tooltips
 import DashboardIcon from '@mui/icons-material/Dashboard';
@@ -30,8 +29,13 @@ import AddTaskIcon from '@mui/icons-material/AddTask';
 import ApiIcon from '@mui/icons-material/Api';
 import LogoutIcon from '@mui/icons-material/Logout';
 
+//Styles
+import '../assets/styles/App.scss';
+import '../assets/styles/components/Dashboard.scss';
+import '../assets/styles/bootstrap.scss';
+
+// Types
 import { TooltipItem } from '../types/TooltipItem';
-import { create } from '@mui/material/styles/createTransitions'
 
 const dashboardFilterIcons: TooltipItem[] = [
     // {title: 'Main', icon: <DashboardIcon/>, filter: true},
@@ -108,7 +112,7 @@ function Dashboard() {
                         <h2>{CardItem.title}</h2>
                     }
                     {CardItem.value &&  
-                        <h3 className="mb-0 mt-4">{CardItem.value}</h3> 
+                        <p className="h3 mb-0 mt-4">{CardItem.value}</p> 
                     }
                     <p className="mb-0 mt-2">{CardItem.description}</p>
                     {CardItem.footer && CardItem.link ?

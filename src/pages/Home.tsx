@@ -4,6 +4,9 @@ import ContactSection from '../components/ContactSection'
 import IntroSection from '../components/IntroSection'
 import SkillsSection from '../components/SkillsSection'
 
+// Styles
+import '../assets/styles/tailwind.scss';
+
 function Home() {
 
     return (

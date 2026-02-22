@@ -9,6 +9,7 @@ import Planet from '../components/Planet'
 // Styles
 import '../assets/styles/App.scss'
 import '../assets/styles/components/Planet.scss'
+import '../assets/styles/bootstrap.scss';
 
 // Types
 import { SelectedOptions } from '../types/SelectedOptions';

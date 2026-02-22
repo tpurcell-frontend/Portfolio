@@ -1,21 +1,17 @@
 .intro-section {
   position: relative;
-  max-width: 1000px;
   margin: 0 auto;
-  font-size: 18px;
 }
 
 .intro-section__heading {
   margin: 0;
 }
 
-.intro-section__subheading {
+.h2.intro-section__subheading {
   color: $corefire-green;
-  margin-top: 12px;
 }
 
 .intro-section__description {
-  margin-top: 24px;
 
   p {
     margin: 0;
@@ -71,7 +67,6 @@
 
 .intro-section__group {
   text-align: left;
-  margin-top: 48px;
 
   h2 {
     display: flex;
@@ -91,7 +86,7 @@
 .intro-section__projects__wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 25px;
+  gap: 24px;
 }
 
 .intro-section__projects__item {
@@ -101,12 +96,20 @@
     display: block;
     background-color: $warm-pink;
     border: 2px solid $warm-pink;
-    padding: 15px;
+    padding: 5px;
     border-radius: 10px;
     color: $white;
     font-weight: bold;
     transition: color 0.5s;
     text-decoration: none;
+
+    @include md {
+      padding: 10px;
+    }
+
+    @include lg {
+      padding: 15px;
+    }
 
     svg.MuiSvgIcon-root {
       color: $white;
@@ -128,7 +131,6 @@
 
 .intro-section__projects__item__description {
   position: absolute;
-  margin-top: 25px;
   padding: 15px;
   background-color: $gray;
   border-radius: 10px;
@@ -150,18 +152,11 @@
   }
 
   .intro-section__description {
-    margin-top: 24px;
   }
 
   .intro-section__callout {
-    margin-top: 32px;
-  }
-
-  .intro-section ul li + li {
-    margin-top: 0;
   }
 
   .intro-section__group {
-    margin-top: 64px;
   }
 }

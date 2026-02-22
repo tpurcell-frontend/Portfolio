@@ -1,0 +1,82 @@
+.moon-wrapper {
+  position: relative;
+  width: 275px;
+  height: 275px;
+  background: transparent;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.moon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 275px;
+  height: 275px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #f5f3ce, #d9d6b5);
+  box-shadow:
+    0 0 20px rgba(255, 255, 200, 0.6),
+    0 0 60px rgba(255, 255, 180, 0.4),
+    0 0 120px rgba(255, 255, 160, 0.2);
+  animation: glow-pulse 4s ease-in-out infinite;
+
+  a {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+@keyframes glow-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 20px rgba(255, 255, 200, 0.6),
+      0 0 60px rgba(255, 255, 180, 0.4),
+      0 0 120px rgba(255, 255, 160, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 30px rgba(255, 255, 220, 0.8),
+      0 0 80px rgba(255, 255, 190, 0.5),
+      0 0 150px rgba(255, 255, 170, 0.3);
+  }
+}
+
+// Sun Background
+.sun-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto;
+}
+
+.sun {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, #fff59d, #fbc02d);
+  box-shadow:
+    0 0 30px rgba(255, 193, 7, 0.8),
+    0 0 60px rgba(255, 152, 0, 0.6),
+    0 0 100px rgba(255, 87, 34, 0.4),
+    0 0 140px rgba(255, 61, 0, 0.2);
+  animation: sun-pulse 6s ease-in-out infinite;
+}
+
+@keyframes sun-pulse {
+  0%, 100% {
+    box-shadow:
+      0 0 30px rgba(255, 193, 7, 0.8),
+      0 0 60px rgba(255, 152, 0, 0.6),
+      0 0 100px rgba(255, 87, 34, 0.4),
+      0 0 140px rgba(255, 61, 0, 0.2);
+  }
+  50% {
+    box-shadow:
+      0 0 50px rgba(255, 213, 33, 1),
+      0 0 90px rgba(255, 167, 38, 0.8),
+      0 0 140px rgba(255, 112, 67, 0.6),
+      0 0 180px rgba(255, 61, 0, 0.4);
+  }
+}
