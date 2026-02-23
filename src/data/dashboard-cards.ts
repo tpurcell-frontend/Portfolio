@@ -20,8 +20,8 @@ const cards: DashboardCard[] = [
   {
     title: 'Sandwich Maker',
     description: 'The Sandwich Maker is an example of React componentization, user input and data manipulation, resulting in the output of flexible and scalable objects. This project is written in TypeScript and uses Cypress testing.',
-    footer: ['See the Project', 'See the Repo'],
-    link: ['/projects/sandwich-maker', 'https://github.com/tpurcell-frontend/Portfolio/blob/main/src/pages/SandwichMaker.tsx'],
+    // footer: ['See the Project', 'See the Repo'],
+    // link: ['/projects/sandwich-maker', 'https://github.com/tpurcell-frontend/Portfolio/blob/main/src/pages/SandwichMaker.tsx'],
     width: `calc(33.33% - 8px)`,
     project: true,
     blank: true,
