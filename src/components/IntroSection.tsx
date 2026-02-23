@@ -72,7 +72,7 @@ export default function IntroSection() {
                     <h2>Skills</h2>
                     <p className="mt-4 lg:mt-8">The skills used in those projects include 
                         <span className="intro-section__skill"> Drupal 11</span>,
-                        <span className="intro-section__skill"> WordPresss</span>,
+                        <span className="intro-section__skill"> WordPress</span>,
                         <span className="intro-section__skill"> Twig </span>,
                         <span className="intro-section__skill"> JavaScript </span>,
                         <span className="intro-section__skill"> PHP</span>,
