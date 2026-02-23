@@ -30,7 +30,7 @@ export default function IntroSection() {
                 {/* Group - Turn this into a component */}
                 <div className="intro-section__group mt-12 md:mt-16 lg:mt-20">
                     <h2>Projects</h2>
-                    <p className="mt-4 lg:mt-8">I have built or heavily contributed to the following enterprise-level projects:</p> 
+                    <p className="mt-4 lg:mt-8">Client Enterprise Projects</p> 
                     <div className="intro-section__projects__wrapper mt-2 lg:mt-4">
                         <div className="intro-section__projects__item">
                             <a className="external" target="_blank" rel="noopener noreferrer" href="https://salve.edu/">Salve Regina University
@@ -48,7 +48,7 @@ export default function IntroSection() {
                             </a>
                         </div>
                     </div>
-                    <p className="mt-8 lg:mt-12">Additionally, here are projects built on this site:</p> 
+                    <p className="mt-8 lg:mt-12">Portfolio Projects</p> 
                     <div className="intro-section__projects__wrapper mt-2 lg:mt-4">
                         <div className="intro-section__projects__item">
                             <a className="external" rel="noopener noreferrer" href="/projects/planet-generator">Planet Generator
@@ -70,16 +70,19 @@ export default function IntroSection() {
                 {/* Group */}
                 <div className="intro-section__group mt-12 md:mt-16 lg:mt-20">
                     <h2>Skills</h2>
-                    <p className="mt-4 lg:mt-8">The skills used in those projects include 
+                    <p className="mt-4 lg:mt-8">The skills used in the client enterprise projects include:<br></br>
                         <span className="intro-section__skill"> Drupal 11</span>,
                         <span className="intro-section__skill"> WordPress</span>,
-                        <span className="intro-section__skill"> Twig </span>,
-                        <span className="intro-section__skill"> JavaScript </span>,
+                        <span className="intro-section__skill"> Twig</span>,
+                        <span className="intro-section__skill"> JavaScript</span>,
+                        <span className="intro-section__skill"> jQuery</span>,
                         <span className="intro-section__skill"> PHP</span>,
                         <span className="intro-section__skill"> Node.js</span>,
                         <span className="intro-section__skill"> CSS</span>,
                         <span className="intro-section__skill"> SASS</span>,
+                        <span className="intro-section__skill"> Bootstrap</span>,
                         <span className="intro-section__skill"> Foundation</span>,
+                        <span className="intro-section__skill"> Acquia</span>,
                         <span className="intro-section__skill"> Pantheon</span>,
                         <span className="intro-section__skill"> Docker</span>,
                         <span className="intro-section__skill"> Drush</span>,
@@ -89,7 +92,17 @@ export default function IntroSection() {
                         <span className="intro-section__skill"> Npm</span>,
                         <span className="intro-section__skill"> WCAG 2.2</span>.
                     </p>
-                    <p className="mt-2 lg:mt-4">Additional skills will be displayed on projects contained in this portfolio.</p>
+                    <p className="mt-2 lg:mt-4">The skills used in the portfolio projects include:<br></br>
+                        <span className="intro-section__skill"> React 18</span>,
+                        <span className="intro-section__skill"> TypeScript</span>,
+                        <span className="intro-section__skill"> Material UI</span>,
+                        <span className="intro-section__skill"> Node.js</span>,
+                        <span className="intro-section__skill"> CSS</span>,
+                        <span className="intro-section__skill"> SASS</span>,
+                        <span className="intro-section__skill"> Tailwind </span>,
+                        <span className="intro-section__skill"> Npm</span>,
+                        <span className="intro-section__skill"> WCAG 2.2</span>.
+                    </p>
                 </div>
                 {/* Moon Background */}
                 <MoonBackground />
